@@ -31,3 +31,31 @@ Administrador de base de datos, quien coordina cómo funciona la base de datos y
 La base de datos debe de estar jerarquizada, jerarquía garantizada por el SGBD, y además debe de estar disponible todo momento que se le requiera. También debe de ser eficiente, es decir, que sin abusar del consumo de recursos de acceso a los datos de forma rápida.
 
 También el sistema debe incluir procesos que nos ayuden al análisis de los datos, que en conjunto con todo lo anteriormente mencionado nos ayudan al propósito final del sistema, proporcionarnos y/o contenernos información de manera correcta.
+
+## clase 3 SQL
+para poder administrar una base de datos, necesitamos comunicarnos con el SGBD a través de SQL, con sus 3 sublenguajes:
+- DML:Data Modification Lenguaje. sirve para manipular/manejar los registros, desde consultarlos, crearlos, actualizarlos y/o eliminarlos
+    - SELECT
+    - INSERT
+    - DELETE
+    - UPDATE
+- DCL: Data Control Lenguaje. Sirve para administrar como y que pueden hacer los distintos roles de la base de datos
+    - GRANT
+    - REVOKE
+- DDL:
+
+Para que una base de datos sea considerado buena, debe de tener ciertas características que el SGBD nos da para mantenerlas
+- Consistencia: todos los valores deben de ser consistentes, no deben contradecirse(que para ello, debe estar bien diseñada), para ello el SGBD nos otorga el CONTROL DE CONCURRENCIA
+    - Control de concurrencia: evita que operaciones de diversos usuarios que traten de modifcar el mismo valor causen conflictos, a través de marcas de tiempo para cada operacion, estableciendo diferencias a veces imperceptibles de tiempo entre una y otra, lo que le da tiempo de actuar al gestor para actualizar el registro de la primera operacion y actuar en consecuencia de los nuevos datos en la siguiente operacion.
+    - Bloqueo: cuando una operacion está siendo ejecutada, limita que otra pueda modificar el mismo dato hasta que esta termina.
+    - sistema de recuperación: que si por algun fallo imprevisto(no tan letal, como un apagón) tiene sistemas que ayudan a manipular las transacciones que se quedaron a medias
+        - REDO: re-hace la operacion que no se terminó de llevar a cabo SI ES QUE PUEDE, si no puede pasa a la siguiente fase "UNDO"
+        - UNDO: des-hace la operacion que no se pudo llevar a cabo, como si nunca se hubiera llevado a cabo la transaccion.
+- Seguridad: solo deben acceser los autorizados a los datos
+    - proteger de datos: no permite que quien no deba tener acceso a los datos o a ciertos datos lo tenga, evitando 2 consultarlos. Para preservar la INTEGRIDAD y CONFIDENCIALIDAD de los datos.
+        - mal manejo
+        - intrusión
+    - Trigger: alerta que pone el administrador de base de datos sobre una accion en una tabla, que en seguridad se utiliza para que cuando se haga una accion sobre una tabla lo anota en un registro(aunque tambien se utliza en otros ambitos, como para modificar datos que dependan de otros, para que sean consistentes.)
+    - Alerta: mensajes enviados en caso de alguna situacion alarmante, ya sea asignada por un trigger o por lo que veremos despues, el sistema de monitoreo
+    - Monitoreo: sistema que revisa y nos brinda informacion de diversas maneras sobre posibles parametros que pudieren afectar de manera critica la base de datos, como almacenamiento, por poner un ejemplo. Este sistema puede activar alertas
+- Disponibilidad: que todo el tiempo podamos acceder a la base de datos, de manera eficiente
