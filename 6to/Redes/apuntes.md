@@ -92,3 +92,64 @@ HUB: miniswitch, que en realidad es el switch antiguo. Es un repetidor de bits, 
 
 **COMPLETAR**
 existen puertos de origen (desde el 1024, que antes de eso la pc los destina a otra cosa) y de destino (como los sitios web, que si es http es 80 o https 443)
+
+los switches guardan las MAC en su tabla de MAC ADRESS
+
+ARP es un protocolo para comunicarse con MAC adress que aunque desconocida, el switch le "pregunta" al resto de los dispositivos quien tiene la ip solicitada, quien la tiene se la proporciona al switch y este facilita la comunicacion. A partir de ahi, el switch almacena la MAC adress que está conectada en el puerto del dispositivo que respondió su MAC ADRESS. Este tipo de comunicacion es por origen
+
+-----
+
+![red](/6to/Redes/imagenes/image.png)
+aqui podemos apreciar una red, donde el cable azul es un cable de consola
+
+**nota: como en el caso de 10.10.10.2/24, el /24 nos dice antes de empezar esos numeros los 24 bits anteriores a la dicha son los de la red, osea que son 255.255.255, es una nomenclatura para ahorrar espacio**
+![red](/6to/Redes/imagenes/config%20ip.png)
+
+podemos apreciar la DEFAULT GATEWAY es la ip que nos asigna el router a todos los dispositivos para comunicarnos con otros dispositivos ajenos a la misma red, por lo que es la que usan nuestros dispositivos para internet, en este caso (regresando a la imagen de la red) del router a la izquierda tienen la DEFAULT GATEWAY 10.10.10.1/24, que  es con la que se comunican a la red de la derecha, con DEFAULT GATEWAY 20.20.20.20.1/24
+
+#### como comunicar la PC1 con la PC0
+![pt1](/6to/Redes/imagenes/x.png)
+![alt text](/6to/Redes/imagenes/image-1.png)
+nos dice que en la capa 3, la pc1 lo que sabe. src(origen): la ip de la computadora que manda el ping
+
+**nota:3 tipos de mensaje en telecom:**
+
+**- unicast**
+
+**- broadcast**
+
+**- completar**
+![alt text](/6to/Redes/imagenes/image-2.png)
+podemos apreciar lo primero que pasa cuando se intenta hacer comunicacion entre 2 dispositivos dentro de la misma red y que nunca antes se ha hecho(el switch y la pc1 desconocen la MAC Adress de la PC0), ahi en la capa 2 como no sabe HACE EL PROTOCOLO ARP, para conocer la MAC Adress. primero hace todo el protocolo antes de tirar el ping
+![alt text](/6to/Redes/imagenes/image-3.png)
+aqui podemos ver que despues de ejecutar la primera parte de arp, el paquete avanzó al switch 0 y como el paquete avanzó de origen pc1 al switch, el switch ya conoce la MAC ADRESS de la pc1, pero le falta preguntar a los dispositivos que no son PC1 de quien tiene la mac address de la ip a la que la pc1 se quiere comunicar(tirar ping/simple package). Como en este caso aun no esta configurada la conexion del router a la red de la izquierda, solo tiene un dispositivo al que preguntarle, al router de la derecha
+![alt text](/6to/Redes/imagenes/image-4.png)
+de hecho, como se ve en esta imagen, si le preguntamos a la pc0 cuales mac adress conoce, no conoce ninguna, pues nunca se ha comunicado con el switch, por lo tanto tampoco con la pc1
+![alt text](/6to/Redes/imagenes/image-5.png)
+en el siguiente paso, el paquete llega al pc0
+
+COMPLETAR
+
+----
+configurando router o para que establezca conexion, asignandole una ip al switch que tiene conectado por el puerto gigabit0/1
+![alt text](/6to/Redes/imagenes/image-6.png)
+![alt text](/6to/Redes/imagenes/image-7.png)
+y los leds de la izquierda se prenden
+
+![alt text](/6to/Redes/imagenes/image-8.png)
+y se hace lo mismo con la interface de la derecha, que es la interface gigabitEthernet 0/1 del router
+![alt text](/6to/Redes/imagenes/image-9.png)
+
+ahora, configuramos la VirtualLan del switch desde la pc 1(aprovechando que lo conectamos por el cable de consola)
+![alt text](/6to/Redes/imagenes/image-10.png)
+
+en la siguiente imagen, previamente conectamos la computadora con el router y le configuramos password en el login y enable al switch, pero ademas nos permitira conectarnos de la pc al router sin necesidad de que se conecte directamente con cable de consola
+![alt text](/6to/Redes/imagenes/image-11.png)
+ahora, con el cable desconectado y siguiendo la ruta (en la pc) de desktop>SSH/TELNET>TELNET y en telnet escribimos la ip a la que nos queremos comunicar, en este caso 10.10.10.1, que nos dirigue al router.
+![alt text](/6to/Redes/imagenes/image-12.png)
+y apreciamos, que nos dejo acceder al router desde la pc0 sin necesidad de tener conectado un cable consola
+![alt text](/6to/Redes/imagenes/image-13.png)
+
+-----
+
+el router aprende IP's en la tabla de routeo, cuando se le asigna una ip a alguna de sus interfaces y encendemos la intefaz las almacena en dichas tablas. Si apagamos la interfaz, el router deja de conocer dicha ip

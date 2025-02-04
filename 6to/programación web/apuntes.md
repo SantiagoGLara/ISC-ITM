@@ -17,6 +17,7 @@
 5. servicios web 20%
 
 **30% del final**
+
 ## introduccion
-aplicacion web: aplicacion que para ejecutarla lo hacemos a través de un navegador web
+aplicacion web: aplicacion que para ejecutarla lo hacemos a través de un navegador webññ
 navegador: entorno que brinda herramientas para 
