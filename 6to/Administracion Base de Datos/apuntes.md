@@ -59,3 +59,7 @@ Para que una base de datos sea considerado buena, debe de tener ciertas caracter
     - Alerta: mensajes enviados en caso de alguna situacion alarmante, ya sea asignada por un trigger o por lo que veremos despues, el sistema de monitoreo
     - Monitoreo: sistema que revisa y nos brinda informacion de diversas maneras sobre posibles parametros que pudieren afectar de manera critica la base de datos, como almacenamiento, por poner un ejemplo. Este sistema puede activar alertas
 - Disponibilidad: que todo el tiempo podamos acceder a la base de datos, de manera eficiente
+-----
+**Query interesante:**
+![nice query](/6to/Administracion%20Base%20de%20Datos/imagenes/image.png)
+el insert esta interesante, jala la columna editorial de la tabla libros y la inserta en la tabla editoriales

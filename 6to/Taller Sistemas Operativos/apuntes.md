@@ -20,3 +20,19 @@ El **núcleo** es el corazón del sistema operativo. Su función principal es ge
 
 ### Espacio de Usuario
 El **espacio de usuario** es donde se ejecutan las aplicaciones que usa el usuario final. Este espacio garantiza la **estabilidad y seguridad del sistema**, ya que las aplicaciones no pueden acceder directamente a los recursos del sistema sin pasar por el núcleo. Además, mediante **interfaces gráficas**, el sistema operativo interactúa con el usuario, ofreciendo una experiencia amigable y controlada.
+
+### proceso y multiprogramacion
+programa: entidad pasiva, lista de instrucciones
+proceso: entidad activa resultado de ejecutar un programa
+relacion: un programa ejecuta multiples procesos
+#### proceso en un sistema multiprogramacion
+el proceso es la imagen en memoria de un programa junto con suestado de ejecución. Una tarea es menor compleja, no tiene interrupciones ni cambios de estado, mientras que el proceso puede ser interrumpido y gestionado dinamicamente
+##### ilusion de simultaneidad
+gracias a la multiprogramacion, el sistema hace la ilusion de que hay varios procesos se ejecutan a la vez, pero en realidad es uno detras de otro. Solo los que4 tienen un procesador asignado están realmente ejecutandose, los demas están esperando ya que no tienen aun recursos asignados.
+#### ciclo de vida de un proceso
+- nuevo: creado no ejecutado
+- listo: esperando asignacion de procesador
+- ejecución: instrucciones siendo procesadas
+- bloqueado: esperando evento externo
+- zombie: finalizado pero el SO aun no lo limpia
+- terminado: proceso completamente eliminado
