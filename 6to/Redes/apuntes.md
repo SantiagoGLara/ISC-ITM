@@ -89,6 +89,23 @@ en estas redes todos los dispositivos/nodos operan en semiduplex, compitiendo po
 HUB: miniswitch, que en realidad es el switch antiguo. Es un repetidor de bits, es decir que lo que entraba por uno de sus lados se reenviaba a todos los demás, por eso en el se usaban los metodos de control donde solo uno mandaba. Con este se hacian las redes antiguas
 
 ### trama de enlace de datos
+la trama de enlace de datos prepara los datos encapsulados(capa 2, MAC ADDRESS)
+consta de 3 partes
+- encabezado
+- datos 
+- trailer
+esta trama cambia segun el destino, es decir que debe de estar preparada segun el destino y el camino. Por ejemplo, de la computadora al router lo mandamos de manera inalambrica, los datos se preparan para mandarse asi; pero en el camino entre router y router se comunica por cable de fibra optica, de ahi a uno de cable, otro de fibra y asi por n cantidad de caminos que puede ir cambiando la trama dependiendo del medio por el que se vaya a transportar 
+#### campos de trama 
+![campos de trama](/6to/Redes/imagenes/campos%20de%20trama.png)
+
+#### Direcciones de capa 2
+host a router
+![host a router](image-1.png)
+router a router
+![router a router](image-2.png)
+router a host
+![router a host](image-3.png)
+
 
 **COMPLETAR**
 existen puertos de origen (desde el 1024, que antes de eso la pc los destina a otra cosa) y de destino (como los sitios web, que si es http es 80 o https 443)
@@ -153,3 +170,20 @@ y apreciamos, que nos dejo acceder al router desde la pc0 sin necesidad de tener
 -----
 
 el router aprende IP's en la tabla de routeo, cuando se le asigna una ip a alguna de sus interfaces y encendemos la intefaz las almacena en dichas tablas. Si apagamos la interfaz, el router deja de conocer dicha ip
+
+-----
+### continuacion trama de enlace de datos
+aqui vemos una tabla de rutas, que es como se decide por donde mandar paquetes. podemos ver que hay multiples opciones, donde la mas rapida es la primera, pues su metrica de `costo` es la menor. Sirve como una puerta de emergencia, si algun router no conoce la ruta para mandar el paquete, manda el paquete al siguiente router para ver si el siguiente si sabe como hacerlo, y lo manda por esa ruta; actua como una salida de emergencia. Cabe recalcar que el tiempo que queda bailando el paquete en busqueda de quien sepa enviarlo tiene limite.
+![route print](/6to/Redes/imagenes/route%20Print.png)
+
+### Tramas LAN y WAN
+tradicionalmente los wan utilizaban otros tipos de protocolos para varios tipos de topologias punto a punto, hub-spoke y malla completa. Algunos de los mas comunes al pasar de los años son
+- protocolo punto a punto (PPP)
+- control de enlace de datos de alto nivel (HDLC, High-level Data link Control)
+- Frame Relay
+- Modo de Transferencia Asincrona (ATM)
+- X.25(se usaba para puntos de venta/terminales, pero ya está casi totalmente en desuso)
+
+por defecto, los equipos cisco hablan/trabajan en el protocolo WAN HDLC
+
+`nota: en un router por defecto sus puertos están apagados, en cambio un switch por defecto en cuanto se conectan están encedidos/funcionando`
