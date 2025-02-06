@@ -30,5 +30,30 @@ como parte de esto, la nom IEEE830 nos aporta una estructura que debe de llevar 
 - fuentes primarias: ir directamente al lugar de interes para analizarlo "personalmente", aunque es mala como metodo inicial
 - fuentes secundarias: libros, revistas, etc.
 
-### KICKOFF
-primera entrevista con el cliente
+`kickoff`: primera entrevista con el cliente, por decirlo asi una "patada inicial" de reconocimiento
+
+### caracteristicas ideales de un objetivo
+- deberá ser simple
+- deberá iniciar con uno(maximo 2) verbos en infinitivo, ej: implementar, diseñar, crear.
+
+### notas de las partes de un SRS (IEEE 830)
+![Documento IEEE830](/6to/Ingeniería%20en%20Software/Referencias/IEEE830_esp.pdf)
+
+**propostio**
+
+proposito del documento, no del proyecto
+
+**2.4 Restricciones**
+
+respecto a las politicas, reglas basicas como por ejemplo el CLE, que se considera finalizado un curso de ingles hasta que acaba sus 5 semestre de ingles.
+
+**2.5 suposiciones y dependencias**
+
+presupociones acerca de factores que pudieran afectar el proceso "originalmente" planeado, por ejemplo, si diseñamos un login en base a CURPS, pero sabemos que no el 100% de la poblacion destino del programa cuenta con una, podemos incluir un formulario para ahi mismo registrarlo en el organismo correspondiente, ahorrandonos tiempo y problemas.
+
+**3 Requisitos especificos**
+
+requisitos a nivel de detalle suficiente como para permitir a los diseñadores diseñar un sistema que satisfaga los requisitos(lo necesario, lo pedido. No hay que sobrepasarse), generalmente perceptibles al usuario.
+
+**4 Apendices**
+puede contener todo tipo de informacion relevante para la ERS pero que propiamente no pertenecen a la ERS, como formatos de entrada/salida(BPMN, Diagram de componentes,derama de contexto, etc), resultados de analisis de costos, restriccciones acerca del lenguaje de programación.
