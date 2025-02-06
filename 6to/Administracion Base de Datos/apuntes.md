@@ -59,7 +59,51 @@ Para que una base de datos sea considerado buena, debe de tener ciertas caracter
     - Alerta: mensajes enviados en caso de alguna situacion alarmante, ya sea asignada por un trigger o por lo que veremos despues, el sistema de monitoreo
     - Monitoreo: sistema que revisa y nos brinda informacion de diversas maneras sobre posibles parametros que pudieren afectar de manera critica la base de datos, como almacenamiento, por poner un ejemplo. Este sistema puede activar alertas
 - Disponibilidad: que todo el tiempo podamos acceder a la base de datos, de manera eficiente
+## Administrador de Base de Datos
+ABD: Experto en varias áreas, como: sistemas de información, diseño y operaciones de una b.d, sgbd, se anticipa a los problemas.
+
+Es el elemento más crítico, protege la CID de la b.d, monitorea y tiene respaldo (plan de contingencia). Actualiza o checa cambios de las aplicaciones y la b.d, obtiene y carga datos masivos, limpia los datos (duplicidades, inconsistencias, etc.), relaciones humanas.
+
+Como abd debes proteger(o minimizar daños) la bd de los usuarios internos y externos o ante ataques, debe checar las capacidades de su equipo de computo.
+
+el administrador de bases de datos necesita establecer indicadores o parametros a monitorear segun la base de datos.
+
+Tambien debe de ser alguien continuamente actualizado, estar al tanto de las nuevas tecnologias como en cualquier área, para que no quede obsoleto.
+
+El administrador de base de datos es tambien responsable de preservar la eficiencia de la base de datos, ademas de tener bien reconocida la capacidad de la base de datos, para saber si es capaz de escalar al alcance de las necesidades.
+
+Otra herramienta para preservar los datos en una base de datos es implementar una herramienta de duplicación, que cuando se procesa un dato se procesa doble. Con el fin de no perderlos, pero a la vez puede complicar, pues amplía la necesidad de almacenamiento, lo que consigo amplia la necesidad de mantenimiento de los dispositivos de almacenamiento, lo que nos abre la posibilidad de acceder a `herramientas en la nube`
+### caracterisiticas de un buen administrador de base de datos
+Primero que nada, debe de conocer con amplitud la organizacion para la que trabaja, como funciona y que necesita. Debe de saber como mantener los niveles de estabilidad, disponibilidad, eficiencia y escalabilidad. Inclusive, dependiendo del giro de la empresa, tener conocimiento en temas de negocios para que las soluciones que brindemos con la base de datos y sus procesamientos de datos sean fieles a la necesidad que intentamos cubrir.
+
 -----
+
 **Query interesante:**
 ![nice query](/6to/Administracion%20Base%20de%20Datos/imagenes/image.png)
 el insert esta interesante, jala la columna editorial de la tabla libros y la inserta en la tabla editoriales
+
+----
+
+## La nube
+se refiere a la entrega de servicios informáticos a través de Internet. En lugar de almacenar datos o ejecutar aplicaciones en servidores locales o computadoras personales, la nube permite acceder a recursos, como almacenamiento, bases de datos, servidores, software y análisis, de manera remota y bajo demanda.
+
+Características principales de la nube:
+1. Acceso bajo demanda: Los usuarios pueden acceder a los recursos cuando los necesiten, sin intervención humana directa del proveedor.
+
+2. Escalabilidad: Los recursos pueden ajustarse rápidamente para satisfacer las necesidades cambiantes.
+
+3. Pago por uso: Solo se paga por los recursos que se utilizan, lo que permite optimizar costos.
+
+4. Acceso desde cualquier lugar: Los servicios en la nube están disponibles a través de Internet, lo que permite el acceso desde cualquier dispositivo conectado.
+
+5. Recursos compartidos: Los proveedores de la nube utilizan infraestructuras compartidas para ofrecer servicios a múltiples clientes de manera eficiente.
+
+para fines de un administrador de base de datos vale la pena valorar los riesgos de establecer una base de datos en la nube contra hacerlo localmente, por sus bondades. inclusive, dado el caso, podria ser conveniente hasta segmentarla.
+### firewall
+proteccion, una barrera de seguridad antes de conectarse a nuestra base de datos. Inclusive pueden haber varios consecutivos. Se le llama zona "desmilitarizada" se llaman zonas aisladas de otras que para navegar entre ella no lleva seguridad, zonas simplemente visibles. Por ejemplo, una pagina de ventas en linea como mercado libre, su zona desmilitarizada es cuando enseña todos sus productos, pero por ejemplo para hacer inserciones o hacer nuevos usuarios, vendedores si necesita más seguridad.
+
+----
+definiciones:
+
+BigData:
+DataWareHouse:
