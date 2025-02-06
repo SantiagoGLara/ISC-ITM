@@ -19,5 +19,16 @@
 **30% del final**
 
 ## introduccion
-aplicacion web: aplicacion que para ejecutarla lo hacemos a través de un navegador webññ
-navegador: entorno que brinda herramientas para 
+`aplicacion web:` aplicacion que para ejecutarla lo hacemos a través de un navegador web
+
+`navegador`: entorno que brinda herramientas para correr una pagina web
+
+`Documento HTML:`Es un archivo que cumple con ciertas caracteristicas  que permiten estructurar los contenidos que vamos a visualizar en el navegador
+
+`web:`un servicio más de internet, al que accedemos por medio del navegador. El navegador le pide recursos al servidor
+
+`etiqueta:`identificador de contenidos, util para estructurar el documento,darle forma. Se encierran entre los simbolos "<>", algunas son simples y otras compuestas.
+
+La forma de identificar a las compuestas que tienen un inicio y un final, es decir que primero inician como `<body>` y cierran `</body>`
+
+hay etiquetas que se adaptan al contenido que tienen en y otras que se adaptan al contenedor
