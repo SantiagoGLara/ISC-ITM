@@ -1,7 +1,10 @@
 # LENGUAJES DE INTERFAZ
 u1 examen 100%
+
 u2-u4 practicas
-practicas 1 semana, los 2 presentes al entregar. Por semana de retraso es -10pts
+
+practicas 1 semana para entregarla, los 2 integrantes presentes al entregar. Por semana de retraso es -10pts.
+
 ## resolucion diagnostico
 1. lenguaje de ensamblador es lenguaje de mas bajo nivel, para trabajar a nivel bajo
 2. se encarga de ejecutar operaciones, con alu, unidad de control, buses de datos
