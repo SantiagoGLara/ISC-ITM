@@ -17,3 +17,22 @@ practicas 1 semana para entregarla, los 2 integrantes presentes al entregar. Por
 10. and(multiplicacion) or(suma) not(negacion)
 11. unidad aritmetica logica
 12. rotacion es rotar un grupo de bits, sin que se pierdan(derecha o izquierda), la diferencia con el corrimiento es que si se pierden 
+
+## importancia del ensamblador
+`el compilador` es una herramienta que nos ayuda a traducir las instrucciones a codigo maquina, por eso si tenemos errores sintacticos NO COMPILA, pero en el caso de ensamblador `no tiene compilador`, porque el ensamblador se traduce directamente a codigo binario.
+
+Existen los registros de estado, mejor conocidos como banderas. Entonces, cada dato que pasa al microprocesador viene acompañado de una, para que el microprocesador sepa que hacer.
+
+`PILA:` Guarda informacion de donde se va el programa, Por ejemplo si esta ejecutando un proceso y llega otro mas prioritario, en la pila se guarda la instruccion en la que se quedo el menos prioritario para cuando pueda reanudarlo. En la memoria esta bien marcado/segmentado de cual a cual direccion es pila, de cual a cual son datos y de cual a cual es instucciones.
+
+![alt text](/ISC-ITM/6to/Lenguajes%20de%20interfaz/imagenes/image.png)
+
+### desventajas del ensamblador
+- repeticion constante de instrucciones
+- no hay sintaxis estandarizada para variantes entre procesadores
+- dificultad para encontrar errores.
+### ventajas
+- velocidad de ejecucion
+- mayor control sobre el hardware
+- realizacion de tareas tecnicas que serian imposibles en otro lenguaje
+- depuracion de codigo
