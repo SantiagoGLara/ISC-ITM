@@ -187,3 +187,28 @@ tradicionalmente los wan utilizaban otros tipos de protocolos para varios tipos 
 por defecto, los equipos cisco hablan/trabajan en el protocolo WAN HDLC
 
 `nota: en un router por defecto sus puertos están apagados, en cambio un switch por defecto en cuanto se conectan están encedidos/funcionando`
+
+## Ethernet switching
+la capa 2 se subdivide en 2 capas, la "superior" LLC(control de enlace logico 802.2) es la encargada de ver con que operarémos en la capa fisica y la subcapa MAC, que es la de Control de Acceso al Medio. El estándar de ethernet es el 802.3.
+`nota: el estandar de wifi es 802.11`
+### campos de la trama internet
+![alt text](/ISC-ITM/6to/Redes/imagenes/campos%20de%20trama%20internet.png)
+
+## comunicaciones unicast
+
+## comunicaciones broadcast
+para identificar un mensaje broadcast, la direccion mac de destino es FF-FF-FF-FF(o 255.555.255.255 si fuere en capa 2)
+
+## comunicaciones multicast
+comunicaciones de un segmento del todo, es decir. Dentro del universo de todos los dispositivos, a un segmento. Hay rangos de direcciones, y una la clase D es reservada para multicast, nosotros no podemos trabajar con ella
+
+### clases de IP Adress
+ 
+# estudiar 7.3.6
+
+### Metodos de reenvío de tramas
+Con los switches Cisco, en realidad hay dos métodos de reenvío de tramas y hay buenas razones para usar uno en lugar del otro, dependiendo de la situación.
+
+Los switches utilizan uno de los siguientes métodos de reenvío para el switching de datos entre puertos de la red:
+
+    Switching de almacenamiento y envío - Este método de reenvío de trama recibe la trama completa y calcula el CRC(codigo de redundancia ciclico, verifica si lo llegado y lo recibido coincide, entonces le pide al origen la retransmisión de la trama).
