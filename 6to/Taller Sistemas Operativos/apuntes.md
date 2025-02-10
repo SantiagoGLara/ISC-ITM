@@ -36,3 +36,15 @@ gracias a la multiprogramacion, el sistema hace la ilusion de que hay varios pro
 - bloqueado: esperando evento externo
 - zombie: finalizado pero el SO aun no lo limpia
 - terminado: proceso completamente eliminado
+## virtualizacion
+Es la tecnica que permite representar componentes que parecen reales, aunque no existan fisicamente. Consiste en crear entornos virtuales que emulan el comportamiento de sistemas reales.
+`anfitrion(host):` hardware o sistema que ofrece la virtualizacion(como virtualbox)
+
+`Huésped(guest):` Sistema o aplicaciones que se ejecutan en el entorno virtualizado
+
+`emulación:` simulacion de un hardware completo mediante software, permitiendo ejecutar ya sean en sistemas o aplicaciones diseñados para una arquitectura distinta, con la desventaja de que es menos eficiente
+
+### virtualizacion asistida por hardware
+utiliza caracteristicas del hardware para mejorar la eficiencia de la virtualizacion, se usa para reducir el uso de hardware fisico
+### paravirtualizacion
+el sistema huesped sabe que está virtualizaco y coopera con el anfitrión. No interactua con el Hardware, pero requiere acceso y modificacion del codigo fuente del sistema huésped. el proyecto XEN es un ejemplo, que permite virtualizar sistemas como linux y windows
