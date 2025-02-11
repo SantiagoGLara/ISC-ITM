@@ -106,4 +106,9 @@ proteccion, una barrera de seguridad antes de conectarse a nuestra base de datos
 definiciones:
 
 BigData:
+
 DataWareHouse:
+
+`Un SGBD es autocontenido cuando:` no necesita herramientas ajenas a él mismo para ejecutarse
+
+### Que tomar en cuenta a la hora de seleccionar un nuevo Gesto de Base de Datos?

@@ -35,6 +35,13 @@ tabla:
     </tr>
 </table>
 ``` 
+formatos de parrafo
+```html
+    <p>Para parrafos largos, sangria automatica. Se ajusta a su contenedor</p>
+    <pre>para mostrar texto de forma literal</pre>
+    <span>parrafo sin sangria automatica, se ajusta al contenido</span>
+```
+![span y parrafos](/ISC-ITM/6to/programación%20web/imagenes/parrafospan.png)
 ## introduccion
 `aplicacion web:` aplicacion que para ejecutarla lo hacemos a través de un navegador web
 
