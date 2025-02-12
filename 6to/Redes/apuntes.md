@@ -203,6 +203,13 @@ para identificar un mensaje broadcast, la direccion mac de destino es FF-FF-FF-F
 comunicaciones de un segmento del todo, es decir. Dentro del universo de todos los dispositivos, a un segmento. Hay rangos de direcciones, y una la clase D es reservada para multicast, nosotros no podemos trabajar con ella
 
 ### clases de IP Adress
+![clases](/ISC-ITM/6to/Redes/imagenes/clases.png)
+como vemos en la imagen, los unicos bits modificables son los de host en la clase C(como las domesticas), eso nos da 256 posibles direcciones (que en realidad no se pueden usar ni la primera ni la ultima, pues es donde inicia y finaliza la red).
+
+#### private Adress Space
+dentro de una clase, hay un rango de ip's privadas, como las que usamos en nuestras redes para comunicarnos entre dispositivios de la misma red
+![PrivAdrSpa](/ISC-ITM/6to/Redes/imagenes/PrivAdrSpa.png)
+nuestro router en casa, lo que hace es nateo, proceso que veremos después, pero basicamente por una metodologia transforma nuestra red privada en una publica
  
 # estudiar 7.3.6
 
@@ -212,3 +219,18 @@ Con los switches Cisco, en realidad hay dos métodos de reenvío de tramas y hay
 Los switches utilizan uno de los siguientes métodos de reenvío para el switching de datos entre puertos de la red:
 
     Switching de almacenamiento y envío - Este método de reenvío de trama recibe la trama completa y calcula el CRC(codigo de redundancia ciclico, verifica si lo llegado y lo recibido coincide, entonces le pide al origen la retransmisión de la trama).
+
+### subneteo
+Mascara de subred de direccion variable. Es hacer de una red mas grande, varias mas chicas de acuerdo a las necesidades. Como podemos apreciar en la siguiente imagen, aunque la ipAdress es de clase A, la mascara se comporta como una de clase B
+![introSubneteo](/ISC-ITM/6to/Redes/imagenes/introSubNeteo.png)
+Eso es lo que hacemos con el subneteo, manipular las mascaras
+
+Para resolver una necesidad de host (numero de host que queremos) tenemos que empezar a contar desde el extremo derecho, el bit 32; por ejemplo, si nos piden 14 host en una red tipo c, los ultimos 4 bits del ultimo octeto nos cubren la necesidad a la perfeccion, pues nos da los 14 host y el bit inicial y final que no son usables, no quedan bits volando, y para resolver la necesidad de host(nos pidieron en el ejemplo 14 subredes usables) tenemos que fijarnos donde nos indica la mascara que nos posicionemos, en este caso la mascara al ser red tipo c es 255.255.255.0, con lo que tenemos posicionarnos en el primer bit del ultimo octeto de la mascara, y de izquierda a derecha veremos que el numero que mas se acerca es el 16, que es el que nos cubre a la perfeccion la necesidad de 14 subredes. Pues son los 14 usables + 2 que de inicio a fin que no se pueden usar. En este ejemplo por conveniencia no sobraron bits volando, pero de haber sido el caso, no pueden quedar bits volando.
+
+terminando de resolver, nos queda lo siguiente:
+- total de subredes: 16
+- total de subredes usables: 14
+- total de hosts= 16
+- total de hosts usables=14
+- bits robados= 4
+`porque bits robados?` la mascara de la red(el tipo de red 'C') nos indicaba que el unico octeto que no le pertenecia al host era el ultimo, los 8 ultimos bits no le pertenecian a los host, eran de las redes que el tipo de red nos permitia modificar para el host, pero al subnetear le cedemos los bits a la red, se los ROBAMOS al host para darselos a las redes, por eso en este caso fueron 4 robados, que son los 4 que necesitamos para asignarlos al host
