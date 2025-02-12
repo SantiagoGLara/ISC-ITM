@@ -233,4 +233,4 @@ terminando de resolver, nos queda lo siguiente:
 - total de hosts= 16
 - total de hosts usables=14
 - bits robados= 4
-`porque bits robados?` la mascara de la red(el tipo de red 'C') nos indicaba que el unico octeto que no le pertenecia al host era el ultimo, los 8 ultimos bits no le pertenecian a los host, eran de las redes que el tipo de red nos permitia modificar para el host, pero al subnetear le cedemos los bits a la red, se los ROBAMOS al host para darselos a las redes, por eso en este caso fueron 4 robados, que son los 4 que necesitamos para asignarlos al host
+`porque bits robados?` la mascara de la red(el tipo de red 'C') nos indicaba que el unico octeto que no le pertenecia al host era el ultimo, los 8 ultimos bits no le pertenecian a los host, eran de las redes que el tipo de red nos permitia modificar para el host, pero al subnetear le cedemos los bits a la red, se los ROBAMOS al host para darselos a las redes, por eso en este caso fueron 4 robados, que son los 4 que necesitamos para asignarlos al host.
