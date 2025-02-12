@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-imagen = cv2.imread('IE PAPA.png')
+imagen = cv2.imread('BBWU.png')
 
 B, G, R = cv2.split(imagen)
 print(imagen.shape)# un arreglo de 3 datos, donde los primeros 2 son el tamaño y el tercero
