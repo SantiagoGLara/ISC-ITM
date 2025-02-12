@@ -209,4 +209,4 @@ el arreglo de la imagen es unicamente de 0-255, pero unicamente un valor por pix
 conociendo que una imagen es una matriz de arreglos
 primero: leemos la imagen
 
-
+### BYTWISE NOT, INVERSION DE COLORES
