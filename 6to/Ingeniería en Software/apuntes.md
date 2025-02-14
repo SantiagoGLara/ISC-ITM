@@ -56,4 +56,30 @@ presupociones acerca de factores que pudieran afectar el proceso "originalmente"
 requisitos a nivel de detalle suficiente como para permitir a los diseñadores diseñar un sistema que satisfaga los requisitos(lo necesario, lo pedido. No hay que sobrepasarse), generalmente perceptibles al usuario.
 
 **4 Apendices**
-puede contener todo tipo de informacion relevante para la ERS pero que propiamente no pertenecen a la ERS, como formatos de entrada/salida(BPMN, Diagram de componentes,derama de contexto, etc), resultados de analisis de costos, restriccciones acerca del lenguaje de programación.
+puede contener todo tipo de informa
+cion relevante para la ERS pero que propiamente no pertenecen a la ERS, como formatos de entrada/salida(BPMN, Diagram de componentes,derama de contexto, etc), resultados de analisis de costos, restriccciones acerca del lenguaje de programación.
+
+### trazabilidad de requisitos
+Asociacion de un requisito con otros requisitos y las diferentes instancias de los artefactos(diversos productos tangibles/intangibles obtenidos durante el proceso de desarrollo, como documentos, diagramas, SRS, Evaluaciones, etc).
+
+#### Matriz de trazabilidad de requisitos
+tipo de documento que contiene los requisitos, en el que se destacan 2 opciones diferentes y se comparan con sus especificiaciones
+#### tipos de trazabilidad
+1. `trazabilidad directa:`garantiza que todos los requisitos estén vinculados a sus correspondientes casos de diseño y prueba. Se centra en pasar de los requisitos al producto finla,  cuidando que se cumplan los requisitos durante la fase de diseño y prueba, es decir, cuidar que el requisito se cumpla
+2. `Trazabilidad hacia atrás:`
+3. `trazabilidad hacia ambos lados:` 
+
+**imagen**
+**imagen realzacion de pruebas**
+
+es importante trazar y probar los requisitos, si no lo hacemos nuestro producto puede llegar a ser nuo
+**imagen matrzi de trazabilidad**
+
+### Despripción de proceso actuales o modelado de negocios
+Sirve para modelar los procesos del software, y aunque incorrecto, muchas veces terminamos modelando procesos de la empresa donde trabajamos.
+#### diferencias
+- `PROCESO:` serie de tareas o actividades interrelacionadas para un fin
+- `Analisis de proceso:` comprender el proceso y medir los resultados del como alcanzar el objetivo
+- `Modelado:` el trazar el proceso
+### Proceso de Desarrollo de Software
+### Modelado de negocios
