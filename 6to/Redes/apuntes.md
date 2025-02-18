@@ -192,7 +192,7 @@ por defecto, los equipos cisco hablan/trabajan en el protocolo WAN HDLC
 la capa 2 se subdivide en 2 capas, la "superior" LLC(control de enlace logico 802.2) es la encargada de ver con que operarémos en la capa fisica y la subcapa MAC, que es la de Control de Acceso al Medio. El estándar de ethernet es el 802.3.
 `nota: el estandar de wifi es 802.11`
 ### campos de la trama internet
-![alt text](/ISC-ITM/6to/Redes/imagenes/campos%20de%20trama%20internet.png)
+![alt text](/6to/Redes/imagenes/campos%20de%20trama%20internet.png)
 
 ## comunicaciones unicast
 
@@ -203,12 +203,12 @@ para identificar un mensaje broadcast, la direccion mac de destino es FF-FF-FF-F
 comunicaciones de un segmento del todo, es decir. Dentro del universo de todos los dispositivos, a un segmento. Hay rangos de direcciones, y una la clase D es reservada para multicast, nosotros no podemos trabajar con ella
 
 ### clases de IP Adress
-![clases](/ISC-ITM/6to/Redes/imagenes/clases.png)
+![clases](/6to/Redes/imagenes/clases.png)
 como vemos en la imagen, los unicos bits modificables son los de host en la clase C(como las domesticas), eso nos da 256 posibles direcciones (que en realidad no se pueden usar ni la primera ni la ultima, pues es donde inicia y finaliza la red).
 
 #### private Adress Space
 dentro de una clase, hay un rango de ip's privadas, como las que usamos en nuestras redes para comunicarnos entre dispositivios de la misma red
-![PrivAdrSpa](/ISC-ITM/6to/Redes/imagenes/PrivAdrSpa.png)
+![PrivAdrSpa](/6to/Redes/imagenes/PrivAdrSpa.png)
 nuestro router en casa, lo que hace es nateo, proceso que veremos después, pero basicamente por una metodologia transforma nuestra red privada en una publica
  
 # estudiar 7.3.6
@@ -222,7 +222,7 @@ Los switches utilizan uno de los siguientes métodos de reenvío para el switchi
 
 ### subneteo
 Mascara de subred de direccion variable. Es hacer de una red mas grande, varias mas chicas de acuerdo a las necesidades. Como podemos apreciar en la siguiente imagen, aunque la ipAdress es de clase A, la mascara se comporta como una de clase B
-![introSubneteo](/ISC-ITM/6to/Redes/imagenes/introSubNeteo.png)
+![introSubneteo](/6to/Redes/imagenes/introSubNeteo.png)
 Eso es lo que hacemos con el subneteo, manipular las mascaras
 
 Para resolver una necesidad de host (numero de host que queremos) tenemos que empezar a contar desde el extremo derecho, el bit 32; por ejemplo, si nos piden 14 host en una red tipo c, los ultimos 4 bits del ultimo octeto nos cubren la necesidad a la perfeccion, pues nos da los 14 host y el bit inicial y final que no son usables, no quedan bits volando, y para resolver la necesidad de host(nos pidieron en el ejemplo 14 subredes usables) tenemos que fijarnos donde nos indica la mascara que nos posicionemos, en este caso la mascara al ser red tipo c es 255.255.255.0, con lo que tenemos posicionarnos en el primer bit del ultimo octeto de la mascara, y de izquierda a derecha veremos que el numero que mas se acerca es el 16, que es el que nos cubre a la perfeccion la necesidad de 14 subredes. Pues son los 14 usables + 2 que de inicio a fin que no se pueden usar. En este ejemplo por conveniencia no sobraron bits volando, pero de haber sido el caso, no pueden quedar bits volando.
