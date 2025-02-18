@@ -83,3 +83,21 @@ Sirve para modelar los procesos del software, y aunque incorrecto, muchas veces 
 - `Modelado:` el trazar el proceso
 ### Proceso de Desarrollo de Software
 ### Modelado de negocios
+
+------
+detección de problema->analisis
+
+### lenguaje UML
+lenguaje estandar para representar y especificar/documentar los elementos que se aunan conforma a POO, es de proposito general, libre y es un estándar
+
+#### diagramas de comportamiento
+##### CASOS DE USO 
+pwemite realizar especificaciones de alcances funcionales del programa. Es para plazmar las acciones de los actores de la empresa
+consta de:
+- actores: humano, el sistema, temporizadores o dispositivos.
+- casos de uso: acciones de los actores, representados con ovalos. la relacion entre eso y un actor es una `ASOSIACION`, se hace la asosiacion con una linea.
+- sistema.
+###### relaciones
+- asosiación: 
+- include: parte "externa" al codigo que tiene que llevar forzosamente, como cuando cargamos un documento. Llamamos una validacón incluida forzosamente
+- extends: incluir una situacón pero no es obligatoria, puede ser que no en todas las ejecuciones se realice. Por ejemplo en un sistema puedes llamar un sistema de ayuda, está en determinada ventana, puede ser que la solicite o no.
