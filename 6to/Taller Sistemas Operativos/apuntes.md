@@ -75,3 +75,27 @@ maquina virtual, que actúa como un servidor privado de un entorno, en este caso
 - Desarrollo y prueba de aplicaciones en entornos controlados
 - Servidores de bases de datos o correo
 - implementacion de rededs virtuales(VPN)
+
+### sistemas operativos propietarios
+Algún individuo o compañia retiene el derecho de autor sobre el programa, negando el acceso al codigo fuente del programa y derecho a copiarlo.
+#### caracteristicas
+- retencion de derechos de autor
+- mayor compatibilidad de software y hardware
+- control de calidad y soporte tecnico exclusivo
+- Desarrollo y actualizaciones centralizadas
+- Modelos de licenciamiento y costos asociados
+#### ventajas
+- control de calidad
+- personal capacitado
+- uso comun por usuarios
+- software para aplicaciones especificas
+- difusion de publicaciones acerca de uso y aplicacion de software
+#### desventajas
+- soporte ineficiente
+- dependencia a proveedores
+- descontinuacion de una linea de software
+- cursos de aprendizaje costosos
+- ilegalidad de copias sin licencia para el efecto
+-----
+**investigacion: empresas que usan sistemas operativos propietarios y razones para elegirlos**
+- Red Hat: tiene su sistema operativo, red hat linux. Software de uso empresarial, con seguridad aumentada, certificaciones de redes,altamente adaptable: soportan implementaciones en servidores físicos, virtuales y entornos de nube híbrida. Esto lo hace ideal para empresas en crecimiento o aquellas que planean migrar a la nube. 
