@@ -6,6 +6,48 @@
     <title>Formulario</title>
 </head>
 <body>
+    <form class="" action="Respuesta.html" method="post">
+        <!-- en action le damos la url de donde jala los datos el formulario -->
+         <label for="tipotexto">Elemento Input<strong> tipo texto</strong></label><br>
+         <!-- es lo mismo que usar span, pero el laben como se ve ahi asocia directamente al texto con su elemento, que es importante semanticamente para el navegador-->
+        <input type="text" name="tipotexto" value=""><br>
+        <!--  -->
+        <label>
+            Elemento<strong> tipo email</strong><br>
+            <input type="email" name="" value=""><br>
+            <!-- en este caso, asociamos el lavel al elemento sin necesidad de asignarle el nombre -->
+        </label>
+        
+        <span>Elemento <strong>TextArea:&nbsp;</strong></span><textarea name="name" rows="4" cols="40"></textarea><br>
+        <!-- similar a un input, pero deja poner varios renglones de texto -->
+        <span>Elemento <strong>Metter:&nbsp;</strong></span><textarea name="name" rows="4" cols="40"></textarea><br>
+         <meter value="25" min="0"max="100"></meter><br>
+         <span>Elemento <strong>progress:&nbsp;</strong></span><textarea name="name" rows="4" cols="40"></textarea><br>
+         <progress value="75" max=""></progress><br>
+         <span>Elemento <strong>Select</strong></span>
+         <select class="" name="">
+            <option value="1">Uno</option>
+            <option value="2">Dos</option>
+            <option value="3">Tres</option> 
+         </select>
+         <!-- select es una lista desplegable -->
+          <select>
+            <optgroup label="Principiantes">
+                <option value="Pedro">Pedro</option>
+                <option value="COño">Coño</option>
+                <option value="rich">Rich</option>
+            </optgroup>
+            <optgroup label="Avanzados">
+                <option value="Fichi">yo</option>
+                <option value="peip">navarro</option>
+                <option value="rich">profe</option>
+            </optgroup>
+            
+            <!-- grupos de opciones -->
+          </select><br><br>
+          <button type="reset" name="button">Cancelar</button>
+          <button type="submit" name="button">Enviar</button>
+    </form>
     
 </body>
 </html>
