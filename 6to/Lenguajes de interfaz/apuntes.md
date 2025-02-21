@@ -77,3 +77,42 @@ un segmento es un area especial en un programa que inicia el limite de un parraf
 - segmento de datos(DS): contiene datos, constantes y areas de trabajo definidas por el programa
 - segmento de pila(SS): contiene datos y direcciones que se necesitan guardar temporalmente
 - registros de segmento: son registros de 16 bits que guardan los limites de los segmentos, las direcciones de cada segmento vaya. 
+## Memoria Principal(RAM)
+Memoria volatil, es donde la computadora guarda temporalmente los datos de los progroamas que el procesador está procesando o va a procesar. Cuando el procesador va a ejecutar un programa primero carga a memoria y despues ejecuta
+### tipos de memoria RAM
+- SRAM
+- DRAM: donde se guardan programas y datos cuando hay un programa en ejecucion. Economica pero debe actualizarse en lapsos no mayor a 1 ms o se pierde el contenido
+- VRAM: almacena datos de video, tiene doble puerto y permite actualizar constantemente la pantalla
+- RAM de CMOS: en la tarjeta madre almacena informacion del sistema.
+- caché: muy costosa, se caracteriza por ser la mas rapida de todas. Se conforma de circuitos integrados o chips capaces de memorizar información digital, es decir, valores binarios.
+## interrupciones
+estado en el cual el microprocesador detiene la ejecución, por una peticion y le tiene que dar prioridad a esta. Fueron creadas para facilitar al programador el acceso a los diferentes dispositivos de la computadora. Hay diferentes tipos:
+- hardware: generadas por el teclado, el mouse, botón de volumen,etc.
+    - internas: cuando realizamos una operacion que genera banderas de estado 
+    - externas: cuando conectamos el cargador, audifonos, impresora, etc.
+- software: provocadas por el sistema, como una alarma que pongamos
+    - interrupciones DOS:
+    - interrupciones BIOS: Basic Input Output System
+
+La instrucción INT es como nos referimos a la subrutina del sistema conocida como MANEJADOR DE INTERRUPCIONES. En el manejador de interrupciones se encuentran todas las interrupciones; cuando mandamos a llamar una interrupcion se manda una dirección de donde se encuentra la función que queremos usar y el manejador de interrupciones ejecuta ese segmento
+
+### interrupciones comunes
+- INT 10h: servicios de video, procedimientos que muestean rutinas que controlan la posicion del cursor, textoa  color, desplazan pantalla y muestran graficos
+- 16h
+- 1Ah
+### llamadas a servicios del sistema
+llamadas que ejecutan los programas de aplicacion para pedir algun servicio al SO. Existen 2 tipos de llamadas al sistema, bloqueantes y no bloqueantes
+- bloqueantes: 
+- no bloqueantes
+## modos de direccionamiento
+son las maneras que enviamos la info. Indican la manera de obtener los operandos.
+- Direccionamiento de registro: cuando en un mnemonico se opera con 2 registros
+- Direccionamiento inmediato: cuando se opera y queremos mandar un numero
+de memoria
+- Direccionamiento directo 
+- Direccionamiento indirecto
+- Direccionamiento extentido
+- Direccionamiento 
+- Direccionamiento 
+- Direccionamiento 
+- Direccionamiento 
