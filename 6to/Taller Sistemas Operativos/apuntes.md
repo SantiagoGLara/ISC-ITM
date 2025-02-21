@@ -48,3 +48,54 @@ Es la tecnica que permite representar componentes que parecen reales, aunque no 
 utiliza caracteristicas del hardware para mejorar la eficiencia de la virtualizacion, se usa para reducir el uso de hardware fisico
 ### paravirtualizacion
 el sistema huesped sabe que está virtualizaco y coopera con el anfitrión. No interactua con el Hardware, pero requiere acceso y modificacion del codigo fuente del sistema huésped. el proyecto XEN es un ejemplo, que permite virtualizar sistemas como linux y windows
+
+----------- 
+
+`Como se pueden utilizar drivers paravirtualizados para optimizar el rendimiento de los dispositivos en una maquina virtual`
+Mayor eficiencia en la gestión de recursos
+
+Los drivers paravirtualizados permiten un uso más eficiente de la CPU, memoria, red y almacenamiento, lo que beneficia el rendimiento global del host y de las VMs. Esto es crítico cuando el host ejecuta múltiples VMs.
+
+Ejemplo práctico:
+
+    Controladores de memoria paravirtualizada permiten al hipervisor gestionar dinámicamente la memoria de la VM, ajustando su asignación según sea necesario, lo que optimiza el uso de los recursos disponibles.
+
+
+-----------
+### VPS: Virtual Private Server
+maquina virtual, que actúa como un servidor privado de un entorno, en este caso  de una virtualizacion. Cada VPS tiene recursos asignados de manera exclusiva como CPU, RAM y  almacenamiento, aunque comparte hardware fisico con otros VPS en el mismo anfitrión. Como utilizar nuestra maquina como servidor para jugar con otras personas.
+
+#### caracteristicas
+- INDEPENDENCIA: Cada VPS tiene su propio S.O, y puede reiniciarse de forma independiente de otras VPS en el mismo servidor
+- ESCALABILIDAD: los recursos pueden ejecutarse segun las necesidades del usuario
+- AISLAMIENTO: los VPS están separados, lo que significa que el rendimiento o problemas en una no afectan a los demás
+
+#### usos comunes
+- Alojamiento web para sitios que requieren mas recursos que los planes de hosting compartido
+- Desarrollo y prueba de aplicaciones en entornos controlados
+- Servidores de bases de datos o correo
+- implementacion de rededs virtuales(VPN)
+
+### sistemas operativos propietarios
+Algún individuo o compañia retiene el derecho de autor sobre el programa, negando el acceso al codigo fuente del programa y derecho a copiarlo.
+#### caracteristicas
+- retencion de derechos de autor
+- mayor compatibilidad de software y hardware
+- control de calidad y soporte tecnico exclusivo
+- Desarrollo y actualizaciones centralizadas
+- Modelos de licenciamiento y costos asociados
+#### ventajas
+- control de calidad
+- personal capacitado
+- uso comun por usuarios
+- software para aplicaciones especificas
+- difusion de publicaciones acerca de uso y aplicacion de software
+#### desventajas
+- soporte ineficiente
+- dependencia a proveedores
+- descontinuacion de una linea de software
+- cursos de aprendizaje costosos
+- ilegalidad de copias sin licencia para el efecto
+-----
+**investigacion: empresas que usan sistemas operativos propietarios y razones para elegirlos**
+- Red Hat: tiene su sistema operativo, red hat linux. Software de uso empresarial, con seguridad aumentada, certificaciones de redes,altamente adaptable: soportan implementaciones en servidores físicos, virtuales y entornos de nube híbrida. Esto lo hace ideal para empresas en crecimiento o aquellas que planean migrar a la nube. 
