@@ -106,13 +106,62 @@ llamadas que ejecutan los programas de aplicacion para pedir algun servicio al S
 - no bloqueantes
 ## modos de direccionamiento
 son las maneras que enviamos la info. Indican la manera de obtener los operandos.
-- Direccionamiento de registro: cuando en un mnemonico se opera con 2 registros
-- Direccionamiento inmediato: cuando se opera y queremos mandar un numero
-de memoria
-- Direccionamiento directo 
-- Direccionamiento indirecto
-- Direccionamiento extentido
-- Direccionamiento 
-- Direccionamiento 
-- Direccionamiento 
-- Direccionamiento 
+- `Direccionamiento de registro:` cuando en un mnemonico se opera con 2 registros
+- `Direccionamiento inmediato:` cuando se opera y queremos mandar un numero de memoria
+- `Direccionamiento directo:`
+- `Direccionamiento indirecto:`
+- `Direccionamiento extentido:`
+- `Direccionamiento indirecto mediante registro: `
+- `Direccionamiento por registro base: `
+- `Direccionamiento indexado: `
+- `Direccionamiento respecto a una base: `
+
+## Proceso de ensamblado y ligado
+un programa escrito ensamblador no puede ejecutarse directamente en la computadora, debe interpretarse/ensamblarse en ejecutable. El ensamblador, similar a lo que hace un compilador, produce un archivo que contiene lenguaje maquina al cual se le conoce archivo de codigo objeto
+
+Este archivo no está aun listo para ejecutarse, debe pasar a otro programa llamado `Enlazador`, que hace enlace con los recursos que necesita el codigo para ahora si, poder ejecutarse.
+flujo:
+![ensam-liga](/6to/Lenguajes%20de%20interfaz/imagenes/Proceso%20ensamblado%20ligado.png)
+## Despleagado de mensajes en el monitor
+
+El adaptador de video controla la visualización de texto y gráﬁcos. Tiene dos componentes: el controlador de video y la memoria de visualización de video. Todos los gráficos y el texto que se muestran en el monitor se escriben en la RAM de visualización de video, para después enviarlos al monitor mediante el controlador de video. ​
+
+El controlador de video es en sí un microprocesador de propósito especial, que libera a la CPU principal del trabajo de controlar el hardware de video.​
+
+Para hacer esto se pueden utilizar varios de los servicios con los que cuenta el lenguaje ensamblador.​
+
+Para detener la pantalla y permitir al usuario ver lo que se ha desplegado en la misma se utiliza el servicio 00 de la interrupción 16h.​
+
+```nasm
+;en este caso, lo que inicia con . son las directivas del programa
+.model small
+.data  ;segmento de datos
+
+
+cuenta db 30h,'$';en cuenta, reserva un DataByte(8 bits) con el valor 30 en hexadecimal, por eso 30h y otros 8 bits para el signo de pesos
+                 ;tambien pudimos referenciar el signo de pesos con su ascii en hexadecimal (24) o decimal (36)
+
+.code      ;segmento de codigo
+mov ax, @data ;aqui @data manda a llamar la direccion del segmento de datos y la guarda en ax, puesto que aunque pusimos antes el segmento, el codigo por si solo
+              ;no sabe donde esta ese segmento
+mov ds,ax
+mov cx,0
+ciclo:     ;etiqueta/identificador, para "marcar" una seccion del codigo
+mov dx,offset cuenta   ;offset hace el desplazamiento hasta donde estan los datos cuenta
+mov ah,09      
+
+int 21h     
+add cuenta,1
+inc cx
+
+cmp cx, 10        ;COMPARA 10 y CX
+jne ciclo         ;toda las instrucciones que inician con j son de bifurcacion de salto, JNE es JUMP IF NOT EQUALS, si no son iguales salta a la linea del ciclo
+je salir          ;si son iguales, salta a salir 
+
+
+
+salir:
+
+.exit    ;fin del codigo
+
+```
