@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Libro</title>
+    <style>
+        *{
+           font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        label{
+            display: grid;
+        }
+        .Principal{
+            top: 15%;
+            left: 30%;
+            width: 30rem;
+            height: 80%;
+            position: absolute;
+            margin: 0 auto;
+            background-color: #fffaf0;
+            /* left: 5%; */
+            border-radius: 5px;
+        }
+        .Principal h1{
+            color: #360A9B;
+        }
+        .botones{
+            position: absolute;
+            margin: 0 auto;
+            left:35%;
+        }
+        body{
+            background: #360A9B;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+   
+    <main>
+        <div class="Principal">
+            <header>
+                <h1>Registro de libros</h1>
+            </header>
+            <form action="Respuesta.html" method="post">
+                <label>
+                    Título
+                    <input type="text">
+                </label>
+                <label>
+                    Genero
+                    <select>
+                        <option value=""></option>
+                        <optgroup label="Ciencia Ficción" >
+                            <option>CyberPunk</option>
+                            <option>Space Opera</option>
+                            <option>Distopía</option>
+                            <option>Postapocaliptico</option>
+                        </optgroup>
+                        <optgroup label="Fantasía">
+                            <option>Epica</option>
+                            <option>Urbana</option>
+                            <option>Oscura</option>
+                            <option>Magico-realismo</option>
+                        </optgroup>
+                        <optgroup label="Ensayo y Filosofia">
+                            <option>Filosofia Clasica</option>
+                            <option>Filosofia Moderna</option>
+                            <option>Politica y Sociedad</option>
+                            <option>Ciencias Sociales</option>
+                        </optgroup>
+                    </select>
+                </label>
+                <label>
+                    Sinopsis
+                    <textarea rows="4"></textarea>
+                </label>
+                <label>
+                    Número de Páginas
+                    <input type="number">
+                </label>
+                <label>
+                    Portada
+                    <input type="file">
+                </label>
+                <label>
+                    Fecha Salida
+                    <input type="date">
+                </label>
+                <div class="botones">
+                    <button type="reset">Reiniciar</button>
+                    <button type="submit">Registrar</button>
+                </div>
+                
+
+            </form>
+
+        </div>
+    </main>
+    
+</body>
+</html>
