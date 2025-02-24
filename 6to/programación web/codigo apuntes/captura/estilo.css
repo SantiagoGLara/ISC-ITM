@@ -1,0 +1,17 @@
+* {
+    border: 0px black solid;
+}
+form{
+    display: grid;
+}
+.TituloEntrada{
+    width: 120px;
+    float: left;
+    text-align: right;
+    
+}
+input{
+    border: 1px black solid;
+    margin-left: 1%;
+    margin-bottom: 1%;
+}

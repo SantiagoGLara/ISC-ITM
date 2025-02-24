@@ -41,6 +41,12 @@ formatos de parrafo
     <pre>para mostrar texto de forma literal</pre>
     <span>parrafo sin sangria automatica, se ajusta al contenido</span>
 ```
+div
+```html
+<div class="hola">
+    contenedor por excelencia haahaha, agrega salto de linea por defecto
+<div>
+```
 ![span y parrafos](/ISC-ITM/6to/programación%20web/imagenes/parrafospan.png)
 ## introduccion
 `aplicacion web:` aplicacion que para ejecutarla lo hacemos a través de un navegador web
@@ -93,3 +99,44 @@ https://dsc.itmorelia.edu.mx/web/documentos/asignaturas/AE055ProgramacionWeb.pdf
 HTML, CSS Y JAVASCRIPT
 #### LADO DEL SERVIDOR
 PHP, ruby, java, pyhton, etc.
+
+## unidad 2
+
+### selectores
+es el identificador del elemento que queremos modificar del hmtl en css, por ejemplo *, .root, .Principal,etc.
+```css
+*{
+           font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        label{
+            display: grid;
+        }
+        .Principal{
+            top: 15%;
+            left: 30%;
+            width: 30rem;
+            height: 80%;
+            position: absolute;
+            margin: 0 auto;
+            background-color: #fffaf0;
+            /* left: 5%; */
+            border-radius: 5px;
+        }
+        .Principal h1{
+            color: #360A9B;
+        }
+        .botones{
+            position: absolute;
+            margin: 0 auto;
+            left:35%;
+        }
+        body{
+            background: #360A9B;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+```
+### modelo de caja
+#### modelo de caja tradicional
