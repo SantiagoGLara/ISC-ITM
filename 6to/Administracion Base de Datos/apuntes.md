@@ -140,3 +140,17 @@ El SGA es un área de memoria compartida que se utiliza para almacenar informaci
 Es un grupo de estructuras de memoria compartida que contiene datos e información de control de una base de datos.
 Varios procesos pueden acceder de forma concurrente a la misma instancia, accediendo a la información contenida en el SGA, por lo que también se llama Shared Global Area.
 ![SGA-Diagrama](/6to/Administracion%20Base%20de%20Datos/imagenes/SGA.png)
+
+### Procesos en 2do plano
+- `DBWR` es el DataBaseWriter, el encargado de hacer escrituras sobre las bases de datos. Una vez liberados los bloques de informacion modificados, es el encargado de actualizar esos bloques. Trabaja con los buffers, para no desgastar en exceso la memoria. Tambien es encargado de liberar los buffers, periodicamente o según se necesite transportar datos.
+
+- `LGWR` Log, es el que tiene los registros de que se estaba haciendo operacion a operacion. Para el log, hay 3 parametros que le marcan que una operacion se haya realizado. Si se llegó a un commit, si se llenó el buffer y hay que vaciarlo para trabajar con mas informacion y si ya pasó cierto tiempo.
+
+    idempotente: si se daña una operacion que ya estaba hecha, no afecta el resultado. Por ejemplo, si una operacion se interrumpe pero ya habia actualizado sus cambios, el redo va a tratar de volverlas a hacer, si no cuidaramos la idempotencia de la bdd, al re-hacerla pero ya estaba hecha, habría una alteracion del resultado deseado. parte de esto es lo que nos ayuda a hacer el `LGWR`
+- `CKPT: `Es el checkpoint, un punto a donde regresar en caso de tragedia, de sincronizacion para actualizar las cabeceras de los datos, limpiar buffers y volver a empezar. Recordando, todos los datos tienen una cabecera que nos habla de su estátus, el CKPT se encarga de actualizar esta.
+- `SMON: `System Monitor. Se encarga de realizar las actualizaciones necesarias es recuperar la base de datos, el que cuando algo que no se termina de registrar en la bdd, lo registra. Se activa cada cierto tiempo para verificar que todo esté en orden
+- `PMON: `Process Monitor, registra las operaciones no realizadas de una transaccion y regresa la BDD a un estado consistente, liberando datos bloqueados / semimodificados en transacciones fallidas. Se podría decir que es el que hace el ROLLBACK; de igual manera que el SMON despierta cada cierto tiempo
+- `ARC` archivado, ayuda a archivar los datos de cada usuario, como tal no participa tan de manera tan activa como el DBWR, pero si es necesario le apoya, subyugado a él.
+- `MMON: `Monitor de manejabilidad, se encarga de controlar las tareas relacionadas con AWR. 
+- `AWR: `Area de Volcado para las Estadisticas monitoriea las operaciones realizadas y va generando estadisticas para que sean monitoreadas.
+- `CJQ: `Coordinador de Cola de Trabajos(QUERY JOB COORDINATOR). Cualquier requerimiento de los usuarios necesita un trabajo, así que se le asigna un orden. Tambien se necesita manejar su prioridad, aplazar los que no se puedan hacer, etc. Toda esta coordinacion la maneja el CJQS
