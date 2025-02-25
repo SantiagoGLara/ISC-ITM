@@ -238,3 +238,8 @@ terminando de resolver, nos queda lo siguiente:
 Cuando nos presentan un problema donde las subredes presentan necesidades de host distintas, comenzaremos a resolver para la red que tenga la necesidad más grande  y de ahí hacia abajo. porque? para empezar, a lapiz nos complica los calculos, pero mas importante, imposibilita la capacidad de comunicarse entre ip's.s
 
 Igualmente, si un dia despues de subnetear, una red necesita mas host, simplemente modificando la mascara de esa red ampliamos la capacidad.
+
+#### NAT
+En nuestros hogares tenemos redes privadas, que son validas son lo dentro de nuestra red. Por ejemplo, si nos comunicamos con gmail, podemos comunicarnos hacia ellos pero de regreso no puede comunicarse, pues es privada. Es `lo que soluciona la NAT`, antes de enviar el paquete de informacion, la desencapsula y le desasocia la red privada, asociandole una publica y la envia, y de regreso le vuelve a asignar la privada. Es decir, en una comunicacion bilateral se necesita `NATEAR` 2 veces. 
+
+Evidentemente es necesario esto, pues todos tenemos ip's privadas, no es posible tener una ip publica. Cada continente tiene un rango de ip's publicas, y cada pais sus propias. Cada pais las reparte entre sus provedores de servicios.ks
