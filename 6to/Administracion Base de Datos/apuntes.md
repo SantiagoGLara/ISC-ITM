@@ -111,4 +111,32 @@ DataWareHouse:
 
 `Un SGBD es autocontenido cuando:` no necesita herramientas ajenas a él mismo para ejecutarse
 
-### Que tomar en cuenta a la hora de seleccionar un nuevo Gesto de Base de Datos?
+### Instancia
+
+Una instancia de una base de datos es el conjunto de estructuras de memoria y de procesos que acceden a los archivos de datos.
+
+Cada instancia está asociada a una base de datos. Cuando se inicia una base de datos en un servidor (independientemente del tipo de computadora), se le asigna un área de memoria (SGA) y se lanza uno o más procesos. La combinación del SGA y de los procesos es lo que se llama instancia. La memoria y los procesos de una instancia gestionan los datos de la base de datos asociada de forma eficiente y sirven a uno o varios usuarios.
+    Cuando se inicia una instancia el DBMS monta la base de datos. Es decir, cuando una instancia se asocia a la base de datos correspondiente, en una misma computadora pueden coexistir varias instancias simultáneamente, accediendo cada una a su propia base de datos.
+    Únicamente el administrador de la base de datos puede iniciar una instancia y abrir una base de datos. Si una base de datos está abierta, entonces el administrador puede cerrarla, cuando esto ocurre, los usuarios no pueden acceder a la información que contiene.
+
+Para que un SGBD pueda funcionar, primero se debe crear una instancia de este. La instancia está formada por tres tipos de componentes:
+
+- Archivos
+- Estructuras de memoria
+- Estructuras de procesos
+
+Funcionamiento de la memoria
+
+La estructura de la memoria está formada por tres áreas básicas:
+
+- SGA (Área Global del Sistema): Asignada al iniciar la instancia y es el componente fundamental de una instancia.
+- PGA (Área Global de Programas): Asignada al iniciar un proceso de servidor.
+- UGA (Área Global de Usuario): Asignada a cada sesión de usuario. Se localiza en la SGA si el usuario se conecta a la base de datos usando un servidor compartido, pero se ubica en la PGA si se utiliza un servidor dedicado.
+
+#### El SGA
+
+El SGA es un área de memoria compartida que se utiliza para almacenar información de control y de datos de la instancia. Se crea cuando la instancia se levanta y se borra cuando esta se deja de usar (cuando se ha cerrado).
+
+Es un grupo de estructuras de memoria compartida que contiene datos e información de control de una base de datos.
+Varios procesos pueden acceder de forma concurrente a la misma instancia, accediendo a la información contenida en el SGA, por lo que también se llama Shared Global Area.
+![SGA-Diagrama](/6to/Administracion%20Base%20de%20Datos/imagenes/SGA.png)
