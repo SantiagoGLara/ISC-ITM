@@ -19,10 +19,62 @@
                     <input type="text" name="Titulo">
                 </label>
             </div>
+            <label>
+                <div class="TituloEntrada">Numero de Paginas</div>
+                <select>
+                    <option value="1">Ciencia Ficcion</option>
+                    <option value="2">Politica</option>
+                    <option value="3">Cientifico</option>
+                    <!-- value en este caso nos sirve para identificar la opcion mas facilmente, es menos costoso que guardar el texto completo -->
+                </select>
+            </label>
+            <label>
+                <div class="TituloEntrada">tipo del libro según el contenido</div>
+                <input type="number" id="numpagina" name="Numero de Pagina" min="10" value="10">
+            </label>
+            <label>
+                <div class="TituloEntrada">Pais de Origen</div>
+                <input type="text" name="Numero de Pagina">
+            </label>
             <div class="dato">
                 <label>
-                    <div class="TituloEntrada">Editorial</div>
-                    <input type="text" name="Editorial">
+                    <div class="TituloEntrada">Dimension del libro(cms)</div>
+                    <select>
+                        <option value="1">17x24</option>
+                        <option value="2">15x22</option>
+                        <option value="3">11x17</option>
+                    </select>
+                </label>
+            </div>
+            
+           <div class="dato">
+            <label>
+                <div class="TituloEntrada">Idioma</div>
+                <select>
+                    <option value="1">Español</option>
+                    <option value="2">Ingles</option>
+                    <option value="3">Aleman</option>
+                    <option value="4">Portugues</option>
+                </select>
+            </label>
+           </div>
+           <div class="dato">
+            <label>
+                <div class="TituloEntrada">Imagen de la portada o cubierta</div>
+                <input type="file" name="portada" accept="image/x-jpeg">
+                </div>
+            </label>
+            </div>
+            <label>
+                <div class="TituloEntrada">Imagen de la contraportada</div>
+                <input type="file" name="portada" accept="image/x-jpeg">
+                </div>
+            </label>
+            </div>
+            <div class="dato">
+                <label>
+                    <div class="TituloEntrada">Autor</div>
+                    <input type="text" name="Autor">
                 </label>
             </div>
             <div class="dato">
@@ -30,6 +82,15 @@
                     <div class="TituloEntrada">ISBN</div>
                     <input type="text" name="ISBN">
                 </label>
+            </div>
+            <div class="dato">
+                <label>
+                    <div class="TituloEntrada">Editorial</div>
+                    <input type="text" name="Editorial">
+                </label>
+            </div>
+            <div class="dato">
+                
             </div>
             
         </form>
