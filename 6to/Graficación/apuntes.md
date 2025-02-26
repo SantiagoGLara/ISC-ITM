@@ -210,3 +210,5 @@ conociendo que una imagen es una matriz de arreglos
 primero: leemos la imagen
 
 ### BYTWISE NOT, INVERSION DE COLORES
+
+COMMIT para no dejar abandonado este repo, pero lo odio
