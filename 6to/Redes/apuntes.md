@@ -243,3 +243,82 @@ Igualmente, si un dia despues de subnetear, una red necesita mas host, simplemen
 En nuestros hogares tenemos redes privadas, que son validas son lo dentro de nuestra red. Por ejemplo, si nos comunicamos con gmail, podemos comunicarnos hacia ellos pero de regreso no puede comunicarse, pues es privada. Es `lo que soluciona la NAT`, antes de enviar el paquete de informacion, la desencapsula y le desasocia la red privada, asociandole una publica y la envia, y de regreso le vuelve a asignar la privada. Es decir, en una comunicacion bilateral se necesita `NATEAR` 2 veces. 
 
 Evidentemente es necesario esto, pues todos tenemos ip's privadas, no es posible tener una ip publica. Cada continente tiene un rango de ip's publicas, y cada pais sus propias. Cada pais las reparte entre sus provedores de servicios.ks
+## IPV6
+### LIMITACIONES IPV4
+- agotamiento de direcciones ipv4, al manejarse en decimal son mas limitadas
+- falta de conectividad extremo a extremo.
+- mayor complejidad en la red
+### Generalidades de ipv6
+- manejo de paquetes mejorado: se maneja con 128 bits, a diferencia de los 32 bits
+- elimina la necesidad del NATEO, pues al ser tan amplia la cantidad de direcciones de ipv6 no se repiten. Aunque por parte de accesibilidad de internet está mejor, por parte de seguridad no es tan recomendable manejarlo asi.
+
+#### encabezados IPV4
+![alt text](/6to/Redes/imagenes/Encabezado%20ipv4.png.png)
+considerando que esos 20 bytes los agrega el protocolo TCP en el encabezado
+#### encabezados IPV6
+![alt text](/6to/Redes/imagenes/ENCABEZADO%20IPV6.png)
+### DECISIONES DE REENVIO DE HOST
+los paquetes siempre se crean en el host de origen. El host de origen debe poder dirigir el paquete al host de destino. Para ello, los dispositivos finales de host crean su propia tabla de enrutamiento. En este tema se explica cómo los dispositivos finales utilizan las tablas de enrutamiento.
+
+Otra función de la capa de red es dirigir los paquetes entre hosts. Un host puede enviar un paquete a lo siguiente:
+
+- Itself - un host puede hacer ping a sí mismo enviando un paquete a una dirección IPv4 especial de 127.0.0.1 o una dirección IPv6 ::1, que se conoce como la interfaz de bucle invertido. El hacer ping a la interfaz de bucle invertido, pone a prueba la pila del protocolo TCP/IP en el host.
+- Host local - este es un host de destino que se encuentra en la misma red local que el host emisor. Los hosts de origen y destino comparten la misma dirección de red.
+- Host remoto - este es un host de destino en una red remota. Los hosts de origen y destino no comparten la misma dirección de red.
+
+Cuando enviamos un paquete, detecta la computadora si es una direccion dentro de la misma red, en caso de no ser de la misma lo manda al router, y este a través de su tabla de routeo sabe como llegar al destino
+### PUERTA DE ENLACE PREDETERMINADA
+La puerta de enlace predeterminada es el dispositivo de red (es decir, el router o el switch de capa 3) que puede enrutar el tráfico a otras redes. Si se piensa en una red como si fuera una habitación, el gateway predeterminado es como la puerta. Si desea ingresar a otra habitación o red, debe encontrar la puerta.
+
+En una red, una puerta de enlace predeterminada suele ser un router con estas características:
+
+- Tiene una dirección IP local en el mismo rango de direcciones que otros hosts en la red local.
+- Puede aceptar datos en la red local y reenviar datos fuera de la red local.
+- Enruta el tráfico a otras redes.
+
+### Decisión de envio de paquetes del router
+¿Qué sucede cuando llega un paquete a la interfaz de un router?
+
+El router examina la dirección IP de destino del paquete y busca en su tabla de enrutamiento para determinar dónde reenviar el paquete. La tabla de enrutamiento contiene una lista de todas las direcciones de red conocidas (prefijos) y a dónde reenviar el paquete. Estas entradas se conocen como entradas de ruta o rutas. El router reenviará el paquete utilizando la mejor entrada de ruta que coincida (más larga).
+![alt text](/6to/Redes/imagenes/ejemplokk.png)
+### tabla de enrutamiento ip router
+La tabla de enrutamiento del router contiene entradas de ruta de red que enumeran todos los posibles destinos de red conocidos.
+
+La tabla de enrutamiento almacena tres tipos de entradas de ruta:
+
+- Redes conectadas directamente - estas entradas de ruta de red son interfaces de router activas. Los routers agregan una ruta conectada directamente cuando una interfaz se configura con una dirección IP y se activa. Cada interfaz de router está conectada a un segmento de red diferente. En la figura, las redes conectadas directamente en la tabla de enrutamiento IPv4 R1 serían 192.168.10.0/24 y 209.165.200.224/30.
+- Redes remotas - estas entradas de ruta de red están conectadas a otros routers. Los routers aprenden acerca de las redes remotas ya sea mediante la configuración explícita de un administrador o mediante el intercambio de información de ruta mediante un protocolo de enrutamiento dinámico. En la figura, la red remota en la tabla de enrutamiento IPv4 R1 sería 10.1.1.0/24.
+- Ruta predeterminada - al igual que un host, la mayoría de los routers también incluyen una entrada de ruta predeterminada, una puerta de enlace de último recurso. La ruta predeterminada se utiliza cuando no hay una mejor coincidencia (más larga) en la tabla de enrutamiento IP. En la figura, la tabla de enrutamiento IPv4 R1 probablemente incluiría una ruta predeterminada para reenviar todos los paquetes al router R2.
+
+La figura identifica las redes directamente conectadas y remotas del router R1.
+#### enrutameinto estatico
+entradas de ruta que se configuran manualmente, por tenerlo directamente conectado. Si queremos conectar a una red que no tenemos conectado, routear de manera estatica es ir indicando los saltos que queremos que de entre dispositivos, pero si nos equivocamos el router hace de todos modos el salto, sin importar si está bien o mal, o si llega a fallar la ruta. 
+
+#### enrutamiento dinamico
+Un protocolo de enrutamiento dinámico permite a los routers aprender automáticamente sobre redes remotas, incluida una ruta predeterminada, de otros routers. Los routers que usan protocolos de enrutamiento dinámico comparten automáticamente la información de enrutamiento con otros routers y compensan cualquier cambio de topología sin que sea necesaria la participación del administrador de la red. Si se produce un cambio en la topología de red, los routers comparten esta información mediante el protocolo de enrutamiento dinámico y actualizan automáticamente sus tablas de enrutamiento.
+
+es decir, marcamos que habrá un enrutamiento dinamico y entre routers se avisan que rutas conocen ellos, se las dicen entre ellos y con eso se apoyan constantemente para mandar las cosas. Si falla algun camino, en automatico la ruta se acomoda.
+
+El comando show ip route de EXEC mode privilegiado se utiliza para ver la tabla de enrutamiento IPv4 en un router Cisco IOS. El ejemplo muestra la tabla de enrutamiento IPv4 del router R1. Al principio de cada entrada de tabla de enrutamiento hay un código que se utiliza para identificar el tipo de ruta o cómo se aprendió la ruta. Entre las fuentes de ruta comunes (códigos) se incluyen las siguientes:
+
+L - Dirección IP de interfaz local conectada directamente
+
+C - Red conectada directamente
+
+S — La ruta estática fue configurada manualmente por un administrador
+
+O - OSPF
+
+D - EIGRP
+
+## Resolucion de direcciones
+Hay dos direcciones primarias asignadas a un dispositivo en una LAN Ethernet:
+
+- Dirección física (la dirección MAC) - Se utiliza para comunicaciones NIC a NIC en la misma red Ethernet.
+- Dirección lógica (la dirección IP) - Se utiliza para enviar el paquete desde el dispositivo de origen al dispositivo de destino. La dirección IP de destino puede estar en la misma red IP que la de origen o en una red remota.
+
+es decir, las capa 2 son las MAC. Todos los paquetes enviados necesitan mac de origen destino y ip de origen destino
+### destino en una red remota
+cuando la ip destino está en una red remota, la direccion mac de destino será la del gateway predeterminada del host(interfaz del router), es decir, la mac es valida dentro de la misma red (los conectados al mismo router). 
+![alt text](/6to/Redes/imagenes/red%20remota.png)
+

@@ -212,3 +212,21 @@ primero: leemos la imagen
 ### BYTWISE NOT, INVERSION DE COLORES
 
 COMMIT para no dejar abandonado este repo, pero lo odio
+
+# OTRA UNIDAD
+## PROYECCION
+### PARALELAS
+preserva sus dimensiones, no se distorsionan segun la distancia. Matriz asociada a la paralela
+
+[1 0 0 0]<br>
+[0 1 0 0]<br>
+[0 0 1 0]<br>
+[0 0 0 1]<br>
+### PERSPECTIVAS
+tienen convergencia en un punto de incidencia, simulan la vision natural. matriz asociada a perspectiva
+
+[1 0 0 0]<br>
+[0 1 0 0]<br>
+[0 0 1 0]<br>
+[0 0 1/d 1]<br>
+`normalizar:` dejar todos los valores dentro de un rango

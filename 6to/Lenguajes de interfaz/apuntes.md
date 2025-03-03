@@ -192,3 +192,19 @@ int 21h
 .exit
 ```
 
+
+### constantes
+- tipo caracter
+- tipo cadena (secuencias de caracteres)
+### palabras reservadas
+tienen un significado especial, y solo pueden usarse dentro de su contexto correcto. Hay varias palabras reservadas
+### identificadores
+### instrucciones
+es un enunciado que se vuelve ejecutable
+
+## Ciclos numericos
+en ocaciones es necesario hacer que el programa no siga una secuencia lineal, si no que repita varias veces una sentencia o bloque de instrucciones antes de continuar con el ciclo del programa. Por ejemplo LOOP, LOOPE, LOOPNE, LOOPZ, LOOPNZ
+
+### caotyra vasuca de cadenas:
+- MOVSB
+- MOVSW
