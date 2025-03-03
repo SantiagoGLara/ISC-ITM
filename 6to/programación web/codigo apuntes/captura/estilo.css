@@ -23,3 +23,23 @@ header{
 #numpagina{
     width: 8%;
 }
+input[type="radio"]{
+    margin-bottom: 2%;
+}
+button{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 100px;
+    margin-left: 10px;
+    
+}
+.botones{
+    display: flex;
+    margin-left: 60%;
+}
+form{
+    border: 1px black solid;
+}
+textarea{
+    border: 1px black solid;
+}

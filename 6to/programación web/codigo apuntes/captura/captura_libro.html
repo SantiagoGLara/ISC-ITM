@@ -20,7 +20,7 @@
                 </label>
             </div>
             <label>
-                <div class="TituloEntrada">Numero de Paginas</div>
+                <div class="TituloEntrada">tipo del libro según el contenido</div>
                 <select>
                     <option value="1">Ciencia Ficcion</option>
                     <option value="2">Politica</option>
@@ -28,8 +28,26 @@
                     <!-- value en este caso nos sirve para identificar la opcion mas facilmente, es menos costoso que guardar el texto completo -->
                 </select>
             </label>
+            <div class="dato">
+                <label>
+                    <div class="TituloEntrada">Autor</div>
+                    <input type="text" name="Autor">
+                </label>
+            </div>
+            <div class="dato">
+                <label>
+                    <div class="TituloEntrada">ISBN</div>
+                    <input type="text" name="ISBN">
+                </label>
+            </div>
+            <div class="dato">
+                <label>
+                    <div class="TituloEntrada">Editorial</div>
+                    <input type="text" name="Editorial">
+                </label>
+            </div>
             <label>
-                <div class="TituloEntrada">tipo del libro según el contenido</div>
+                <div class="TituloEntrada">Numero de Paginas</div>
                 <input type="number" id="numpagina" name="Numero de Pagina" min="10" value="10">
             </label>
             <label>
@@ -73,26 +91,30 @@
             </div>
             <div class="dato">
                 <label>
-                    <div class="TituloEntrada">Autor</div>
-                    <input type="text" name="Autor">
+                    <div class="TituloEntrada">El libro tiene sobrecubierta</div>
+                    <input type="checkbox" name="opc1" value="opc1">
                 </label>
             </div>
             <div class="dato">
                 <label>
-                    <div class="TituloEntrada">ISBN</div>
-                    <input type="text" name="ISBN">
-                </label>
-            </div>
-            <div class="dato">
-                <label>
-                    <div class="TituloEntrada">Editorial</div>
-                    <input type="text" name="Editorial">
-                </label>
-            </div>
-            <div class="dato">
+                    <div class="TituloEntrada">pasta suave</div>	
+                    <input type="radio" name="grupo1" value="opc1"> 
+                </label><br>
                 
-            </div>
+                <label>
+                    <div class="TituloEntrada">pasta dura</div>	
+                    <input type="radio" name="grupo1" value="opc2"> 
+                </label><br>
             
+                <label>
+                    <div class="TituloEntrada">Resumen del libro</div>
+                    <textarea name="resumen" id="resumen" cols="30" rows="10"></textarea>
+                </label>
+                <div class="botones">
+                    <button type="reset">Borrar</button> 
+                    <button type="submit">Enviar</button>
+                </div>
+                <div class="dato">
         </form>
     </main>
 </body>

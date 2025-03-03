@@ -99,3 +99,45 @@ Algún individuo o compañia retiene el derecho de autor sobre el programa, nega
 -----
 **investigacion: empresas que usan sistemas operativos propietarios y razones para elegirlos**
 - Red Hat: tiene su sistema operativo, red hat linux. Software de uso empresarial, con seguridad aumentada, certificaciones de redes,altamente adaptable: soportan implementaciones en servidores físicos, virtuales y entornos de nube híbrida. Esto lo hace ideal para empresas en crecimiento o aquellas que planean migrar a la nube. 
+
+| comando | descripcion |
+|-----------|-----------|
+| cat   | Datos 1   |
+| cd   | Datos 2   |
+| chmod   | Datos 3   |
+| chown   | Datos 4   |
+| clear   | Datos 5   |
+| cp   | Datos 6   |
+| date   | Datos 7   |
+| df   | Datos 8   |
+| dir   | Datos 9   |
+| Fila 10  | Datos 10  |
+| Fila 11  | Datos 11  |
+| Fila 1   | Datos 1   |
+| Fila 2   | Datos 2   |
+| Fila 3   | Datos 3   |
+| Fila 4   | Datos 4   |
+| Fila 5   | Datos 5   |
+| Fila 6   | Datos 6   |
+| Fila 7   | Datos 7   |
+| Fila 8   | Datos 8   |
+| Fila 9   | Datos 9   |
+| Fila 10  | Datos 10  |
+| Fila 11  | Datos 11  |
+## manejo de archivos y directorios
+### drivers de dispositivos
+son rutinas de bajo nivel que se comunican directamente con el dispositivo, es el responsabe de iniciar las operaciones de e/s con el dispositivo. tambien procesa el fin deestas operaciones.
+### sistema basico de archivos
+- realiza las E/S fisicas
+- realiza intercambio de bloques de datos
+- realiza colocacion de bloques de datos
+- realiza buffering de bloques con la memoria principal
+### supervisor basico de E/S
+Responsable del inicio y termino de una E/S de un archivo, mantiene las estructuras de control y realiza planificaciones para rendimientos optimos, es parte del SO
+### funciones de la gestion de archivos
+- identificar y localizar un archivo
+- usa un directorio para escribir 
+## organizacion de directorios
+el sistema organiza los archivos en carpetas dentro de una carpeta principal, cada usuario tiene su propia carpeta que puede contener mas subcarpetas y archivos. Para encontrar un archivo se pueden contener mas subcarpetas y archivos, para encontrar un archivos  se sigue la ruta dentro de estas subcarpetas. Se pueden tener diferentes archivos con el mismo nombre en diferentes ubicaciones.
+
+## administracion del sistema

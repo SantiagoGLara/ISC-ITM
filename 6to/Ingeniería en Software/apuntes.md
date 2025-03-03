@@ -101,3 +101,30 @@ consta de:
 - asosiación: 
 - include: parte "externa" al codigo que tiene que llevar forzosamente, como cuando cargamos un documento. Llamamos una validacón incluida forzosamente
 - extends: incluir una situacón pero no es obligatoria, puede ser que no en todas las ejecuciones se realice. Por ejemplo en un sistema puedes llamar un sistema de ayuda, está en determinada ventana, puede ser que la solicite o no.
+
+
+`documentacion no entregable al cliente:` entrevistas, focus group, diagramas de contextos
+
+### propuesta de proyecto(projecto charter, propuestas de proyecto, plan de proyecto, Acta de proyecto)
+objetivo
+mapa de tiempos(roadmap) con tiempos estimados
+diagrama de gant
+presupuesto
+analisis de viablidad
+
+objetivo: el cliente firma de acuerdo
+
+### matriz traza
+req
+descripcion de req
+version 
+prioridad
+objetivo
+entregables
+diseño
+desarrollo 
+responsable
+prioridad
+autor
+requisitos asociados
+precondicion
