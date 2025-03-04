@@ -132,8 +132,9 @@ La estructura de la memoria está formada por tres áreas básicas:
 - SGA (Área Global del Sistema): Asignada al iniciar la instancia y es el componente fundamental de una instancia.
 - PGA (Área Global de Programas): Asignada al iniciar un proceso de servidor.
 - UGA (Área Global de Usuario): Asignada a cada sesión de usuario. Se localiza en la SGA si el usuario se conecta a la base de datos usando un servidor compartido, pero se ubica en la PGA si se utiliza un servidor dedicado.
+## unidad 2 
 
-#### El SGA
+### El SGA
 
 El SGA es un área de memoria compartida que se utiliza para almacenar información de control y de datos de la instancia. Se crea cuando la instancia se levanta y se borra cuando esta se deja de usar (cuando se ha cerrado).
 
@@ -154,3 +155,25 @@ Varios procesos pueden acceder de forma concurrente a la misma instancia, accedi
 - `MMON: `Monitor de manejabilidad, se encarga de controlar las tareas relacionadas con AWR. 
 - `AWR: `Area de Volcado para las Estadisticas monitoriea las operaciones realizadas y va generando estadisticas para que sean monitoreadas.
 - `CJQ: `Coordinador de Cola de Trabajos(QUERY JOB COORDINATOR). Cualquier requerimiento de los usuarios necesita un trabajo, así que se le asigna un orden. Tambien se necesita manejar su prioridad, aplazar los que no se puedan hacer, etc. Toda esta coordinacion la maneja el CJQS
+
+### DATAFILE & TABLESPACE
+DataFile es el espacio fisico donde se almacenan los datos, y Tablespace es el espacio logico donde accedemos a estos datos, un tablespace puede estar dividio en multiples datafiles
+
+principales TableSpaces:
+- `System:`
+- `Sysaux:` espacio de contenido auxiliar de las bases de datos, en teoria ni si quiera el administrador debe acceder a este tablespace
+- `user1: `espacio para todas las bases de datos, tanto de usuarios como el administrador. En este caso, es comun ver que se crean diversos TableSpaces similares a este, en bases de datos grandes o cuando tenemos bases de datos distribuidas tambien se recomienda distribuir tambien los tablespaces
+- `temp:` datos de uso temporal, para guardar datos de procesos que requieren un apoyo, un espacio de almacenamiento temporal para que los procesos tengan acceso rapido a la informacion. Persé los usuarios no modificamos este espacio, si no que es el mismo gestor con los procesos que llevamos a cabo
+- `UNDO:` Espacio para cuando ejecutamos espacios transaccionales, espacio donde se queda lo que hay que recuperar. Inclusive, sirve para recuperar los datos que incluso se pierden, ademas que ayuda a monitorear las transacciones; y puede ademas tener subUndo para diversas tareas especificas. Depende el gestor de bases de datos, puede hacer que `undo` sea un tableSpace o un segmento dentro de todos los TableSpaces
+
+un TableSpace puede tener varios segmentos, cada segmento está relacionado con tablas e indices. Podemos tener segmentos de usuario, segmentos de datos, segmentos de indice Y segmento de LOB. Y a su vez, un segmento puede tener multiples extensiones. Por ejemplo: yo creo una tabla, a esa tabla se le asigna un segmento disponible, segmento cuyo espacio predeterminado 10mb, y llega un momento en el que la tabla llena el espacio del tableSpace, ahí es cuando se usa una `extensión`. En este caso aunque logicamente hacemos una extension que todo queda junto, fisicamente lo mas probable es que no queden contiguos, aunque tambien lleva su cierta organizacion para evitar la FRAGMENTACION. Podemos añadir extensiones del mismo tamaño del mismo segmento original o fragmento de.
+
+----
+
+`LOB: Large Objects, son objetos que no se pueden dividir, objetos grandes. Por ejemplo imagenes, porque no los podemos dividir.` Una tabla por más registros que tenga no se considera un large object, porque puede 'dividirse' por cada uno de sus registros, es decir, la podemos ver por sus multiples registros pequeños. 
+
+---
+Una extesión puede contener varios bloques, cuyo espacio tiene que ser multiplos de 4K, es decir, multiplos de los bloques fisicos de nuestro disco duro. 
+### bloque:
+los bloque se conforman de diversas partes, pero sigue la siguiente estructuras
+![alt text](/6to/Administracion%20Base%20de%20Datos/imagenes/estructura%20bloque.png)
