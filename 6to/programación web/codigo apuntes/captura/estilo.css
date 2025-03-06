@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
 * {
+    font-family: "Roboto Slab",serif;
+    background-color: #92b2a7;
     border: .0px black solid;
 }
 form{
@@ -11,14 +15,17 @@ form{
     margin-left: 1%;
     margin-bottom: 1.5%;
     margin-right: 1% ;
+    color: whitesmoke;
     
 }
-input{
-    border: 1px black solid;
+input, select, textarea{
+    border: 1px whitesmoke solid;
+    color: black;
 }
 header{
     width: 9%0;
     text-align: center;
+    color: whitesmoke;
 }
 #numpagina{
     width: 8%;

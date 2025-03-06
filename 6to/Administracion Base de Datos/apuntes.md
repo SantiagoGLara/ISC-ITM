@@ -177,3 +177,5 @@ Una extesión puede contener varios bloques, cuyo espacio tiene que ser multiplo
 ### bloque:
 los bloque se conforman de diversas partes, pero sigue la siguiente estructuras
 ![alt text](/6to/Administracion%20Base%20de%20Datos/imagenes/estructura%20bloque.png)
+
+![alt text](/6to/Administracion%20Base%20de%20Datos/imagenes/extension%20de%20bloques.png)

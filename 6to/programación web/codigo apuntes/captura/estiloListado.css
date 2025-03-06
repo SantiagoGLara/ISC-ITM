@@ -11,15 +11,11 @@ table{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.551);
     color: white;
 }
-table tbody tr:hover {
-    background-color: #92b2a7;
-    cursor: pointer;
-}
 td{
     border-bottom: 1px solid #dddddd; 
+    border: solid black 1px;
 }
 th, td{
-    border: 1px black solid;
     padding: 10px;
     text-align: center;
     background-color:#6e7b8c;
@@ -41,4 +37,24 @@ tr{
 }
 label{
     background-color: transparent;
+}
+input:hover{
+    cursor: pointer;
+}
+button{
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+button:active{
+    background-color:antiquewhite;
+}
+h1{
+    font-size: 60px;
+}
+.checkbox{
+    max-width: 100px;
+}
+.par{
+    font: arial;
+   background-color: #A9B0B8 ;
 }

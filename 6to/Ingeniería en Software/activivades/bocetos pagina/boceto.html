@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Dinámico</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; }
+        .pregunta { margin-bottom: 10px; }
+        button { display: block; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <h2>Formulario de Preguntas</h2>
+    <form id="formulario">
+        <div id="contenedor-preguntas">
+            <div class="pregunta">
+                <label>Pregunta 1:</label>
+                <input type="text" name="pregunta" required>
+            </div>
+        </div>
+        <button type="button" onclick="agregarPregunta()">Agregar Pregunta</button>
+        <button type="submit">Guardar</button>
+    </form>
+
+    <h3>Preguntas Guardadas</h3>
+    <ul id="lista-preguntas"></ul>
+
+    <script>
+        let contador = 1;
+        
+        function agregarPregunta() {
+            contador++;
+            const contenedor = document.getElementById('contenedor-preguntas');
+
+            const nuevaPregunta = document.createElement('div');
+            nuevaPregunta.classList.add('pregunta');
+            nuevaPregunta.innerHTML = `
+                <label>Pregunta ${contador}:</label>
+                <input type="text" name="pregunta" required>
+            `;
+
+            contenedor.appendChild(nuevaPregunta);
+        }
+
+        document.getElementById("formulario").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            
+            const preguntas = Array.from(document.querySelectorAll("input[name='pregunta']")).map(input => input.value);
+            
+            const response = await fetch("http://localhost:3000/preguntas", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ preguntas })
+            });
+
+            if (response.ok) {
+                alert("Preguntas guardadas con éxito");
+                cargarPreguntas();
+            }
+        });
+
+        async function cargarPreguntas() {
+            const response = await fetch("http://localhost:3000/preguntas");
+            const data = await response.json();
+
+            const lista = document.getElementById("lista-preguntas");
+            lista.innerHTML = "";
+            data.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.textContent = `Formulario ${index + 1}: ${item.preguntas.join(", ")}`;
+                lista.appendChild(li);
+            });
+        }
+
+        cargarPreguntas();
+    </script>
+
+</body>
+</html>
