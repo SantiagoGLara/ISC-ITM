@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78546127-96af-4572-9c52-3e844b922f7a" name="Changes" comment="TAREA 04 GRAFI">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6to/Graficación/actividades/actividad 5/curvasBeizer.py" afterDir="false" />
+    <list default="true" id="78546127-96af-4572-9c52-3e844b922f7a" name="Changes" comment="TAREA 05 GRAFI">
+      <change afterPath="$PROJECT_DIR$/6to/Graficación/actividades/actividad 7/backface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,18 +23,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "SantiagoGLara"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SantiagoGLara&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/SantiagoGLara/ISC-ITM",
-    "accountId": "f211a2af-83cd-4678-9df0-727a6e57141a"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SantiagoGLara/ISC-ITM&quot;,
+    &quot;accountId&quot;: &quot;f211a2af-83cd-4678-9df0-727a6e57141a&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -52,6 +50,7 @@
     "Python.E3Division3canales.executor": "Run",
     "Python.E4AjusteControlRango.executor": "Run",
     "Python.E5Blur3x3.executor": "Run",
+    "Python.backface.executor": "Run",
     "Python.curvasBeizer.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -89,8 +88,18 @@
       <updated>1739331405067</updated>
       <workItem from="1739331406201" duration="94000" />
       <workItem from="1739331507645" duration="2343000" />
-      <workItem from="1740111348641" duration="864000" />
+      <workItem from="1740111348641" duration="1707000" />
+      <workItem from="1741405881249" duration="751000" />
     </task>
+    <task id="LOCAL-00001" summary="TAREA 05 GRAFI">
+      <option name="closed" value="true" />
+      <created>1740112880102</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1740112880102</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,6 +143,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="TAREA 05 GRAFI" />
+    <option name="LAST_COMMIT_MESSAGE" value="TAREA 05 GRAFI" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -152,6 +165,7 @@
     <SUITE FILE_PATH="coverage/ISC_ITM$curvasBeizer.coverage" NAME="curvasBeizer Coverage Results" MODIFIED="1740112217926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 5" />
     <SUITE FILE_PATH="coverage/ISC_ITM$E3Division3canales.coverage" NAME="E3Division3canales Coverage Results" MODIFIED="1739365744315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 2" />
     <SUITE FILE_PATH="coverage/ISC_ITM$E4AjusteControlRango.coverage" NAME="E4AjusteControlRango Coverage Results" MODIFIED="1739332645408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 2" />
+    <SUITE FILE_PATH="coverage/ISC_ITM$backface.coverage" NAME="backface Coverage Results" MODIFIED="1741406110508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 7" />
     <SUITE FILE_PATH="coverage/ISC_ITM$E2EscaladeGrises.coverage" NAME="E2EscaladeGrises Coverage Results" MODIFIED="1739332993040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 2" />
     <SUITE FILE_PATH="coverage/ISC_ITM$codigos_de_colores.coverage" NAME="codigos de colores Coverage Results" MODIFIED="1739681936810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 4" />
   </component>
