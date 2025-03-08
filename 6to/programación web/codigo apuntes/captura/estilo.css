@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
-* {
+body{
     font-family: "Roboto Slab",serif;
     background-color: #92b2a7;
     border: .0px black solid;
@@ -46,7 +46,16 @@ button{
 }
 form{
     border: 1px black solid;
+    /* box-shadow: rgb(200,200, 200) 5px 10px 8px; */
 }
 textarea{
     border: 1px black solid;
+}
+header{
+    /* background-image: url("winston.jpg"); */
+    /* background-position: bottom; */
+    background-size: cover;
+    border: solid #92b2a7 1px; 
+    background-color: transparent;
+    background: -webkit-linear-gradient(30deg,#0f0f0f,#ddd)
 }
