@@ -140,3 +140,29 @@ es el identificador del elemento que queremos modificar del hmtl en css, por eje
 ```
 ### modelo de caja
 #### modelo de caja tradicional
+
+
+## unidad 3: LENGUAJES DEL LADO DEL CLIENTE
+recordando que el lenguaje del lado del cliente es javascript, y del lado del servidor puede ser php, python, perl...
+
+HTML es la estructura de la pagina, css es el diseño y javascript de las funcionalidades
+### introduccion a javascript
+es un lenguaje de programacion capaz de manipular los ele,emtps HTML y sus propiedades CSS de manera dinamica, es decir, construye etiquetas y reglas de estilo dependiendo de la informacion que el usuario proporciona. Al igual que java, no necesita compilacion, si no que usa un INTERPRETE; en java se utiliza una maquina virtual, el javascript se utiliza el **NAVEGADOR**
+
+### atributos asociados al mouse
+- onclick: responde al evento
+- onmousedown: responde al evento
+- onmouseup: responde al evento
+- onmouseenter: responde al evento
+- onmouseleave: responde al evento
+- onmouseover: responde al evento
+- onmouseout: responde al evento
+- onmousemove: responde al evento
+- onwheel: responde al evento
+### atributos asociados al teclado:
+- onkeypress:responde al evento keypress, al presionar una tecla
+- onkeydown:responde al evento kewydown
+- onkeyup:responde al evento cuando se activa un elemento y se libera una tecla
+- onload:responde al evento
+- onunload:responde al evento
+

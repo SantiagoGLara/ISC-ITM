@@ -141,3 +141,21 @@ Responsable del inicio y termino de una E/S de un archivo, mantiene las estructu
 el sistema organiza los archivos en carpetas dentro de una carpeta principal, cada usuario tiene su propia carpeta que puede contener mas subcarpetas y archivos. Para encontrar un archivo se pueden contener mas subcarpetas y archivos, para encontrar un archivos  se sigue la ruta dentro de estas subcarpetas. Se pueden tener diferentes archivos con el mismo nombre en diferentes ubicaciones.
 
 ## administracion del sistema
+
+## medicion y desempeño del so
+herramientas de medicion
+
+el monitor de confiabilidad de windows es una herramienta que combina registros y alertas de rendimiento, server performance advisor y el monitor del sistema. Proporciona una interfaz grafica para personalizar la recopilacion de datos y el seguimiento de eventos
+
+### indicadores de desempeño
+son parametros para medir la eficiencia del sistema
+
+turnAround TIME: es el tiempo desde que el proceso que inicia hasta que finaliza. Incluye accesos a disco, memoria, compilacion, sobrecargas y tiempos de cpu
+
+TIEMPO DE CADA CICLO: es el tiempo que tarda un ciclo del procesador, se mide en nanosegundos
+
+FRECUENCIA DE RELOK(f): velocidad del procesador, medida en Megahertz. Se calcula como la inversa del tiempo del ciclo f=1/tiempo ciclo
+
+TOTAL DE INSTRUCCIONES: numero de instrucciones que un programa debe ejecutar
+
+ciclos por instruccion (CPI)
