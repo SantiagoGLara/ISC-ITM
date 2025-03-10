@@ -179,3 +179,68 @@ los bloque se conforman de diversas partes, pero sigue la siguiente estructuras
 ![alt text](/6to/Administracion%20Base%20de%20Datos/imagenes/estructura%20bloque.png)
 
 ![alt text](/6to/Administracion%20Base%20de%20Datos/imagenes/extension%20de%20bloques.png)
+
+### OLAP Y OLTP
+El procesamiento analítico en línea (OLAP) y el procesamiento de transacciones en línea (OLTP) son dos diferentes sistemas de procesamiento de datos que ayudan a almacenar y analizar datos empresariales de manera muy distinta. 
+
+El OLAP combina y agrupa los datos para que pueda analizarlos desde diferentes puntos de vista, puede recopilar y almacenar datos de muy diversas fuentes, como sitios web, aplicaciones, medidores inteligentes y sistemas internos. 
+
+Mientras que el OLTP almacena y actualiza grandes volúmenes de datos transaccionales de manera confiable y eficiente. Las bases de datos de OLTP pueden ser uno de los diferentes orígenes de datos para un sistema de OLAP.
+
+#### Importancia del OLAP
+
+El procesamiento analítico en línea (OLAP) ayuda a las organizaciones a procesar y beneficiarse de una cantidad cada vez mayor de información digital. Algunos de los beneficios de OLAP son los siguientes. 
+
+### Toma de decisiones acertadas
+Las empresas utilizan OLAP para tomar decisiones rápidas y precisas a fin de mantenerse competitivas en una economía acelerada. Hacer consultas analíticas en bases de datos relacionales consume mucho tiempo porque necesita buscar en varias tablas de datos. En cambio, los sistemas OLAP procesan e integran previamente los datos para que se puedan generar los informes analíticos empresariales más rápido y cuando sea necesario.
+
+### No requiere conocimientos técnicos
+
+Los sistemas OLAP facilitan el análisis de datos complejos para los analistas empresariales sin conocimientos técnicos. Los directivos de la empresa pueden realizar cálculos analíticos complejos y generar informes gerenciales sin tener que aprender a operar las bases de datos.
+
+### Vista de datos integrada
+OLAP proporciona una visión unificada de las distintas unidades empresariales. Los administradores y tomadores de decisiones pueden ver el panorama general y resolver los problemas de manera efectiva. Pueden llevar a cabo análisis hipotéticos, que anticipen el impacto de las decisiones tomadas por un departamento sobre las otras áreas de la empresa.
+
+### Similitudes entre el OLAP y el OLTP
+
+Tanto el procesamiento analítico en línea (OLAP) como el procesamiento de transacciones en línea (OLTP) son sistemas de administración de bases de datos que almacenan y procesan grandes volúmenes de datos. Ambos necesitan una infraestructura de TI eficiente y confiable para funcionar sin problemas. Pueden utilizarse tanto para consultar datos existentes como para almacenar datos nuevos. Ambos respaldan la toma de decisiones basada en los datos de una organización.
+
+La mayoría de las empresas utilizan los sistemas de OLTP y OLAP juntos para cumplir con sus necesidades de inteligencia empresarial. Diferencias entre el OLAP y el OLTP El propósito principal del procesamiento analítico en línea (OLAP) es analizar los datos agregados, mientras que el propósito principal del procesamiento de transacciones en línea (OLTP) es procesar las transacciones de bases de datos.
+
+Los sistemas de OLAP se utilizan para generar informes, realizar análisis de datos complejos e identificar tendencias. Por el contrario, los sistemas de OLTP se utilizan para procesar pedidos, actualizar el inventario y administrar las cuentas de los clientes. Por lo cual, se consideran las siguientes características específicas para cada caso: 
+
+### Formato de datos
+Los sistemas de OLAP utilizan modelos de datos multidimensionales, para poder ver los mismos datos desde diferentes ángulos. Las bases de datos de OLAP almacenan los datos en formato de hipercubo, donde cada dimensión representa un atributo diferente. Cada celda del cubo representa un valor o una medida para la intersección de todas las dimensiones.
+
+Por el contrario, los sistemas de OLTP utilizan una base de datos relacional para organizar los datos en tablas. Cada fila de la tabla representa una instancia de una entidad y cada columna representa un atributo de la entidad.
+
+### Arquitectura de datos
+La arquitectura de las bases de datos de OLAP prioriza la lectura de datos sobre las operaciones de
+escritura de datos. Puede realizar consultas complejas de forma rápida y eficiente en grandes volúmenes de datos. La disponibilidad no es un aspecto de alta prioridad, ya que el principal caso de uso son los análisis. 
+
+Por otro lado, la arquitectura de las bases de datos de OLTP prioriza las operaciones de escritura de datos. Está dirigida para atender un gran volumen de operaciones que requieren actualizar datos transaccionales sin comprometer la integridad de la base de datos.
+
+Por ejemplo, si varios clientes compran el mismo artículo al mismo tiempo, el sistema de OLTP puede actualizar los niveles de existencias con precisión. Además, el sistema priorizará cronológicamente a los clientes si el artículo es el último en existencias. La disponibilidad es una prioridad alta, por lo general, se logra mediante múltiples copias de seguridad de datos.
+### Rendimiento
+Los tiempos de procesamiento del OLAP pueden requerir de varios minutos e incluso de horas según el tipo y el volumen de datos que se analicen. Para actualizar una base de datos de OLAP, se procesan periódicamente grandes lotes de datos que se cargan una sola vez al sistema. La frecuencia de actualización dedatos puede ser diaria, semanal o incluso mensual.
+
+Por el contrario, los tiempos de procesamiento del OLTP se miden en milisegundos. Las bases de datos de OLTP administran las actualizaciones de las bases de datos en tiempo real. Las actualizaciones son rápidas, breves y constantes. Se emplea un procesamiento de flujos en lugar del procesamiento por lotes.
+### Requisitos
+Los sistemas de OLAP actúan como un almacén de datos centralizado (Data Warehouse) y extraen datos de múltiples almacenamientos, bases de datos
+relacionales y otros sistemas. Los requisitos de almacenamiento van desde terabytes (TB) hasta petabytes (PB). Las lecturas de datos también pueden requerir un uso intensivo de recursos de computación y necesitar servidores de alto rendimiento.
+
+Por otro lado, puede medir los requisitos de almacenamiento del OLTP en gigabytes (GB). Las bases de datos de OLTP también se pueden limpiar una vez que los datos se pasan a un almacenamiento de datos de OLAP relacionado. Los requisitos de computación de los sistemas de OLTP también son altos.
+
+### Ejemplo de las diferencias entre el OLAP y el OLTP
+Considere el caso de una gran cadena minorista que opera cientos de tiendas a lo largo de todo el país. Esta empresa tiene una enorme base de datos que hace un seguimiento de las ventas, el inventario, los datos de los clientes y proveedores. 
+
+La empresa utiliza un sistema de OLTP para procesar las ventas en tiempo real, Cada tienda está conectada a la base de datos central, que actualiza los niveles de inventario en tiempo real a medida que se venden los productos, también usa la tecnología de OLTP para administrar las operaciones en las cuentas de los clientes, como registrar los puntos de fidelidad, actualizar la información de los pagos y procesar las devoluciones. 
+
+Por otro lado, la empresa utiliza un sistema de OLAP para analizar los datos recopilados por el sistema de OLTP. Los analistas financieros de la empresa pueden utilizar el OLAP para generar informes sobre las tendencias de ventas, los niveles de inventario, la demografía de los clientes y otras métricas. Realizan consultas complejas sobre grandes volúmenes de datos históricos para identificar patrones y tendencias que puedan servir para tomar decisiones empresariales. Identifican los productos populares por temporada y utilizan la información para optimizar los presupuestos de inventario.
+El procesamiento analítico en línea (OLAP) y el procesamiento de transacciones en línea (OLTP) son dos sistemas de procesamiento de datos diferentes diseñados para propósitos distintos. El sistema de OLAP está dirigido hacia el análisis de datos e informes complejos, mientras que el sistema de OLTP está orientado para el procesamiento transaccional y las actualizaciones en tiempo real.
+
+Entender las diferencias entre estos sistemas puede ser de ayuda para tomar decisiones informadas sobre qué sistema satisface mejor sus necesidades. En muchos casos, una combinación de ambos sistemas puede ser la mejor solución para las empresas que requieren tanto el procesamiento de transacciones como el análisis de datos. En última instancia, elegir el sistema correcto depende de las necesidades específicas de su empresa, lo que incluye el volumen de datos, la complejidad de las consultas, el tiempo de respuesta, la escalabilidad y el costo.
+
+![OLAP vs. OLTP](/6to/Administracion%20Base%20de%20Datos/imagenes/OLAPvsOLTP.png)
+
+normalmente OLAP lo usan mucho analistas de mercado, financieros. Les sirve mucho para basarse en supuestos, para hacer simulaciones para tratar de predecir lo que va a pasar.
