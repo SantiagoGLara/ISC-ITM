@@ -322,3 +322,23 @@ es decir, las capa 2 son las MAC. Todos los paquetes enviados necesitan mac de o
 cuando la ip destino está en una red remota, la direccion mac de destino será la del gateway predeterminada del host(interfaz del router), es decir, la mac es valida dentro de la misma red (los conectados al mismo router). 
 ![alt text](/6to/Redes/imagenes/red%20remota.png)
 
+---
+
+protocolo orientado a la conexion(TCP): que antes de hacer intercambio de conexion, el remitente le pregunta al destinatario si está listo para recibirlo
+
+protocolo no orientado a la conexion(UDP): no pregunta si está orientado
+
+la diferencia de TCP/IP y tcp, es que tcp opera en la capa de transporte y tpc/ip opera en la capa de red
+
+----
+
+### mensajes ICMPV6 de solicitud y de anuncio de router
+ICMPv6 incluye cuatro nuevos protocolos como parte del protocolo ND o NDP(Neighbor Descovery Protocol):
+- Mensaje de solicitud de router
+- Mensaje de anuncio de router
+- Mensaje de solicitud de vecino
+- Mensaje de anuncio de vecino
+
+### Traceroute. prueba de la ruta
+Traceroute(tracert)
+Genera una lista de saltos que se alcanzaron correctamente a lo largo de la ruta, contrario de un ping simple que unicamente dice si llega o no, sin importar por donde llega o hasta donde se quedó.
