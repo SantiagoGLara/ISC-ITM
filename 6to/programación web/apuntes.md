@@ -166,3 +166,81 @@ es un lenguaje de programacion capaz de manipular los ele,emtps HTML y sus propi
 - onload:responde al evento
 - onunload:responde al evento
 
+### ENTRADA AL SERVIDOR
+```ssh
+C:\Users\reliv>ssh pwsgonzalez@ia.itmorelia.edu.mx
+pwsgonzalez@ia.itmorelia.edu.mx's password:
+Linux debian 6.1.0-20-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.85-1 (2024-04-11) x86_64
+Last login: Thu Mar 13 10:22:34 2025 from 10.31.17.2
+
+pwsgonzalez@debian:~$ mkdir public_html
+pwsgonzalez@debian:~$ ls
+public_html
+
+
+pwsgonzalez@debian:~$ cd ..
+pwsgonzalez@debian:/home$ ls
+anunez      lost+found  pwaolalde    pwdhernandez      pweguzman       pwimoreno      pwrpiedra    serverdeb
+gerardozi   marco_alc   pwaoliva     pwdhernandez1535  pwemartinez     pwimoreno1895  pwrvargas    soporte
+jcolivares  otoshi5     pwarmando    pwdnunez          pwfmartinez     pwmbucio       pwscardona   villbar
+jruiz       pwamurillo  pwcvaldez    pwdvelasco        pwgcalderon     pwmpantoja     pwsgonzalez
+juanpa77    pwanunez    pwdanincera  pwecampos         pwgcardona0839  pwmvera        pwvdiaz1135
+jzavala     pwanvarro   pwdbarranco  pwegarcia         pwgcazarez      pwpramirez     rcontreras
+
+
+pwsgonzalez@debian:/home$ chmod 755 pwsgonzalez
+pwsgonzalez@debian:/home$ cd pwsgonzalez
+pwsgonzalez@debian:~$ ls
+public_html
+
+
+pwsgonzalez@debian:~$ pwd
+/home/pwsgonzalez
+pwsgonzalez@debian:~$ cd public_html
+pwsgonzalez@debian:~/public_html$ nano index.html
+pwsgonzalez@debian:~/public_html$ ls
+index.html
+
+
+pwsgonzalez@debian:~/public_html$ cd tarea
+pwsgonzalez@debian:~/public_html/tarea$ nano index.html
+pwsgonzalez@debian:~/public_html/tarea$ ls
+index.html
+```
+COPIAR ARCHIVO AL SERVIDOR
+```SSH
+C:\>cd C:\Users\reliv\ISC\ISC-ITM\6to\programación web\actividades\practica 3
+
+C:\Users\reliv\ISC\ISC-ITM\6to\programación web\actividades\practica 3>dir
+ Volume in drive C is Windows
+ Volume Serial Number is 995A-CBE0
+
+ Directory of C:\Users\reliv\ISC\ISC-ITM\6to\programación web\actividades\practica 3
+
+03/03/2025  09:30 PM    <DIR>          .
+02/24/2025  03:17 AM    <DIR>          ..
+02/24/2025  11:28 AM             3,332 formulario.html
+02/24/2025  05:00 AM               621 Respuesta.html
+               2 File(s)          3,953 bytes
+               2 Dir(s)  490,157,039,616 bytes free
+
+C:\Users\reliv\ISC\ISC-ITM\6to\programación web\actividades\practica 3>scp *.* pwsgonzalez@ia.itmorelia.edu.mx:public_htlm/capitulo
+Connection closed by 200.33.171.68 port 22
+scp: Connection closed
+
+C:\Users\reliv\ISC\ISC-ITM\6to\programación web\actividades\practica 3>scp *.* pwsgonzalez@ia.itmorelia.edu.mx:public_html/capitulo
+pwsgonzalez@ia.itmorelia.edu.mx's password:
+Respuesta.html                                                                                                            100%  621     6.6KB/s   00:00
+formulario.html                                                                                                           100% 3332    65.1KB/s   00:00
+```
+
+aqui ya estan copiados los archivos en el servidor, lo checamos y como solo eran de prueba los eliminamos
+
+```ssh
+pwsgonzalez@debian:~/public_html/capitulo$ ls
+formulario.html  Respuesta.html
+pwsgonzalez@debian:~/public_html/capitulo$ rm formulario.html
+pwsgonzalez@debian:~/public_html/capitulo$ rm Respuesta.html
+pwsgonzalez@debian:~/public_html/capitulo$ ls
+pwsgonzalez@debian:~/public_html/capitulo$
+```
