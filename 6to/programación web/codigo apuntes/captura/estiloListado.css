@@ -57,3 +57,12 @@ h1{
 .par{
    background-color: #A9B0B8 ;
 }
+tr:nth-child(odd):not(tr:first-child){
+    background-color: #fff;
+}
+tr:nth-child(even){
+    background-color: #eee;
+}
+tr:hover:not(tr:first-child):not(tr:last-child){
+    background-color: #fff;
+}

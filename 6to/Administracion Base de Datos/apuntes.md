@@ -162,7 +162,7 @@ DataFile es el espacio fisico donde se almacenan los datos, y Tablespace es el e
 principales TableSpaces:
 - `System:`
 - `Sysaux:` espacio de contenido auxiliar de las bases de datos, en teoria ni si quiera el administrador debe acceder a este tablespace
-- `user1: `espacio para todas las bases de datos, tanto de usuarios como el administrador. En este caso, es comun ver que se crean diversos TableSpaces similares a este, en bases de datos grandes o cuando tenemos bases de datos distribuidas tambien se recomienda distribuir tambien los tablespaces
+- `user1:` espacio para todas las bases de datos, tanto de usuarios como el administrador. En este caso, es comun ver que se crean diversos TableSpaces similares a este, en bases de datos grandes o cuando tenemos bases de datos distribuidas tambien se recomienda distribuir tambien los tablespaces
 - `temp:` datos de uso temporal, para guardar datos de procesos que requieren un apoyo, un espacio de almacenamiento temporal para que los procesos tengan acceso rapido a la informacion. Persé los usuarios no modificamos este espacio, si no que es el mismo gestor con los procesos que llevamos a cabo
 - `UNDO:` Espacio para cuando ejecutamos espacios transaccionales, espacio donde se queda lo que hay que recuperar. Inclusive, sirve para recuperar los datos que incluso se pierden, ademas que ayuda a monitorear las transacciones; y puede ademas tener subUndo para diversas tareas especificas. Depende el gestor de bases de datos, puede hacer que `undo` sea un tableSpace o un segmento dentro de todos los TableSpaces
 
@@ -191,17 +191,17 @@ Mientras que el OLTP almacena y actualiza grandes volúmenes de datos transaccio
 
 El procesamiento analítico en línea (OLAP) ayuda a las organizaciones a procesar y beneficiarse de una cantidad cada vez mayor de información digital. Algunos de los beneficios de OLAP son los siguientes. 
 
-### Toma de decisiones acertadas
+#### Toma de decisiones acertadas
 Las empresas utilizan OLAP para tomar decisiones rápidas y precisas a fin de mantenerse competitivas en una economía acelerada. Hacer consultas analíticas en bases de datos relacionales consume mucho tiempo porque necesita buscar en varias tablas de datos. En cambio, los sistemas OLAP procesan e integran previamente los datos para que se puedan generar los informes analíticos empresariales más rápido y cuando sea necesario.
 
-### No requiere conocimientos técnicos
+#### No requiere conocimientos técnicos
 
 Los sistemas OLAP facilitan el análisis de datos complejos para los analistas empresariales sin conocimientos técnicos. Los directivos de la empresa pueden realizar cálculos analíticos complejos y generar informes gerenciales sin tener que aprender a operar las bases de datos.
 
-### Vista de datos integrada
+#### Vista de datos integrada
 OLAP proporciona una visión unificada de las distintas unidades empresariales. Los administradores y tomadores de decisiones pueden ver el panorama general y resolver los problemas de manera efectiva. Pueden llevar a cabo análisis hipotéticos, que anticipen el impacto de las decisiones tomadas por un departamento sobre las otras áreas de la empresa.
 
-### Similitudes entre el OLAP y el OLTP
+#### Similitudes entre el OLAP y el OLTP
 
 Tanto el procesamiento analítico en línea (OLAP) como el procesamiento de transacciones en línea (OLTP) son sistemas de administración de bases de datos que almacenan y procesan grandes volúmenes de datos. Ambos necesitan una infraestructura de TI eficiente y confiable para funcionar sin problemas. Pueden utilizarse tanto para consultar datos existentes como para almacenar datos nuevos. Ambos respaldan la toma de decisiones basada en los datos de una organización.
 
@@ -209,29 +209,29 @@ La mayoría de las empresas utilizan los sistemas de OLTP y OLAP juntos para cum
 
 Los sistemas de OLAP se utilizan para generar informes, realizar análisis de datos complejos e identificar tendencias. Por el contrario, los sistemas de OLTP se utilizan para procesar pedidos, actualizar el inventario y administrar las cuentas de los clientes. Por lo cual, se consideran las siguientes características específicas para cada caso: 
 
-### Formato de datos
+#### Formato de datos
 Los sistemas de OLAP utilizan modelos de datos multidimensionales, para poder ver los mismos datos desde diferentes ángulos. Las bases de datos de OLAP almacenan los datos en formato de hipercubo, donde cada dimensión representa un atributo diferente. Cada celda del cubo representa un valor o una medida para la intersección de todas las dimensiones.
 
 Por el contrario, los sistemas de OLTP utilizan una base de datos relacional para organizar los datos en tablas. Cada fila de la tabla representa una instancia de una entidad y cada columna representa un atributo de la entidad.
 
-### Arquitectura de datos
+#### Arquitectura de datos
 La arquitectura de las bases de datos de OLAP prioriza la lectura de datos sobre las operaciones de
 escritura de datos. Puede realizar consultas complejas de forma rápida y eficiente en grandes volúmenes de datos. La disponibilidad no es un aspecto de alta prioridad, ya que el principal caso de uso son los análisis. 
 
 Por otro lado, la arquitectura de las bases de datos de OLTP prioriza las operaciones de escritura de datos. Está dirigida para atender un gran volumen de operaciones que requieren actualizar datos transaccionales sin comprometer la integridad de la base de datos.
 
 Por ejemplo, si varios clientes compran el mismo artículo al mismo tiempo, el sistema de OLTP puede actualizar los niveles de existencias con precisión. Además, el sistema priorizará cronológicamente a los clientes si el artículo es el último en existencias. La disponibilidad es una prioridad alta, por lo general, se logra mediante múltiples copias de seguridad de datos.
-### Rendimiento
+#### Rendimiento
 Los tiempos de procesamiento del OLAP pueden requerir de varios minutos e incluso de horas según el tipo y el volumen de datos que se analicen. Para actualizar una base de datos de OLAP, se procesan periódicamente grandes lotes de datos que se cargan una sola vez al sistema. La frecuencia de actualización dedatos puede ser diaria, semanal o incluso mensual.
 
 Por el contrario, los tiempos de procesamiento del OLTP se miden en milisegundos. Las bases de datos de OLTP administran las actualizaciones de las bases de datos en tiempo real. Las actualizaciones son rápidas, breves y constantes. Se emplea un procesamiento de flujos en lugar del procesamiento por lotes.
-### Requisitos
+#### Requisitos
 Los sistemas de OLAP actúan como un almacén de datos centralizado (Data Warehouse) y extraen datos de múltiples almacenamientos, bases de datos
 relacionales y otros sistemas. Los requisitos de almacenamiento van desde terabytes (TB) hasta petabytes (PB). Las lecturas de datos también pueden requerir un uso intensivo de recursos de computación y necesitar servidores de alto rendimiento.
 
 Por otro lado, puede medir los requisitos de almacenamiento del OLTP en gigabytes (GB). Las bases de datos de OLTP también se pueden limpiar una vez que los datos se pasan a un almacenamiento de datos de OLAP relacionado. Los requisitos de computación de los sistemas de OLTP también son altos.
 
-### Ejemplo de las diferencias entre el OLAP y el OLTP
+#### Ejemplo de las diferencias entre el OLAP y el OLTP
 Considere el caso de una gran cadena minorista que opera cientos de tiendas a lo largo de todo el país. Esta empresa tiene una enorme base de datos que hace un seguimiento de las ventas, el inventario, los datos de los clientes y proveedores. 
 
 La empresa utiliza un sistema de OLTP para procesar las ventas en tiempo real, Cada tienda está conectada a la base de datos central, que actualiza los niveles de inventario en tiempo real a medida que se venden los productos, también usa la tecnología de OLTP para administrar las operaciones en las cuentas de los clientes, como registrar los puntos de fidelidad, actualizar la información de los pagos y procesar las devoluciones. 
@@ -244,3 +244,35 @@ Entender las diferencias entre estos sistemas puede ser de ayuda para tomar deci
 ![OLAP vs. OLTP](/6to/Administracion%20Base%20de%20Datos/imagenes/OLAPvsOLTP.png)
 
 normalmente OLAP lo usan mucho analistas de mercado, financieros. Les sirve mucho para basarse en supuestos, para hacer simulaciones para tratar de predecir lo que va a pasar.
+
+### SMON, PMON Y LGWR
+procesos en segundo plano basicos 
+
+SMON: system monitor
+PMON: Process Monitor
+LGWR: Log writer
+
+### estados para iniciar una instancia
+
+startup>nomount>mount>open
+
+en startup es el estado en el que comienza a arrancar el servidor, despues en nomount se prepara la instancia de la bdd(sin usarla), para que en mount inicie la instancia y se monte la base de datos, para que quede en el estado OPEN
+
+#### nomount
+aqui es donde se crean los archivos PFILE(parametros legibles/registrados en un archivo de texto, donde los cambios se realizan hasta que se reinicie el sistema) y SPFILE(server parameter file, archivo binario. los cambios se hacen en cuanto los ejecutamos), que son archivos de parametros, donde se crean variables con las que tienen metricas para ajustar el servidor, entonces en el nomount se leen esos archivos y estos son los que configuran el SGA(system global area, para la instancia)
+
+#### mount
+aqui se crean los control file, donde se definen los datafile y tablespaces. En este estado unicamente el administrador tiene acceso a la base de datos.
+
+----
+
+STARTUP NO MOUNT
+
+ALTER DATABASE MOUNT/OPEN
+
+#### shutdown
+hay 4 tipos de shutdown que nos da el sistema, diferenciadas con como trata las instancias(usuarios) activos
+- normal: no se admitirán nuevas conexiones a la bd, pero mantiene las conexiones actualez hasta que se desconecten los usuarios. Cuando se cierra la ultima conexion, la BDD pasa al estado CLOSED, establece un checkpoint y se vacian los buffers y se registra en disco lo que quede en memoria.
+- inmediate: no se aceptan nuevas conexiones, las conexiones actuales se cierran inmediatamente, cancelando las transacciones en curso con un rollback
+- transactional: mantiene abiertas unicamente las sesiones con transacciones en transcurso y espera a que terminen. Cuando un usuario ya no tiene transacciones activas le cierra las sesión.
+- abort
