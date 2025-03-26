@@ -342,3 +342,6 @@ ICMPv6 incluye cuatro nuevos protocolos como parte del protocolo ND o NDP(Neighb
 ### Traceroute. prueba de la ruta
 Traceroute(tracert)
 Genera una lista de saltos que se alcanzaron correctamente a lo largo de la ruta, contrario de un ping simple que unicamente dice si llega o no, sin importar por donde llega o hasta donde se quedó.
+
+## vlan
+red de area local virtual, son segmentaciones logicas de una red. Por ejemplo, cuando tenemos 3 computadoras conectadas a un switch, las 3 estan conectadas al mismo switch, entonces en capa 2 (mac address) solo existe 1 red, y vlan a nivel logico divide esta red

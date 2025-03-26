@@ -8,30 +8,54 @@
 </head>
 <body>
     <header>
-        <h1>Pantalla de Listado</h1>
+        <h1 id="titulo">Pantalla de Listado</h1>
         <h2>libros</h2>
     </header>
     <table>
-        <tr>
+        <tr onclick="setTimeout(mostrar,5000)" id="primero">
             <th>#</th><th>ISBN</th><th>Título</th><th>Autor</th>Tipo<th>Lenguaje</th><th>Stock</th><th>Precio</th><th><a href="#">+ &#128218</th>
         </tr>
-        <tr>
+        <tr id="segundo">
             <td>978-750-563-656-3</td><td>Cien años de soledad</td><td>Gabriel Garcia Marquez</td><td>Novela</td><td>Español</td><td>30</td><td>385</td><td><a href="#">&#9997;&#127995</a></td>
         </tr>
-        <tr>``
+        <tr id="tercero">
             <td>978-750-563-656-3</td><td>Cien años de soledad</td><td>Gabriel Garcia Marquez</td><td>Novela</td><td>Español</td><td>30</td><td>385</td><td></td>
         </tr>
-        <tr>
+        <tr id="cuarto">
             <td>978-750-563-656-3</td><td>Cien años de soledad</td><td>Gabriel Garcia Marquez</td><td>Novela</td><td>Español</td><td>30</td><td>385</td><td></td>
         </tr>
-        <tr>
+        <tr id="quinto">
             <td>978-750-563-656-3</td><td>Cien años de soledad</td><td>Gabriel Garcia Marquez</td><td>Novela</td><td>Español</td><td>30</td><td>385</td><td></td>
         </tr>
     </table>
-
-    
+    <button type="button" name="button" onclick="mostrarfilas()">Filas</button>
+    <button type="button" name="button" onclick="mostrarfilas()">ultima fila</button>
+    <button type="button" name="button" onclick="cambiarColor()">cambiar</button>
+    <button type="button" name="button" onclick="cambiarTitulo()">titulo</button>
 </body>
 <script>
     alert(window.location);
+    function mostrar(){
+        alert("han pasado 5 segundos")
+    }
+    function mostrarfilas(){
+        elementos=document.getElementsByTagName("tr")
+        for(var i=0;i<=elementos.length;i++)
+        window.alert(elementos[i].id)
+    }
+    // mostrar2(){
+        
+    // }
+    // mostrar4(){
+    //     var elementoPrincipal=document.getElementById("tabla1")
+    // }
+    function cambiarColor(){
+        var elemento=document.getElementsByTagName("h1");
+        elemento[0].style.background="green";
+    }
+    function cambiarTitulo(){
+        var titulo=document.getElementById("titulo");
+        titulo.innerHTML="Mi nuevo listado de libros";
+    }
 </script>
 </html>

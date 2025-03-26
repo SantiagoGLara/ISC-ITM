@@ -244,3 +244,42 @@ pwsgonzalez@debian:~/public_html/capitulo$ rm Respuesta.html
 pwsgonzalez@debian:~/public_html/capitulo$ ls
 pwsgonzalez@debian:~/public_html/capitulo$
 ```
+### mensajes de descubrimiento de vecinos
+icmpv6 es la version de arp para detectar vecinos con ipv6 En este curso, nos referiremos a él como ND. ND proporciona servicios de resolución de direcciones, detección de routers y redirección para IPv6 mediante ICMPv6. ICMPv6 ND utiliza cinco mensajes ICMPv6 para realizar estos servicios:
+
+- NS: Mensajes de solicitud de vecinos.
+- NA: Mensaje de anuncio de vecino
+- RS: Mensaje de solicitud del router
+- RA: Mensajes de anuncio del router.
+
+----- 
+notas
+
+servicios de conexion remota:
+- telnet: servicio por default para acceder de manera remota a una red, pero sin mayor seguridad
+- ssh: conexiones encriptadas, pero se tiene que configurar
+
+-----
+en ipv6 no hay como tal ip publicas y privadas, pero tienen sus equivalentes: Gua y 
+
+---
+Un router aprende de 3 formas:
+- cuando tiene algo directamente conectado
+- cuando asignamos una ruta estatica
+- cuando asignamos una ruta dinamica
+
+de hecho, en iproute sale que tipo es, si directamente conectado o configurado
+
+---
+### gateway predeterminado
+el gateway es la puerta donde nosotros nos podemos comunicar con alguien que esté en una red ajena a la nuestra, recordando que si está en la nuestra el mismo swiich puede resolvernos la comunicacion.
+
+Por lo general, un switch de grupo de trabajo que interconecta equipos cliente es un dispositivo de capa 2. Como tal, un switch de capa 2 no necesita una dirección IP para funcionar adecuadamente. Sin embargo, se puede configurar una configuración IP en un conmutador para dar a un administrador acceso remoto al conmutador.
+
+Para conectarse y administrar un switch a través de una red IP local, debe tener configurada una interfaz virtual de switch (SVI). El SVI se configura con una dirección IPv4 y una máscara de subred en la LAN local. El conmutador también debe tener una dirección de puerta de enlace predeterminada configurada para administrar el conmutador de forma remota desde otra red.
+
+Por lo general, la dirección del gateway predeterminado se configura en todos los dispositivos que desean comunicarse más allá de la red local.
+
+Para configurar un gateway predeterminado en un switch, use el comando de configuración global ip default-gateway ip default-gateway. La dirección IP que se configura es la dirección IPv4 de la interfaz del enrutador local conectada al switch
+
+En la Figura 1 se muestra un administrador que establece una conexión remota al switch S1 en otra red.
