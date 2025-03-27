@@ -345,3 +345,26 @@ Genera una lista de saltos que se alcanzaron correctamente a lo largo de la ruta
 
 ## vlan
 red de area local virtual, son segmentaciones logicas de una red. Por ejemplo, cuando tenemos 3 computadoras conectadas a un switch, las 3 estan conectadas al mismo switch, entonces en capa 2 (mac address) solo existe 1 red, y vlan a nivel logico divide esta red
+
+
+# resolucion examen mod 8-10
+
+configuracion basica switch
+![alt text](/6to/Redes/imagenes/examenConfigswitch.png)
+
+configuraion basica router
+![alt text](/6to/Redes/imagenes/EXAMENrouter.pngimage-4.png)
+
+basicamente era hacer eso con los 2 routers y los 4 switch, tomando en cuenta que hay que utilizar el subneteo para saber que ip asignar a los routers. Tambien, considerar que en routers hay que hacer eso que hice en la interface gigabitethernet0/0 para las 2 interfaces tomando encuenta la ip 'base' y marcara que nos da el archivo
+
+![alt text](/6to/Redes/imagenes/config%201%20ruta%20estatica.png)
+
+configurar 1 ruta estatica, eso se podia hacer con todas las rutas(4 switches) en ambos routers
+
+# MODULOS 11-12
+## DIRECCIONAMIENTO IPv4
+Mascara de subred de longitud variable (VLSM)=subneteo
+
+Rercordando que las direcciones ipv4 tienen 4 octetos decimales, donde una parte (la primera) le pertenece a los host y otra a las redes(derecha). 
+
+Con las mascaras, podemos manipular las IP'S de una clase para que trabajen comode otra clase
