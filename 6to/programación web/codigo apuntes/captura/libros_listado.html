@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="estilokys.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -12,50 +23,144 @@
         <h2>libros</h2>
     </header>
     <table>
-        <tr onclick="setTimeout(mostrar,5000)" id="primero">
-            <th>#</th><th>ISBN</th><th>Título</th><th>Autor</th>Tipo<th>Lenguaje</th><th>Stock</th><th>Precio</th><th><a href="#">+ &#128218</th>
-        </tr>
-        <tr id="segundo">
-            <td>978-750-563-656-3</td><td>Cien años de soledad</td><td>Gabriel Garcia Marquez</td><td>Novela</td><td>Español</td><td>30</td><td>385</td><td><a href="#">&#9997;&#127995</a></td>
-        </tr>
-        <tr id="tercero">
-            <td>978-750-563-656-3</td><td>Cien años de soledad</td><td>Gabriel Garcia Marquez</td><td>Novela</td><td>Español</td><td>30</td><td>385</td><td></td>
-        </tr>
-        <tr id="cuarto">
-            <td>978-750-563-656-3</td><td>Cien años de soledad</td><td>Gabriel Garcia Marquez</td><td>Novela</td><td>Español</td><td>30</td><td>385</td><td></td>
-        </tr>
-        <tr id="quinto">
-            <td>978-750-563-656-3</td><td>Cien años de soledad</td><td>Gabriel Garcia Marquez</td><td>Novela</td><td>Español</td><td>30</td><td>385</td><td></td>
-        </tr>
+        <thead>
+            <tr id="primero">
+                <th>#</th><th>ISBN</th><th data-sort="titulo">Título</th><th data-sort="autor">Autor</th><th data-sort="tipo">Tipo</th><th data-sort="lenguaje">Lenguaje</th><th>Stock</th><th>Precio</th><th><a href="#">+ &#128218</a></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="segundo">
+                <td>1</td><td>978-750-563-656-3</td><td>Cien años de soledad</td><td>Gabriel Garcia Marquez</td><td>Novela</td><td>Español</td><td>30</td><td>499</td><td><a href="#">&#9997;&#127995</a></td>
+            </tr>
+            <tr id="tercero">
+                <td>2</td><td>978-750-563-656-3</td><td>Indigno de ser Humano</td><td>Osamu Dazai</td><td>Novela del yo</td><td>Español</td><td>20</td><td>299</td><td></td>
+            </tr>
+            <tr id="cuarto">
+                <td>3</td><td>978-750-563-656-3</td><td>Noches Blancas</td><td>Fiodor Dostoyevski</td><td>Novela</td><td>Español</td><td>15</td><td>385</td><td></td>
+            </tr>
+            <tr id="quinto">
+                <td>4</td><td>978-750-563-656-3</td><td>1984</td><td>George Orwell</td><td>Novela distopica</td><td>Español</td><td>10</td><td>399</td><td></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr id="suma-fila">
+                <td colspan="6">Suma:</td>
+                <td id="suma-stock"></td>
+                <td id="suma-precio"></td>
+                <td></td>
+            </tr>
+        </tfoot>
     </table>
-    <button type="button" name="button" onclick="mostrarfilas()">Filas</button>
-    <button type="button" name="button" onclick="mostrarfilas()">ultima fila</button>
-    <button type="button" name="button" onclick="cambiarColor()">cambiar</button>
-    <button type="button" name="button" onclick="cambiarTitulo()">titulo</button>
+    <script>
+        alert(window.location);
+        function mostrar(){
+            alert("han pasado 5 segundos")
+        }
+
+        function cambiarColor(){
+            var elemento=document.getElementsByTagName("h1");
+            elemento[0].style.background="green";
+        }
+        function cambiarTitulo(){
+            var titulo=document.getElementById("titulo");
+            titulo.innerHTML="Mi nuevo listado de libros";
+        }
+
+        const table = document.querySelector('table');
+        const headers = table.querySelectorAll('th[data-sort]');
+        let sortDirections = {};
+
+        headers.forEach(header => {
+            header.addEventListener('dblclick', () => {
+                const column = header.getAttribute('data-sort');
+                const direction = sortDirections[column] === 'asc' ? 'desc' : 'asc';
+                sortDirections[column] = direction;
+                sortTable(column, direction);
+            });
+        });
+
+        function sortTable(column, direction) {
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+
+            const sortedRows = rows.sort((a, b) => {
+                const aValue = a.querySelector(`td[data-sort="${column}"]`) ? a.querySelector(`td[data-sort="${column}"]`).textContent : a.querySelector(`td:nth-child(${getColumnIndex(column) + 1})`).textContent;
+                const bValue = b.querySelector(`td[data-sort="${column}"]`) ? b.querySelector(`td[data-sort="${column}"]`).textContent : b.querySelector(`td:nth-child(${getColumnIndex(column) + 1})`).textContent;
+
+                if (direction === 'asc') {
+                    return aValue.localeCompare(bValue);
+                } else {
+                    return bValue.localeCompare(aValue);
+                }
+            });
+
+            tbody.innerHTML = '';
+            sortedRows.forEach(row => tbody.appendChild(row));
+        }
+        function getColumnIndex(columnName) {
+
+            const headerRow = document.querySelector("tr");
+            const headers = Array.from(headerRow.querySelectorAll("th"));
+            for(let i = 0; i < headers.length; i++){
+                if(headers[i].getAttribute("data-sort") === columnName){
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        // Calculate and add sum to footer
+        const rows = document.querySelectorAll('tbody tr');
+        let totalStock = 0;
+        let totalPrice = 0;
+
+        rows.forEach(row => {
+            const stock = parseInt(row.querySelector('td:nth-child(7)').textContent);
+            const price = parseInt(row.querySelector('td:nth-child(8)').textContent);
+            totalStock += stock;
+            totalPrice += price;
+        });
+
+        document.getElementById('suma-stock').textContent = totalStock;
+        document.getElementById('suma-precio').textContent = totalPrice;
+
+        // Add data-sort attributes to relevant td elements
+        const dataSortHeaders = ["titulo", "autor", "tipo", "lenguaje"];
+        const tableRows = document.querySelectorAll("tbody tr");
+
+        tableRows.forEach(row => {
+            dataSortHeaders.forEach(header => {
+                const cell = row.querySelector(`td:nth-child(${getColumnIndex(header) + 1})`);
+                if(cell){
+                    cell.setAttribute("data-sort", header);
+                }
+            });
+        });
+
+        const numeroHeader = document.querySelector('th:nth-child(1)');
+        let numeroSortDirection = 'asc';
+
+        numeroHeader.addEventListener('dblclick', () => {
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+
+            const sortedRows = rows.sort((a, b) => {
+                const aValue = parseInt(a.querySelector('td:nth-child(1)').textContent);
+                const bValue = parseInt(b.querySelector('td:nth-child(1)').textContent);
+
+                if (numeroSortDirection === 'asc') {
+                    return aValue - bValue;
+                } else {
+                    return bValue - aValue;
+                }
+            });
+
+            tbody.innerHTML = '';
+            sortedRows.forEach(row => tbody.appendChild(row));
+
+            numeroSortDirection = numeroSortDirection === 'asc' ? 'desc' : 'asc';
+        });
+
+    </script>
 </body>
-<script>
-    alert(window.location);
-    function mostrar(){
-        alert("han pasado 5 segundos")
-    }
-    function mostrarfilas(){
-        elementos=document.getElementsByTagName("tr")
-        for(var i=0;i<=elementos.length;i++)
-        window.alert(elementos[i].id)
-    }
-    // mostrar2(){
-        
-    // }
-    // mostrar4(){
-    //     var elementoPrincipal=document.getElementById("tabla1")
-    // }
-    function cambiarColor(){
-        var elemento=document.getElementsByTagName("h1");
-        elemento[0].style.background="green";
-    }
-    function cambiarTitulo(){
-        var titulo=document.getElementById("titulo");
-        titulo.innerHTML="Mi nuevo listado de libros";
-    }
-</script>
 </html>
