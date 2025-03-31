@@ -46,7 +46,7 @@
             <tr id="suma-fila">
                 <td colspan="6">Suma:</td>
                 <td id="suma-stock"></td>
-                <td id="suma-precio"></td>
+                <td id="promedio-precio"></td>
                 <td></td>
             </tr>
         </tfoot>
@@ -120,9 +120,10 @@
             totalStock += stock;
             totalPrice += price;
         });
+        const averagePrice = rows.length > 0 ? totalPrice / rows.length : 0;
 
         document.getElementById('suma-stock').textContent = totalStock;
-        document.getElementById('suma-precio').textContent = totalPrice;
+        document.getElementById('promedio-precio').textContent = averagePrice.toFixed(2);
 
         // Add data-sort attributes to relevant td elements
         const dataSortHeaders = ["titulo", "autor", "tipo", "lenguaje"];
