@@ -322,3 +322,79 @@ es decir, las capa 2 son las MAC. Todos los paquetes enviados necesitan mac de o
 cuando la ip destino está en una red remota, la direccion mac de destino será la del gateway predeterminada del host(interfaz del router), es decir, la mac es valida dentro de la misma red (los conectados al mismo router). 
 ![alt text](/6to/Redes/imagenes/red%20remota.png)
 
+---
+
+protocolo orientado a la conexion(TCP): que antes de hacer intercambio de conexion, el remitente le pregunta al destinatario si está listo para recibirlo
+
+protocolo no orientado a la conexion(UDP): no pregunta si está orientado
+
+la diferencia de TCP/IP y tcp, es que tcp opera en la capa de transporte y tpc/ip opera en la capa de red
+
+----
+
+### mensajes ICMPV6 de solicitud y de anuncio de router
+ICMPv6 incluye cuatro nuevos protocolos como parte del protocolo ND o NDP(Neighbor Descovery Protocol):
+- Mensaje de solicitud de router
+- Mensaje de anuncio de router
+- Mensaje de solicitud de vecino
+- Mensaje de anuncio de vecino
+
+### Traceroute. prueba de la ruta
+Traceroute(tracert)
+Genera una lista de saltos que se alcanzaron correctamente a lo largo de la ruta, contrario de un ping simple que unicamente dice si llega o no, sin importar por donde llega o hasta donde se quedó.
+
+## vlan
+red de area local virtual, son segmentaciones logicas de una red. Por ejemplo, cuando tenemos 3 computadoras conectadas a un switch, las 3 estan conectadas al mismo switch, entonces en capa 2 (mac address) solo existe 1 red, y vlan a nivel logico divide esta red
+
+
+# resolucion examen mod 8-10
+
+configuracion basica switch
+![alt text](/6to/Redes/imagenes/examenConfigswitch.png)
+
+configuraion basica router
+![alt text](/6to/Redes/imagenes/EXAMENrouter.pngimage-4.png)
+
+basicamente era hacer eso con los 2 routers y los 4 switch, tomando en cuenta que hay que utilizar el subneteo para saber que ip asignar a los routers. Tambien, considerar que en routers hay que hacer eso que hice en la interface gigabitethernet0/0 para las 2 interfaces tomando encuenta la ip 'base' y marcara que nos da el archivo
+
+![alt text](/6to/Redes/imagenes/config%201%20ruta%20estatica.png)
+
+configurar 1 ruta estatica, eso se podia hacer con todas las rutas(4 switches) en ambos routers
+
+# MODULOS 11-12
+## DIRECCIONAMIENTO IPv4
+Mascara de subred de longitud variable (VLSM)=subneteo
+
+Rercordando que las direcciones ipv4 tienen 4 octetos decimales, donde una parte (la primera) le pertenece a los host y otra a las redes(derecha). 
+
+Con las mascaras, podemos manipular las IP'S de una clase para que trabajen comode otra clase
+### longitud del prefijo
+es una abreviacion para ver el tipo de mascara 
+![alt text](/6to/Redes/imagenes/prefijos.png)
+
+## UNICAST, MULTICAST Y BROADCAST
+
+
+## NAT
+traducir las redes privadas a publicas. Cuando nosotros queremos comunicarlos con un servidor no hay problema para comunicarnos, pero si nos quiere responder de regreso no puede llegar a nosotros porque nosotros tenemos una IP privada. Entonces, el router empieza el `nateo` le quita lo privado a nuestra red, le asigna la ip publica que tiene el router para comunicarse afuera, el servidor le responde AL ROUTER, y el router, almacena los paquetes nateados(quien lo envio), y se lo regresa al dispositivo que lo mandó
+
+## direcciones ipv4 de uso especial
+### loopback
+ 127.0.0.0 a 127.255.255.255 son para pruebas
+### linklocal 
+169.254.0.0/16 o 169.254.0.1 a 169.2254.255.254. Es un servicio de windows, se utiliza cuando no hay un DHCP que le asigne una ip valida para utilizar el servicio.
+## Direccionamiento con clase antigua
+En 1981, las direcciones IPv4 de Internet se asignaban mediante el direccionamiento con clase, según se define en RFC 790 (https://tools.ietf.org/html/rfc790), Números asignados. A los clientes se les asignaba una dirección de red basada en una de tres clases: A, B o C. RFC dividía los rangos de unidifusión en las siguientes clases específicas:
+
+Clase A (0.0.0.0/8 a 127.0.0.0/8) - diseñada para admitir redes extremadamente grandes, con más de 16 millones de direcciones de host. La clase A utilizó un prefijo fijo / 8 con el primer octeto para indicar la dirección de red y los tres octetos restantes para las direcciones de host (más de 16 millones de direcciones de host por red).
+
+Clase B (128.0.0.0 /16 - 191.255.0.0 /16) - Diseñada para satisfacer las necesidades de redes de tamaño moderado a grande, con hasta 65000 direcciones de host. La clase B utilizó un prefijo fijo / 16 con los dos octetos de alto orden para indicar la dirección de red y los dos octetos restantes para las direcciones de host (más de 65,000 direcciones de host por red).
+Clase C (192.0.0.0 /24 - 223.255.255.0 /24) - diseñada para admitir redes pequeñas con un máximo de 254 hosts. La clase C utilizó un prefijo fijo / 24 con los primeros tres octetos para indicar la red y el octeto restante para las direcciones de host (solo 254 direcciones de host por red).
+Nota: También existe un bloque de multidifusión de clase D que va de 224.0.0.0 a 239.0.0.0, y un bloque de direcciones experimentales de clase E que va de 240.0.0.0 a 255.0.0.0.
+
+En ese momento, con un número limitado de computadoras que utilizan Internet, el direccionamiento con clase era un medio eficaz para asignar direcciones. Como se muestra en la figura, las redes de clase A y B tienen un número muy grande de direcciones de host y la clase C tiene muy pocas. Las redes de clase A representaron el 50% de las redes IPv4. Esto hizo que la mayoría de las direcciones IPv4 disponibles no se utilizaran.
+
+## DOMINIOS DE DIFUSION(BROADCAST)
+son espacios donde un switch que reparte informacion a sus dispisitivos, desde su coexion con el router .
+![alt text](/6to/Redes/imagenes/dominios%20de%20difusion.png).
+si quiere haber comunicacion desde el internet hacia nosotros, el internet se comunica con el router y el router con nuestro dominio, basicamente lo que hablamos en el `nateo`

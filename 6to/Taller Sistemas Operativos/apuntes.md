@@ -141,3 +141,80 @@ Responsable del inicio y termino de una E/S de un archivo, mantiene las estructu
 el sistema organiza los archivos en carpetas dentro de una carpeta principal, cada usuario tiene su propia carpeta que puede contener mas subcarpetas y archivos. Para encontrar un archivo se pueden contener mas subcarpetas y archivos, para encontrar un archivos  se sigue la ruta dentro de estas subcarpetas. Se pueden tener diferentes archivos con el mismo nombre en diferentes ubicaciones.
 
 ## administracion del sistema
+
+## medicion y desempeño del so
+herramientas de medicion
+
+el monitor de confiabilidad de windows es una herramienta que combina registros y alertas de rendimiento, server performance advisor y el monitor del sistema. Proporciona una interfaz grafica para personalizar la recopilacion de datos y el seguimiento de eventos
+
+### indicadores de desempeño
+son parametros para medir la eficiencia del sistema
+
+turnAround TIME: es el tiempo desde que el proceso que inicia hasta que finaliza. Incluye accesos a disco, memoria, compilacion, sobrecargas y tiempos de cpu
+
+TIEMPO DE CADA CICLO: es el tiempo que tarda un ciclo del procesador, se mide en nanosegundos
+
+FRECUENCIA DE RELOK(f): velocidad del procesador, medida en Megahertz. Se calcula como la inversa del tiempo del ciclo f=1/tiempo ciclo
+
+TOTAL DE INSTRUCCIONES: numero de instrucciones que un programa debe ejecutar
+
+ciclos por instruccion (CPI)
+## seguridad en sistemas de informacion
+### seguridad fisica
+proteccion del hardware y dispositivos contra amenazas como robo o daño fisico, desastres naturales o accesos forzados
+
+medidas como 
+- camaras de seguridad
+- control de acceso biometrcio
+- ambientes de temperatura y humedad controlado
+### seguridad logica
+proteccion de software y datos contra accesos no autorizados o modificaciones indebidas, entre sus principales amenazas están los viruas, malware, ataques de hacekrs y robo de credenciales
+
+las medidas como:
+- antivirus y firewalls
+- 2FA
+- cifrado de datos
+### seguridad en redes
+se encarga de la proteccion de la comunicacion y transmision de datos, entre sus amenazas se encuentra la intercepcion de datos, ataques DDoS y suplantacion de identidad
+
+medidas como:
+- redes privadas virtuales(vlan)
+- cifrado de trafico de red
+- monitoreo de trafico sospechoso
+### seguridad e integridad
+la seguridad del software debe integrease en todo el desarrollo, no de manera aislada. En sistemas críticos, la seguridad debe definirse desde la fase de requisitos y diseño.
+
+Es fundamental la gestión y el analisis continuo a lo largo del ciclo de vida.
+
+### integridad de la informacion
+se refiere a la precision y consistencia de los datos en un sistema, entre sus principales riesgos está la modificacion de datos sin autorizacion, corrupcion de informacion por errores o ataques y perdida de datos
+
+medidas:
+- controles de acceso
+- copias de seguridad periodicas
+- hashing y firmas digitales
+
+### buenas practicas para mantener seguridad e integridad
+- uso de contraseñas seguras
+- actualizacion constante de software
+- capacitacion en ciberseguridad
+- implementacion de politicas de acceso
+- monitoreo y auditoria de sistemas
+### planificacion del mantenimiento
+implica decidir anticipadamente que hacer, como hacerlo, cuando y quien lo hará. Su objetivo es contribuir en el logro de los objetivos organizacionales. Organizar y mejorar los procesos del mantenimiento...
+
+
+#### estrategias de mantenimiento
+- definir objetivos y recursos necesarios
+- establecer tiempos de uso de equipos y recursos
+- emitir ordenes para su aplicacion
+- anaizar resultados y aplicar mejoras
+##### divisiones de planificacion
+- de desarrollo: a largo plazo, desarrollo de la empresa
+- mediano plazo: plazo anual
+- programacion: distribucion ordenada de actividades, desde diario hasta anual
+- planificacion y programacion a corto plazo
+#### objetivo del mantenimiento
+- maximizar la disponibilidad de los recursos con el minimo costo
+- aumentar la productividad y la seguridad en su funcionamiento
+- medir y evaluar el desempeño de forma cualitativa y cuantitativa
