@@ -276,3 +276,33 @@ hay 4 tipos de shutdown que nos da el sistema, diferenciadas con como trata las 
 - inmediate: no se aceptan nuevas conexiones, las conexiones actuales se cierran inmediatamente, cancelando las transacciones en curso con un rollback
 - transactional: mantiene abiertas unicamente las sesiones con transacciones en transcurso y espera a que terminen. Cuando un usuario ya no tiene transacciones activas le cierra las sesión.
 - abort
+### TRANSACT SQL
+Lenguaje estructurado por lotes(coleccion de instrucciones)
+
+----
+programacion batch: programacion donde se ejecuta un conjunto de instrucciones, sin interaccion. Unicamente se espera que se ejecute con o sin éxito.
+
+----
+
+en el transactSQL podemos añadir varios lotes a un conjunto, divididos por un GO. Aunque estos no funcionan como las transacciones por si solos, si una instruccion falla el lote sigue corriendo, si queremos que actúe como transaccion tenemos que encerrar los lotes entre `BEGIN` Y `END`.
+
+tambien se pueden declarar variables, generalmente al inicio porque son variables que usaremos duarante la ejecucion. La instruccion para usarlas es `DECLARE @variable TIPO= VALOR`
+
+tipos de datos
+- int 
+- nvarchar(maneja caracteres unicode, para evitar fallos devido a escrituras con caracteres raros)
+    - ejemplo de declaracion: `SET @nom N'Juan'`
+    - ejemplo uso: 
+        - `SELECT @nom=nombre FROM ...`
+        - `SELECT @nom AS nombre...`  <!--devuelve los valores de la variable -->
+        
+estructuras
+- IF ... IS NULL
+- ELSE
+- SET @nivel=
+    - CASE WHEN ..... THEN 'valor'
+    -      WHEN ..... THEN
+    -      ELSE...
+    - END;
+ 
+
