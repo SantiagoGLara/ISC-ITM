@@ -398,3 +398,17 @@ En ese momento, con un número limitado de computadoras que utilizan Internet, e
 son espacios donde un switch que reparte informacion a sus dispisitivos, desde su coexion con el router .
 ![alt text](/6to/Redes/imagenes/dominios%20de%20difusion.png).
 si quiere haber comunicacion desde el internet hacia nosotros, el internet se comunica con el router y el router con nuestro dominio, basicamente lo que hablamos en el `nateo`
+
+## proceso EUI-64
+toma en cuenta nuestra mac para crearnos una direccion ipv6, pero en cuestion de seguridad no es tan bueno, pero le informamos a todos nuestra MAC ADDRESS, por lo que desde windows vista lo dejamos de utilizar. Es mas conveniente hacerlo de manera aleatoria
+
+## configurar ipv6 en mi router
+![alt text](image-4.png)
+![r0](image-5.png)
+![r0pt2](image-6.png)
+
+ipv6-stateful es el nombre que le pusimos antes, es una etiqueta. es decir que cuando configuremos el dhcp server para que las peticiones lleguen a donde lo configuramos
+
+hay 3 metodos para asignar ip con el servedor dhcp. El metodo 1 si le damos todo al usuario, el metodo 2 nosotros servidor dhcp nosotros damos cierta info y ellos construyen el resto, y el 3
+
+se cambia entre modos con banderas, en este caso vamos a prneder la bandera del metodo 3
