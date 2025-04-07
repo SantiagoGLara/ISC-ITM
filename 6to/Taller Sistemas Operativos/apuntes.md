@@ -218,3 +218,65 @@ implica decidir anticipadamente que hacer, como hacerlo, cuando y quien lo hará
 - maximizar la disponibilidad de los recursos con el minimo costo
 - aumentar la productividad y la seguridad en su funcionamiento
 - medir y evaluar el desempeño de forma cualitativa y cuantitativa
+
+### archivos y directorios
+En linx, la informacion se organiza en archivos y directorios:
+- archivo: es una coleccion de datos almacenada con un nombre especifico
+- directorio: es una carpeta que agrupa archivos y puede contener otros directorios llamados subdirectorios
+
+ambos forman una estructura similar a un arbol invertido, donde el directorio raiz es el punto de inicio de esta estructura y se representa con una barra diagonal /
+
+archivos y directorios principales de linux:
+- /bin: programas ejectuables esenciales para el so, como comandos cat,cp[.ls.more y tar]
+- /boot: almacena el kernel de linux y archivos necesairos para el arranque del sistema
+- /dev: incluye archivos especiales que representan dispositivos(terminales, discos e impresoras). en linux los dispositivos se manejan como archivos
+- /etc: almacena archivos de configuracion del sistema y programas de inicializacion 
+- /home: contiene los directorios base
+- /lib: guarda archivos de biblioteca necesarios para que las apps funciones, como librerias para lenguajes de programacion
+/sbin: contiene programas especiales para la administracion del sistema
+- /tmp: es un directorio temporal para archivos almacenados de manera transitoria
+- /usr: archivos, datos y bibliotecas del usuario
+- /var: almacena archivos temporales y de trabajo creados por el sistema
+
+#### permisos de archivos y directorios
+en un sistema con varios usuarios es importante que existan reglas para evitar que alguien sin permiso copie, borre o modifique archivos
+
+en linux cada archivo tiene un dueño, ademas de que cada usuario puede tener  
+
+### tipos de recursos en un sistema
+- disco fisico
+- DHCP Y SCP:
+- Cola de impresion
+- recurso compartido de recursos:
+#### Tareas administrador de sistemas
+
+### medicion y desempeño del SO
+la revision del sistema implica monitorear su desempeño, verificando erroees, consumo de memoria y uso del CPU.
+
+para monitorear una red se pueden usar aplicaciones llamadas sniffer, para verificar aspectos como 
+- trafico de paquetes
+- nivel de utilizacion
+- errores detectados
+- posicion de octetos
+### tratamiento de alarmas
+para garantizar el monitoreo de la red es necesario: 
+- verificar las alarmas: comprobar que los fallos generan alertas adecuadas
+
+### seguridad e integridad:
+todos tienen vulnerabilidades:
+- linux es un ssitema de constante cambio
+- linux tiene fama de ser el so mas seguro
+- linux detecta bugs
+### planificacion de seguridad:
+los ciberataques son una amenaza real, incluso para grandes empresas. Contar con un plan de seguridad informatica es esencial para identificar vulneabilidades y tomar medidas preventivas. Este plan no tiene porque ser extenso, pero debe proteger los datos y sistemas criticos
+
+#### pasos para la planificacion
+- identificacion: identificar activos en riesgo
+- evaluacion de riesgos: establecer lo que se podria poner en peligro los activos anteriores, por ejemplo virus informaticos, hackers, daños fisicos o errores de los empleados
+- priorizar la proteccion IT: una vez evaluado el daño potencial, puedes decidir que amenaza es mas importante empezar a proteger
+- tomar precauciones adecuadas
+#### planificacion y ejecucion
+para aplicar es necesario:
+- comnuicar el plan al personal, asignar responsables y asegurar que cuenten con los recursos para implementar los cambios
+- crear politicas y capacitar, ajustando las politicas de IT al plan de seguridad y capacitar al personal para reducir riesgos
+- establecer un calendario para poner en marcha las medidas del plan

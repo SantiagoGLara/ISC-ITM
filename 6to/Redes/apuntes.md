@@ -407,7 +407,7 @@ toma en cuenta nuestra mac para crearnos una direccion ipv6, pero en cuestion de
 ![r0](image-5.png)
 ![r0pt2](image-6.png)
 
-ipv6-stateful es el nombre que le pusimos antes, es una etiqueta. es decir que cuando configuremos el dhcp server para que las peticiones lleguen a donde lo configuramos
+ipv6-stateful es el nombre que le pusimos antes, es una etiqueta. es decir que cuando configuremos el dhcp server para que las peticiones lleguen a donde lo configuramos. No es un nombre por que si, osea es trivial el nombre que le asignemos pero este servidor en especifico lo configuramos de ese modo, que es ucando el servidor le asigna al que lo solicite todos los datos necesarios, el solicitante no calcula nada
 
 hay 3 metodos para asignar ip con el servedor dhcp. El metodo 1 si le damos todo al usuario, el metodo 2 nosotros servidor dhcp nosotros damos cierta info y ellos construyen el resto, y el 3
 
