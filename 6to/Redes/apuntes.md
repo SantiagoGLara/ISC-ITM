@@ -412,3 +412,31 @@ ipv6-stateful es el nombre que le pusimos antes, es una etiqueta. es decir que c
 hay 3 metodos para asignar ip con el servedor dhcp. El metodo 1 si le damos todo al usuario, el metodo 2 nosotros servidor dhcp nosotros damos cierta info y ellos construyen el resto, y el 3
 
 se cambia entre modos con banderas, en este caso vamos a prneder la bandera del metodo 3
+
+# ICMP
+para buscar host, el ARP de ipv6
+tiene 3 tipos de mensajes: 
+-
+-
+-
+## accesibilidad de host
+se puede utilizar un mensaje eco(ping) icmp para probar la accesibilidad de un host en una red IP. El host local envia una solicitud de eco ICMP de un host, si el host se encuentra disponible, el host de destino responde con una respuesta de eco. Muchas veces, el ping está por defecto apagado(para confirmar que estamos encendidos) por cuestion de seguridad. Esto se puede ver por ejemplo si entre comunicacion de 2 computadoras, de A hacia B si hay respuesta de ping, pero de B hacia A no hay respuesta. Por eso hay que verificar que los dispositivos estén habilitados a dar respuestas de ping
+## destino o servicio inaccesible
+cuando un host o gateway recibe un paquete que no puede entregar, puede utilizar un mensaje ICMP de destino inalcanzable para notificarle al origen 
+
+- red inalcanzable
+- host inalcanzable
+- protocolo inalzcanzable
+- puerto inalcanzable
+### tiempo excedido
+todos los paquetes tienen un tiempo de vida, para evitar que queden circulando, los paquetes tienen su TTL, cuando ese tiempo llega a 0, el router que tenga en dado momento el paquete lo deshecha, eso en `capa 3` esto en IPv4, en IPv6 no existe un TTL, mas bien existe un `limite de saltos`. A nivel de `capa 2` lo que se hace es que por ejemplo los switch cisco, tienen un protocolo llamado STP, evita los caminos redundantes, para evitar bucles, porque? por que a nivel de capa 2 no existen en los paquetes el campo TTL
+
+### mensajes ICMPv6
+los mensajes que tiene este protocolo respecto de la version 4 son similares, pero tiene capaciddades aumentadas. incluye 4 mensajes nuevos como parte del protocolo de deteccion de vecinos (ND o NDP)
+- mensaje de solicitud de router
+- mensaje de anuncio de router
+- mensaje de solicitud de vecino(NS)
+- mensaje de anuncio de vecino(NA)
+como se usa?
+
+con el comando show cdp neighbors  o show cdp neighbors detail
