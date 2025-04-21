@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78546127-96af-4572-9c52-3e844b922f7a" name="Changes" comment="TAREA 07 GRAFI">
-      <change afterPath="$PROJECT_DIR$/6to/Graficación/codigo apunte/codigo1U3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6to/Graficación/codigo apunte/codigo2U3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6to/Graficación/codigo apunte/codigo3U3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/6to/Graficación/codigo apunte/prueba.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +54,9 @@
     "Python.backface.executor": "Run",
     "Python.codigo1U3.executor": "Run",
     "Python.codigo2U3.executor": "Run",
+    "Python.codigo3U3.executor": "Run",
     "Python.curvasBeizer.executor": "Run",
+    "Python.prueba.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -94,6 +96,8 @@
       <workItem from="1740111348641" duration="1707000" />
       <workItem from="1741405881249" duration="1347000" />
       <workItem from="1743447935458" duration="4975000" />
+      <workItem from="1743471457536" duration="640000" />
+      <workItem from="1745253526428" duration="1695000" />
     </task>
     <task id="LOCAL-00001" summary="TAREA 05 GRAFI">
       <option name="closed" value="true" />
@@ -172,16 +176,18 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ISC_ITM$codigo2U3.coverage" NAME="codigo2U3 Coverage Results" MODIFIED="1743448991079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/codigo apunte" />
+    <SUITE FILE_PATH="coverage/ISC_ITM$E5Blur3x3.coverage" NAME="E5Blur3x3 Coverage Results" MODIFIED="1739333711594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 2" />
+    <SUITE FILE_PATH="coverage/ISC_ITM$E4AjusteControlRango.coverage" NAME="E4AjusteControlRango Coverage Results" MODIFIED="1739332645408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 2" />
+    <SUITE FILE_PATH="coverage/ISC_ITM$backface.coverage" NAME="backface Coverage Results" MODIFIED="1741406110508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 7" />
+    <SUITE FILE_PATH="coverage/ISC_ITM$codigo3U3.coverage" NAME="codigo3U3 Coverage Results" MODIFIED="1745254900101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/codigo apunte" />
+    <SUITE FILE_PATH="coverage/ISC_ITM$E2EscaladeGrises.coverage" NAME="E2EscaladeGrises Coverage Results" MODIFIED="1739332993040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 2" />
+    <SUITE FILE_PATH="coverage/ISC_ITM$codigos_de_colores.coverage" NAME="codigos de colores Coverage Results" MODIFIED="1739681936810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 4" />
     <SUITE FILE_PATH="coverage/ISC_ITM$codigo1U3.coverage" NAME="codigo1U3 Coverage Results" MODIFIED="1743449024603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/codigo apunte" />
     <SUITE FILE_PATH="coverage/ISC_ITM$primitivas.coverage" NAME="primitivas Coverage Results" MODIFIED="1739680981002" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 4" />
     <SUITE FILE_PATH="coverage/ISC_ITM$E1InversiónBitwise.coverage" NAME="E1InversiónBitwise Coverage Results" MODIFIED="1739332453340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 2" />
-    <SUITE FILE_PATH="coverage/ISC_ITM$codigo2U3.coverage" NAME="codigo2U3 Coverage Results" MODIFIED="1743448991079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/codigo apunte" />
-    <SUITE FILE_PATH="coverage/ISC_ITM$E5Blur3x3.coverage" NAME="E5Blur3x3 Coverage Results" MODIFIED="1739333711594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 2" />
+    <SUITE FILE_PATH="coverage/ISC_ITM$prueba.coverage" NAME="prueba Coverage Results" MODIFIED="1745255240287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/codigo apunte" />
     <SUITE FILE_PATH="coverage/ISC_ITM$curvasBeizer.coverage" NAME="curvasBeizer Coverage Results" MODIFIED="1740112217926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 5" />
     <SUITE FILE_PATH="coverage/ISC_ITM$E3Division3canales.coverage" NAME="E3Division3canales Coverage Results" MODIFIED="1739365744315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 2" />
-    <SUITE FILE_PATH="coverage/ISC_ITM$E4AjusteControlRango.coverage" NAME="E4AjusteControlRango Coverage Results" MODIFIED="1739332645408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 2" />
-    <SUITE FILE_PATH="coverage/ISC_ITM$backface.coverage" NAME="backface Coverage Results" MODIFIED="1741406110508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 7" />
-    <SUITE FILE_PATH="coverage/ISC_ITM$E2EscaladeGrises.coverage" NAME="E2EscaladeGrises Coverage Results" MODIFIED="1739332993040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 2" />
-    <SUITE FILE_PATH="coverage/ISC_ITM$codigos_de_colores.coverage" NAME="codigos de colores Coverage Results" MODIFIED="1739681936810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/6to/Graficación/actividades/actividad 4" />
   </component>
 </project>
