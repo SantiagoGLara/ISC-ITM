@@ -440,3 +440,13 @@ los mensajes que tiene este protocolo respecto de la version 4 son similares, pe
 como se usa?
 
 con el comando show cdp neighbors  o show cdp neighbors detail
+
+### direcciones link local:
+la version ipv6 de ip privada
+
+## formas de construir una ipv6 propia
+- stateful: te la asigna el servidor
+- statelist sin estado: a partir de rs y ra construye tu mismo tu ipv6
+- statelist con estado: ademas de la info de los mensajes, pide ayuda a un sv
+- 
+
