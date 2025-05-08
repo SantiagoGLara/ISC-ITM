@@ -433,8 +433,8 @@ todos los paquetes tienen un tiempo de vida, para evitar que queden circulando, 
 
 ### mensajes ICMPv6
 los mensajes que tiene este protocolo respecto de la version 4 son similares, pero tiene capaciddades aumentadas. incluye 4 mensajes nuevos como parte del protocolo de deteccion de vecinos (ND o NDP)
-- mensaje de solicitud de router
-- mensaje de anuncio de router
+- mensaje de solicitud de router **RS**  (tambien disponible ipv4)
+- mensaje de anuncio de router**RA**(tambien disponible ipv4)
 - mensaje de solicitud de vecino(NS)
 - mensaje de anuncio de vecino(NA)
 como se usa?
@@ -446,7 +446,7 @@ la version ipv6 de ip privada
 
 ## formas de construir una ipv6 propia
 - stateful: te la asigna el servidor
-- statelist sin estado: a partir de rs y ra construye tu mismo tu ipv6
+- statelist sin estado: a partir de rs y ra construye tu mismo tu ipv6(mandas un rs si el router no te ha mandado el ra, y el router manda el ra para que puedas construir tu ip)
 - statelist con estado: ademas de la info de los mensajes, pide ayuda a un sv
-- 
+- EUI64 
 
