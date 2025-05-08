@@ -450,3 +450,23 @@ la version ipv6 de ip privada
 - statelist con estado: ademas de la info de los mensajes, pide ayuda a un sv
 - EUI64 
 
+
+## capa de transporte
+capa donde se divide (y ensamblan) los paquetes para enviarlos. Si se trabaja con udp son segmentos, si se trabaja con datagramas.
+![alt text](/6to/Redes/imagenes/tcp-udp.png)
+
+cuando hablamos en capa 2, las direcciones son MAC, en capa 3 las direcciones son IP's, y en capa 4? en capa 4 son los puertos de comunicacion.
+
+Dependiendo de la pagina/servicio que ocupemos, nos alcanza un puerto. Por ejemplo, abres facebook y es un puerto, google y es otro. etc. del puerto 1 al 1024 ya están asignados a algo, de ahi para adelante se utilizan otros. El puerto de origen en nuestro caso es el que cambia.
+
+por ejemplo si nosotros nos compunicamos con google, con su ip. Nosotros nos comunicamos desde el puerto 1025 por ejemplo, y lo llevamos hasta la ip de google a su puerto 443, y el nos responde al 1025. Si nosotros hosteamos una web con https por ejemplo, los clientes se comunican a nuestro puerto 443.
+
+en la capa 4 tambien se lleva al cabo la multiplexacion, a través de un solo canal, independiente mente si es voz, video, audio, texto, etc. , hacia varios distintos segun el tipo
+
+- ftp: file transfer protocol
+- http: transferencia de hipertexto
+- smtp: correo electronico
+- dns: domain name service
+- tftp: transferencia de archivos trivial, para copias de seguridad de switches y routers.
+
+En la capa de transporte, independientemente del protocolo, se divide la informacion y se decide que se hará, si udp o tcp. En ambos, se añaden los encabezados, pero en udp se agregan `8 bytes` de encabezados, y  tcp `20 bytes` de encabezado, con lo que se deduce que udp es mas rapido
