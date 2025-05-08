@@ -276,6 +276,7 @@ hay 4 tipos de shutdown que nos da el sistema, diferenciadas con como trata las 
 - inmediate: no se aceptan nuevas conexiones, las conexiones actuales se cierran inmediatamente, cancelando las transacciones en curso con un rollback
 - transactional: mantiene abiertas unicamente las sesiones con transacciones en transcurso y espera a que terminen. Cuando un usuario ya no tiene transacciones activas le cierra las sesión.
 - abort
+## unidad 3
 ### TRANSACT SQL
 Lenguaje estructurado por lotes(coleccion de instrucciones)
 
@@ -305,4 +306,20 @@ estructuras
     -      ELSE...
     - END;
  
+## unidad 4
+## seguridad
+Para la seguridad lo primero que hay que saber cosas nos podrian pasar, ya sea en lo cotidiano o en fallos provocados. Ademas de poder hacer respaldo fisicos logicos, tanto en la nube, un lugar remoto,etc. Podemos tambien usar el mecanismo RAID(Random Array Independient Disc). Que ademas de poder evitar perdida de datos, disminuye la carga de trabajo en cada disco, lo que hace que individualmente cada disco falle menos, y puede aumentar confiabilidad y/o velocidad.
 
+es para utilizar multiples discos y configurarlos para tener diversas formas de repartir los datos(datos enternos, no paritdos). Inclusive hay configuraciones de raid, que implementan mecanismos de redundancia, para guardar el mismo dato en varios lugares, y si se borra en uno se repone. Normalmente, para el buen funcionamiento de este sistema es que ambos discos sean iguales
+
+configuraciones de raid:
+- raid 0: se guardan secuencialmente, si son 2 discos se reparten equitativamente los datos que van llegando
+- raid 1: se almacenan los mismos datos en todos los discos. Aumenta considerablemente la confiabilidad, en cuestion de velocidad si puede haber mejora en la lectura, pero en escritura/actualizacion aumenta considerablemente la lentitud de escritura, pues hay que hacerlo N veces
+-raid 01: Por ejemplo, que si tienes 4 discos, cada par de discos se relaciona entre si con una relacion de raid 0, y entre par y par hay un raid 1. Es decir, cada par se reparte los datos equitativamente, pero un par es espejo del otro raid.
+![raid01](/6to/Administracion%20Base%20de%20Datos/imagenes/raid%2001.jpg)
+- raid 10: este es lo opuesto, cada par de discos es una copia del otro entre si, pero se divide la informacion equitativamente entre copia y copia. es como un raid 0 pero el disco tiene una copia.
+![raid10](/6to/Administracion%20Base%20de%20Datos/imagenes/raid10.jpg)Este es mas utilizado que el raid01
+
+
+    hay otras raid que saltaremos por que no son tan usados
+- raid 5: si por ejemplo, tenemos 5 discos, se reparten equitativamente, y en una unidad distinta a donde se reparte un dato, se almancena la **PARIDAD** de ese dato, osea que si en el disco 1 se guarda A1, su paridad se puede guardar en el disco 0,2,3,4 o 5. Esta paridad nos dice si el dato está completo/correcto, y apartir de esta paridad podemos recuperar el dato.
