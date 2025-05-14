@@ -208,3 +208,53 @@ en ocaciones es necesario hacer que el programa no siga una secuencia lineal, si
 ### caotyra vasuca de cadenas:
 - MOVSB
 - MOVSW
+
+
+## arduino
+PINB
+
+DDRB: 8 bits, registra en cada bit, cada puerto si va a fungir como entrada o salida (1 salida, 0 entrada)
+
+PORTB: 8 bits, registra si el puerto está encendido o apagado. en caso de tener el DDRB marcado un bit como entrada, ese mismo Bit lo marcaremos como un 1, para usar la resistencia de pullUp, que permite diferenciar cuando la entrada haga el cambio de voltaje
+
+pinB: muestra si tenemos algo conectado. si la resistencia de puppUp está activada(es decir, dado bit marcado como entrada), esperaremos ver en PinB un 1 si no tenemos conectados nada, osea que la entrada no está pasando, el boton sin presionar. Si el boton `se presiona`, osea que ya manda voltaje, en pinB se verá un 0    
+
+primero vemos en ddrb si es entrada o salida, despues en portb, si es entrada vemos si tiene la resistencia de pullup está encendida o apagada, y si es salida si le mandamos o no voltaje
+
+```ASM
+.include "m328pbdef.inc"
+
+config: LDI R16,0B00011100;
+	   OUT DDRB,R16 ;CONFIGURA CUALES BITS SON IN Y CUALES OUT (1 IN, 2 OUT)
+	   SBI PORTB,0 ;BOTON0 1, set bit in out. Pone un 1 en el bit 0 del puerto B
+	   SBI PORTB,1 ;BOTON0 2, pone un 1 en el bit 1 del puertoB. osea que marcamos del puerto b los bits 
+				   ;de entrada
+
+BOTON1: LDI R21,0b00000001
+		NOP ;retardillo		
+		NOP
+		IN R20,PINB ;in port, lo que está en el puerto lo cargamos al registro
+		AND R21,R20  ;00000001, me indica si el boton está presionado o no, en este caso el bit 0 si.
+		CPI R21, 0X01 ;compara el registro 21 con un 1. 0x= hexa
+		BRNE LED_ON ;branch if not equals, osea si la comparacion no es igual. que sea distinto de 1
+					;quiere decir que no está presionado
+BOTON2: LDI R21, 0b00000010  ;0b00000010
+		 IN R20, PINB ;0B00000011
+		 AND R21, R20 ;0b00000010
+		 CPI R21,0b00000010  
+		 BREQ BOTON1
+		 BRNE LED_OFF
+LED_ON: SBI PORTB,3
+	   SBI PORTB,4
+	   SBI PORTB,2
+	   JMP BOTON1
+
+LED_OFF: CBI PORTB,3
+		 CBI PORTB,4
+		 CBI PORTB,2
+		 JMP BOTON1
+start:
+    inc r16
+    rjmp start
+
+```

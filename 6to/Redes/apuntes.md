@@ -469,4 +469,29 @@ en la capa 4 tambien se lleva al cabo la multiplexacion, a través de un solo ca
 - dns: domain name service
 - tftp: transferencia de archivos trivial, para copias de seguridad de switches y routers.
 
+### TCP Y UDP
 En la capa de transporte, independientemente del protocolo, se divide la informacion y se decide que se hará, si udp o tcp. En ambos, se añaden los encabezados, pero en udp se agregan `8 bytes` de encabezados, y  tcp `20 bytes` de encabezado, con lo que se deduce que udp es mas rapido
+
+tcp es un protocolo enfocado a la comunicacion, es decir que antes de mandar los datos (segmentos) primero establece una conexion, se fija que si haya comunicacion con el destino antes de mandarlo, en cambio udp simplemente lo manda, por eso se le dice protocolo sin estado 
+#### CARACTERISTICAS TCP
+- negocía y establece una sesion permanente(o sesión) entre los dispositivos  origen-destino  antes de reenviar trafico
+- garantiza entrega confiable
+- proporciona entrega en el mismo pedido, tcp al enumerarlos y verificar, garantiza que todo llegue a la vez
+- control de flujo. los host tienen recursos ilimitados. Cuando tcp advierte que están sobrecargados, puede solicitar que quien emita los paquetes reduzca el flujo de datos. Por ejemplo si está emitiendo paquetes de 1500Bytes, pero hay sobrecarga, tcp negocia que sean paquetes mas pequeños
+
+A la comunicacion que hace tcp, la confirmacion. Primero envia un mensajd e tipo SYN del orignen al destino, despues el destino envia otro syn y un ack, lo recibe el origen y a partir de a hi ya se establece la comunicacion.
+
+para esto se aucerdan 2 metricas.`tamaño de ventana` y `tamaño maximo de segmento` el tamaño de ventana es el maximo que se puede intercambiar, y el tamaño maximo de segmento es el tamaño real con el que se está dando el intercambio en dada instancia, es decir que las comunicaciones segun parametros tienen un maximo, pero no necesariamente(y de hecho la mayoria de veces no es asi) se usará ese limite, siempre se hacen los maximos de segmento segun la necesidad. 
+#### usos TCP
+- protocolo HTTP
+- FTP 
+- SSH
+#### UDP
+- los datagramas se construyen en el orden enviado
+- no se reenvian los datagramas
+- no retranmision 
+- encabezados de 8 bytes
+#### usos UDP
+- aplicaciones de video y multimedia en vivo:
+- solicitudes simples de solicitud y respuestas
+- aplicaciones que manejan seguridad por si mismas
