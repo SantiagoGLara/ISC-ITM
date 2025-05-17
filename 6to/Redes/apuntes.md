@@ -495,3 +495,9 @@ para esto se aucerdan 2 metricas.`tamaño de ventana` y `tamaño maximo de segme
 - aplicaciones de video y multimedia en vivo:
 - solicitudes simples de solicitud y respuestas
 - aplicaciones que manejan seguridad por si mismas
+
+### capa de presentacion y sesion
+#### capa de presentacion
+como se muestra la informacion, imagenes, texto, animaciones,etc.
+### capa de sesion
+las funciones crean sesiones para mantener dialogos entre aplicaciones de origen y destino
