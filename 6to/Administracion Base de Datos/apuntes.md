@@ -323,3 +323,10 @@ configuraciones de raid:
 
     hay otras raid que saltaremos por que no son tan usados
 - raid 5: si por ejemplo, tenemos 5 discos, se reparten equitativamente, y en una unidad distinta a donde se reparte un dato, se almancena la **PARIDAD** de ese dato, osea que si en el disco 1 se guarda A1, su paridad se puede guardar en el disco 0,2,3,4 o 5. Esta paridad nos dice si el dato está completo/correcto, y apartir de esta paridad podemos recuperar el dato.
+
+## monitoreo de logs
+a través de los logs, podemos verificar lo que está pasando en la base de datos de primera mano. Los logs deben de contrar con observabilidad, esto es lo que nos permite verlos y deducir lo que está pasando.
+
+Recordando que los logs son informacion generada por el sistema a medida que van realizandose acciones, muestran informacion sobre eventos que ocurren durante la ejecucion de la aplicacion. El monitoreo de logs nos permite identificar los eventos que ocurren en nuestra bdd y nos dicen mucho del estado del sistema. Una cosa que puede pasar con los logs es que podemos tener distintas partes en nuestro sistema que generen logs, entonces necesitamos tener herramientas que nos ayuden a centralizar los logs, para facilitarnos el trabajo. Cosas como elastic o el machine learnig son clave para esto
+
+En particular, elastic es puntero en este ambito, nos brinda muchisimas caracteristicas de monitoreo, ademas de ser altamente escalable, de sencillo despliegue, confiable, integracion desde herramientas de los equipos, costos bajos,etc.

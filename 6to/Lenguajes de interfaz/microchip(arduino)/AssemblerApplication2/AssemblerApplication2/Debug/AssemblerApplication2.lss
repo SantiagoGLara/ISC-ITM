@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\reliv\ISC\ISC-ITM\6to\Lenguajes de interfaz\microchip(arduino)\AssemblerApplication2\AssemblerApplication2\main.asm Mon May 19 20:46:41 2025
+AVRASM ver. 2.2.8  C:\Users\reliv\ISC\ISC-ITM\6to\Lenguajes de interfaz\microchip(arduino)\AssemblerApplication2\AssemblerApplication2\main.asm Tue May 20 10:36:01 2025
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328PBdef.inc'
 C:\Users\reliv\ISC\ISC-ITM\6to\Lenguajes de interfaz\microchip(arduino)\AssemblerApplication2\AssemblerApplication2\main.asm(1): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328pbdef.inc'
@@ -1580,12 +1580,12 @@ C:\Users\reliv\ISC\ISC-ITM\6to\Lenguajes de interfaz\microchip(arduino)\Assemble
                                  
                                  
 000000 e10c                      config: LDI R16,0B00011100;
-000001 b904                      	   OUT DDRB,R16 ;CONFIGURA CUALES BITS SON IN Y CUALES OUT (1 IN, 2 OUT)
+000001 b904                      	   OUT DDRB,R16 ;CONFIGURA CUALES BITS SON IN Y CUALES OUT (1 out, 0 in	)
 000002 9a28                      	   SBI PORTB,0 ;BOTON0 1, set bit in out. Pone un 1 en el bit 0 del puerto B
 000003 9a29                      	   SBI PORTB,1 ;BOTON0 2, pone un 1 en el bit 1 del puertoB. osea que marcamos del puerto b los bits 
                                  				   ;de entrada
                                  
-000004 e051                      BOTON1: LDI R21,0b00000001
+000004 e051                      BOTON1: LDI R21,0b00000001 ;para cuando el boton 1 esté presionado
 000005 0000                      		NOP ;retardillo		
 000006 0000                      		NOP
 000007 b143                      		IN R20,PINB ;in port, lo que está en el puerto lo cargamos al registro

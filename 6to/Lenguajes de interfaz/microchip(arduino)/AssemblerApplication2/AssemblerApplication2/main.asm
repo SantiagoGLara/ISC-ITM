@@ -1,12 +1,12 @@
 .include "m328pbdef.inc"
 
 config: LDI R16,0B00011100;
-	   OUT DDRB,R16 ;CONFIGURA CUALES BITS SON IN Y CUALES OUT (1 IN, 2 OUT)
+	   OUT DDRB,R16 ;CONFIGURA CUALES BITS SON IN Y CUALES OUT (1 out, 0 in	)
 	   SBI PORTB,0 ;BOTON0 1, set bit in out. Pone un 1 en el bit 0 del puerto B
 	   SBI PORTB,1 ;BOTON0 2, pone un 1 en el bit 1 del puertoB. osea que marcamos del puerto b los bits 
 				   ;de entrada
 
-BOTON1: LDI R21,0b00000001
+BOTON1: LDI R21,0b00000001 ;para cuando el boton 1 esté presionado
 		NOP ;retardillo		
 		NOP
 		IN R20,PINB ;in port, lo que está en el puerto lo cargamos al registro
