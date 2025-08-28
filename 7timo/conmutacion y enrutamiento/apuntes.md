@@ -1,0 +1,104 @@
+# Conmutacion y enrutamiento en redes de datos
+
+## configuracion basica (puertos switch?)
+
+Para armar una red se necesita minimo un switch y un dispositivo de extremp(como pc). Si pongo 20 switches interconectados estos podrian formar parte de la misma red, mientras tengan direccionamientos de la misma red estos dispositivos podrán comunicarse. Las VLan sirven para dividir una red en varias, que aunque fisicamente responden al mismo dispositvo son diferentes redes.
+
+si tenemos 2 vlan, los dispositivos de extremo de la vlan1 no se pueden conectar con los de la vlan2.
+```
+conf t
+vlan99
+do sh vlan
+name admon
+ip address 172.16.99.1 255.255.255.0
+no shut(comprobar)
+
+//ahora configuramos la interfaz deseada como de administracion el modo de acceso
+interface f0/23
+switchport mode acces
+switchport acces vlan99
+```
+
+el proposito de esta vlan99 es tener una vlan para administrar el resto, aunque en realidad puede ser cualquiera entre la vlan2 y vlan1001.
+```
+show interface brief
+do show runnin config
+```
+ahora, si queremos conectarnos a la vlan, nos vamos al switch donde la configuramos, al puerto 23 que es el que pusimos en **modo de acceso**(para una sola vlan, a diferencia de las **troncales** ) 
+
+tenemos que preparar lineas vty, lineas de consola y una contraseña para el modo privilegiado
+
+```
+//en lugar de enable password, para que vaya cifrado
+enable secret class
+line vty7
+//para a esa linea ponerle limite de 4 usuarios por linea vty simultaneos, pues al ser de configuracion no necesita ni es conveniente que haya muchos
+line vty 0 4 
+password cisco
+```
+
+ahora si accedemos desde el putty por telnet, nos pide la contraseña
+
+resumidamente, se necesita que: 
+- la vlan que se designará de administración tenga ip
+- en todas los switches de la topoligia tendremos que añadir esta misma vlan(con diferente ip) para poder administrar cada uno de ellos dependiendo la IP
+
+## comunicacion de puertos de un switch
+### duplex 
+es comunicacion en ambos sentidos
+#### duplex completo
+envio y recepcion simulteaneo de datos
+![full duplex](Fdup.png)
+
+#### semiduplex
+envio o recepcion, turnado
+![semiduplex](HDup.png)
+para configurarlos puertos del switch de esta manera son los siguientes comandos
+![alt text](image.png)
+### Modo MDIX Automatico
+los switches transmiten a traves del par conectado al pin 3 y 6 del cable utp, del otro lado 1 y 2 y ahi ya se pueden comunicar. Esto antes si era util, hoy dia en defecto es automatico y así sirve 
+```
+mdix auto
+```
+### problemas capa de acceso a la red
+con show interfaces podemos ver los problemas comunes de medios o **ip interface brief**, este ultimo nos ayuda a ver si están levantadas o no. De hecho salen 2 columnas, la primera nos muestra si lo fisico(capa fisica) está levantado y la segunda si el protocolo(capa de enlace de datos) está levantado, como una guia mas precisa. Ambos obviamente son obligatorios para la configuracion
+
+
+comando para muchos datos
+```
+show interfaces fastEthernet 0/18
+```
+aqui ademas de ver a que vlan pertenecen, podemos ver si existen coliciones. Los paquetes son de 1512bites, cuando existen coliciones(2 paquetes enviados de distintos lados chocan) pueden perderse, si sobreviven mas de 66bites pueden ser parcialmente legibles, si son menos se consideran **RUNTS**, algo inservible
+
+CRC es un protocolo para verificar la integridad de la informacion
+
+```
+FastEthernet0/18 is up, line protocol is up (connected)
+  Hardware is Fast Ethernet, address is 0025.83e6.9092 (bia 0025.83e6.9092)
+  MTU 1500 bytes, BW 100000 Kbit/sec, DLY 100 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full-duplex, 100Mb/s, media type is 10/100BaseTX
+  input flow-control is off, output flow-control is unsupported
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output 00:00:01, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     2295197 packets input, 305539992 bytes, 0 no buffer
+     Received 1925500 broadcasts (74 multicasts)
+     0 runts, 0 giants, 0 throttles
+     3 input errors, 3 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 74 multicast, 0 pause input
+     0 input packets with dribble condition detected
+     3594664 packets output, 436549843 bytes, 0 underruns
+     8 output errors, 0 collisions, 10 interface resets
+     0 unknown protocol drops
+     0 babbles, 235 late collision, 0 deferred
+```
+### resolucion de problemas de la capa de acceso a la red
+![alt text](image-1.png)
