@@ -1,4 +1,4 @@
-.include "m328pbdef.inc"
+.include "m328pdef.inc"
 
 config: LDI R16,0B00011100;
 	   OUT DDRB,R16 ;CONFIGURA CUALES BITS SON IN Y CUALES OUT (1 IN, 2 OUT)
@@ -14,7 +14,7 @@ BOTON1: LDI R21,0b00000001
 		CPI R21, 0X01 ;compara el registro 21 con un 1. 0x= hexa
 		BRNE LED_ON ;branch if not equals, osea si la comparacion no es igual. que sea distinto de 1
 					;quiere decir que no está presionado
-BOTON 2: LDI R21, 0b00000010  ;0b00000010
+BOTON_2: LDI R21, 0b00000010  ;0b00000010
 		 IN R20, PINB ;0B00000011
 		 AND R21, R20 ;0b00000010
 		 CPI 21,0b00000010  
@@ -29,3 +29,7 @@ LED_OFF: CBI PORTB,3
 		 CBI PORTB,4
 		 CBI PORTB,2
 		 JMP BOTON1
+
+start:
+    inc r16
+    rjmp start

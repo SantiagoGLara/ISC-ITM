@@ -330,3 +330,8 @@ a través de los logs, podemos verificar lo que está pasando en la base de dato
 Recordando que los logs son informacion generada por el sistema a medida que van realizandose acciones, muestran informacion sobre eventos que ocurren durante la ejecucion de la aplicacion. El monitoreo de logs nos permite identificar los eventos que ocurren en nuestra bdd y nos dicen mucho del estado del sistema. Una cosa que puede pasar con los logs es que podemos tener distintas partes en nuestro sistema que generen logs, entonces necesitamos tener herramientas que nos ayuden a centralizar los logs, para facilitarnos el trabajo. Cosas como elastic o el machine learnig son clave para esto
 
 En particular, elastic es puntero en este ambito, nos brinda muchisimas caracteristicas de monitoreo, ademas de ser altamente escalable, de sencillo despliegue, confiable, integracion desde herramientas de los equipos, costos bajos,etc.
+
+## alertas
+son parecidas a los triggers, segun dado evento se activan y pueden hacer otras cosas. Hay distintos tipos, como asociadas a trabajos(conjunto de operaciones automatizadas ejecutadas por el gestor). 
+
+Se pueden definir alertas tanto para cuando ocurre un error, pero tambien para cuando se cumplen ciertas metricas arbitrarias, por ejemplo, si un usuario hace demasiados intentos de login, cuando hay muchos tipos de solicitudes que pudieran parecer actividad sospechosa.
