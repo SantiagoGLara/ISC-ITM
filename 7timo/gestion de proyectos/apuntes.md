@@ -7,7 +7,6 @@ Desde un punto de vista de la gestion del software, las etapas se pueden dividir
         - generales
         - especificos
         - alcances
-    - 
 esta etapa resulta en la carta de proyecto, con lo que inicia y se da el kickoff
 
 2. Planificación
@@ -42,4 +41,10 @@ esto nos permite definir entregables, para lo que muchas veces nos sirve la meto
             - capacitaciones
             - etc
     - post mortem: chequeo de lo que salió mal y el porque
+
+### carta del proyecto
+circunscribe los lineamientos del proyecto
+consta de lo ya dicho, objetivos(generales y especificos), alcances(sirve para definir posibles MVP, hitos y entregables), partes interesadas(por ejemplo ventas, produccion, sistemas/devops) y Riesgos.
+
+Esto es minimamente lo que debe contener la carta del proyecto. Esta carta va firmada por las partes interesadas, asi como la firma de quien autoriza(directivos correspondientes) y el project manager
 

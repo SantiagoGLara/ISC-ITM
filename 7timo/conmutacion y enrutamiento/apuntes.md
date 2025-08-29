@@ -102,3 +102,41 @@ FastEthernet0/18 is up, line protocol is up (connected)
 ```
 ### resolucion de problemas de la capa de acceso a la red
 ![alt text](image-1.png)
+
+### config ssh
+
+los usuarios ssh se guardan localmente en el dispositivo que lo configuremos
+
+```
+S1(config)# ip domain-name cisco.com
+//tamaño encriptacion
+S1(config)# crypto key generate rsa
+How many bits in the modulus [512]: 1024
+S1(config)# username admin secret ccna
+S1(config)# line vty 0 15
+S1(config-line)# transport input ssh
+S1(config-line)# login local
+S1(config-line)# salida
+```
+
+### interfaces loopback
+existe en todos los routers, es una interfaz logica(no fisica). Su utilidad es comprobar las 4 fases del protocolo de comunicacion tcp/ip
+
+## reenvio de tramas
+### switching en la red
+si por ejemplo, tenemos 2 switches interconectados, un switch en su tabla de macs registra todas las que tiene conectadas el otro, de modo que en su mismo puerto tiene varias macs asociadas
+
+### El método Aprender y Reenviar del Switch
+
+1. Aprender - Examinando la dirección Origen MAC
+   - Se revisa cada trama que ingresa a un switch para obtener información nueva. Esto se realiza examinando la dirección MAC de origen de la trama y el número de puerto por el que ingresó al switch.
+
+   - Si la dirección MAC de origen no existe en la tabla de direcciones MAC, la dirección MAC y el número de puerto entrante son agregados a la tabla.
+   - Si la dirección MAC de origen existe, el switch actualiza el temporizador para esa entrada. De manera predeterminada, la mayoría de los switches Ethernet guardan una entrada en la tabla durante cinco minutos. Si la dirección MAC de origen existe en la tabla, pero en un puerto diferente, el switch la trata como una entrada nueva. La entrada se reemplaza con la misma dirección MAC, pero con el número de puerto más actual.
+2. Reenviar - Examinadno la dirección destino MAC
+   - Si la dirección MAC de destino es una dirección de unidifusión, el switch busca una coincidencia entre la dirección MAC de destino de la trama y una entrada de la tabla de direcciones MAC:
+
+      - Si la dirección MAC de destino está en la tabla, reenviará la trama por el puerto especificado.
+      - Si la dirección MAC de destino no está en la tabla, el switch reenviará la trama por todos los puertos, excepto por el de entrada. Esto se conoce como unidifusión desconocida. Si la dirección MAC de destino es de difusión o de multidifusión, la trama también se envía por todos los puertos, excepto por el de entrada.
+
+**estudiar CRC** 
