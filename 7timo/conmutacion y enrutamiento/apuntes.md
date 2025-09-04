@@ -184,7 +184,7 @@ y si queremos comunicarnos entre switches, a ambos switches se les deben de conf
 
 si entre switches hay que comunicar mas de una vlan, se puede o poner otro cable interconecatandolos y los puertos de este cable ponerlos en esta nueva vlan, o podemos hacer un solo enlace que comunique a ambas con el **modo troncal** en vez de modo de acceso. Preferentemente los 2 puertos de interconexion deben de estar en modo troncal, pero puede estar uno troncal y otro dinamico. Si estan en modos acceso-troncal, aunque el paquete puede llegar no es capaz de entenderlo.
 
-Lo recomedndado es hacerlo con el modo troncal siempre, pues los puertos en la vida laboral son limitados
+Lo recomedndado es hacerlo con el modo troncal siempre, pues los puertos en la vida laboral son limitados, aunque  en dispositivos finales es mejor modo de acceso
 
 Si se mandan mensajes de broadcast con vlans, se transmiten solo con los de la misma vlan. A eso se le llama ajuste de difusion
 
@@ -199,8 +199,8 @@ Entre los datos importantes que hay que recordar acerca de la VLAN 1 se incluyen
 - De manera predeterminada, la VLAN de administración es la VLAN 1.
 - No es posible eliminar ni cambiar el nombre de VLAN 1.
 
-**vlan de datos**
+**vlan de datos** Las VLAN de datos son VLAN configuradas para separar el tráfico generado por el usuario. Las VLAN de datos se usan para dividir la red en grupos de usuarios o dispositivos. Una red moderna tendría muchas VLAN de datos en función de los requisitos organizativos. Tenga en cuenta que no se debe permitir el tráfico de administración de voz y red en las VLAN de datos.
 
-**vlan nativa** una vlan que configuramos para que en las tramas no se etiqueten con el numero de vlan que van, para evitar ataques a la red como el de doble etiqueta, se recomienda que esta sea unicamente la vlan de administracion
+**vlan nativa** una vlan que configuramos para que en las tramas no se etiqueten con el numero de vlan que van, para evitar ataques a la red como el de doble etiqueta, se recomienda que esta sea unicamente la vlan de administracion. Entre los puertos del switch troncales, pedirle que trate a la de admin como administrativa
 
 **vlan de administracion** Una VLAN de administración es una VLAN de datos configurada específicamente para el tráfico de administración de red, incluyendo SSH, Telnet, HTTPS, HHTP y SNMP. De forma predeterminada, la VLAN 1 se configura como la VLAN de administración en un conmutador de capa 2. 

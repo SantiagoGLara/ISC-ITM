@@ -29,3 +29,17 @@ formal
 
 ## lenguajes de programacion
 se dividen en lenguaje maquina, bajo nivel y alto nivel
+
+## compilador
+
+### estructura y fases de un compilador
+![compilador](image.png)
+
+### estructura de un traductor
+![traductor](image-1.png)
+
+el traductor está inmerso en el proceso de compilacion
+
+### interprete
+se ejecuta en el analizador lexico
+
