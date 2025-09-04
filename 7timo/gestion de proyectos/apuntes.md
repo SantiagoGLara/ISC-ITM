@@ -48,3 +48,37 @@ consta de lo ya dicho, objetivos(generales y especificos), alcances(sirve para d
 
 Esto es minimamente lo que debe contener la carta del proyecto. Esta carta va firmada por las partes interesadas, asi como la firma de quien autoriza(directivos correspondientes) y el project manager
 
+## areas importantes a dominar como gestor
+### 1. gestion de integracion
+aprovechar herramientas y planeacion para una correcta cohesion de los que desarrollan el proyecto
+
+### 2. gestión de alcances:(cartas proyecto)
+delimitar correctamente lo que hace y no hace el proyecto, con un cronograma y entregables/mvp alcanzables
+
+### 3. tiempos
+planificar, y ajustar o reajustar de acuerdo a nuevos requerimientos
+
+### 4. costos
+estimacion, presupuestos, el considerar pagos de servicios
+
+### 5. calidad
+
+### 6. Recursos humanos
+
+### 7. comunicacion
+establecer canales de comunicacion oficiales, tanto para comunicados como para la integracion.
+### 8. riesgos
+
+### 9. adquisicion
+los servicios necesarios para el desarrollo
+
+### 10. Partes interesadas
+con reuniones de avances, de la mano con el punto 7
+
+## 12 principios para la gestion de un proyecto de software
+
+a) enfocarse en el valor, el beneficio que aporta a la empresa
+
+b) conducta liderazgo
+
+

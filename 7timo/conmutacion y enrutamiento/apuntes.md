@@ -1,5 +1,8 @@
 # Conmutacion y enrutamiento en redes de datos
 
+# recordar
+entre switches se conectam con cables de comunicacion cruzada
+
 ## configuracion basica (puertos switch?)
 
 Para armar una red se necesita minimo un switch y un dispositivo de extremp(como pc). Si pongo 20 switches interconectados estos podrian formar parte de la misma red, mientras tengan direccionamientos de la misma red estos dispositivos podrán comunicarse. Las VLan sirven para dividir una red en varias, que aunque fisicamente responden al mismo dispositvo son diferentes redes.
@@ -140,3 +143,64 @@ si por ejemplo, tenemos 2 switches interconectados, un switch en su tabla de mac
       - Si la dirección MAC de destino no está en la tabla, el switch reenviará la trama por todos los puertos, excepto por el de entrada. Esto se conoce como unidifusión desconocida. Si la dirección MAC de destino es de difusión o de multidifusión, la trama también se envía por todos los puertos, excepto por el de entrada.
 
 **estudiar CRC** 
+
+**estudiar del 2.5 al 3.1.2**
+## VLAN
+las vlan entre la 1 y la 1005 son vlans de rango normal, despues de eso hasta el 4093 son de rango ampliado. La sugerencia es no usar entre las 1002 y la 1005, pues son diseñadas para tecnologias viejas.
+
+configurar una vlan
+```
+conf t
+vlan99       //numero que le querramos poner
+do sh vlan
+name almacen
+ip address 172.16.99.1 255.255.255.0
+
+
+//ahora configuramos las interfaces que querramos que pertenezcan a esa vlan
+
+interface range f0/2-3
+switchport mode acces  //para que pertenezca a una sola vlan
+
+
+//verificamos
+
+do sh interface fa0/1 switchport
+do sh interface fa0/2 switchport
+
+//y lo que configuramos es el administrative mode, que en el 1 viene por defecto y en el 2-3 viene como estatico
+
+interface f0/2
+switchport access vlan23
+interface f0/3
+switchport access vlan23
+
+//estos son para cambiar las interfaces de vlan
+```
+
+la recomendacion es no dejar interfaces en la vlan default, aunque no se vayan a ocupar. La podemos dejar en una vlan extra llamada vlan de **AGUJERO NEGRO**
+
+y si queremos comunicarnos entre switches, a ambos switches se les deben de configurar las vlan, caso contrario solo se pueden comunicar con los puertos de la vlan default y conectar la pc del switch2 a un puerto que pertenezca a la 23, y entre switches estar conectados a puertos/interfaces de la vlan 23
+
+si entre switches hay que comunicar mas de una vlan, se puede o poner otro cable interconecatandolos y los puertos de este cable ponerlos en esta nueva vlan, o podemos hacer un solo enlace que comunique a ambas con el **modo troncal** en vez de modo de acceso. Preferentemente los 2 puertos de interconexion deben de estar en modo troncal, pero puede estar uno troncal y otro dinamico. Si estan en modos acceso-troncal, aunque el paquete puede llegar no es capaz de entenderlo.
+
+Lo recomedndado es hacerlo con el modo troncal siempre, pues los puertos en la vida laboral son limitados
+
+Si se mandan mensajes de broadcast con vlans, se transmiten solo con los de la misma vlan. A eso se le llama ajuste de difusion
+
+![ventajas vlan](image-2.png)
+### tipos de vlan
+
+**vlan 1 "default"**, por defecto tiene todos los puertos
+Entre los datos importantes que hay que recordar acerca de la VLAN 1 se incluyen los siguientes:
+
+- Todos los puertos se asignan a la VLAN 1 de manera predeterminada.
+- De manera predeterminada, la VLAN nativa es la VLAN 1.
+- De manera predeterminada, la VLAN de administración es la VLAN 1.
+- No es posible eliminar ni cambiar el nombre de VLAN 1.
+
+**vlan de datos**
+
+**vlan nativa** una vlan que configuramos para que en las tramas no se etiqueten con el numero de vlan que van, para evitar ataques a la red como el de doble etiqueta, se recomienda que esta sea unicamente la vlan de administracion
+
+**vlan de administracion** Una VLAN de administración es una VLAN de datos configurada específicamente para el tráfico de administración de red, incluyendo SSH, Telnet, HTTPS, HHTP y SNMP. De forma predeterminada, la VLAN 1 se configura como la VLAN de administración en un conmutador de capa 2. 
