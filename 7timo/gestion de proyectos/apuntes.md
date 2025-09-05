@@ -81,4 +81,12 @@ a) enfocarse en el valor, el beneficio que aporta a la empresa
 
 b) conducta liderazgo
 
+c) crear un entorno de colaboracion
+
+d) adaptarse con base al contexto: por ejemplo la pandemia, adaptar el metodo de trabajo por necesidad a algo en linea
+
+e) adoptar la adaptabilidad a resilencia
+
+f) involucrarse eficazmente con los interesados
+
 
