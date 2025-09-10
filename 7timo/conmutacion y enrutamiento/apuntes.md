@@ -59,7 +59,7 @@ envio o recepcion, turnado
 para configurarlos puertos del switch de esta manera son los siguientes comandos
 ![alt text](image.png)
 ### Modo MDIX Automatico
-los switches transmiten a traves del par conectado al pin 3 y 6 del cable utp, del otro lado 1 y 2 y ahi ya se pueden comunicar. Esto antes si era util, hoy dia en defecto es automatico y así sirve 
+los switches transmiten a traves del par conectado al pin 3 y 6 del cable utp, del otro lado 1 y 2 y ahi ya se pueden comunicar. Esto antes si era util, hoy dia en defecto es automatico y así sirve. Tambien existe el dinamico deseable, pero el DINAMICO AUTOMATICO es el POR DEFECTO y asi sirve
 ```
 mdix auto
 ```
@@ -204,3 +204,25 @@ Entre los datos importantes que hay que recordar acerca de la VLAN 1 se incluyen
 **vlan nativa** una vlan que configuramos para que en las tramas no se etiqueten con el numero de vlan que van, para evitar ataques a la red como el de doble etiqueta, se recomienda que esta sea unicamente la vlan de administracion. Entre los puertos del switch troncales, pedirle que trate a la de admin como administrativa
 
 **vlan de administracion** Una VLAN de administración es una VLAN de datos configurada específicamente para el tráfico de administración de red, incluyendo SSH, Telnet, HTTPS, HHTP y SNMP. De forma predeterminada, la VLAN 1 se configura como la VLAN de administración en un conmutador de capa 2. 
+
+#### configurar puertos ocmo troncales
+![troncales](image-3.png)
+
+de los 16 bits de una trama(?)m 12 son para identificar la vlan y los ultimos 4, el primero es para un protocolo que ya no existe
+
+
+ver caracteristicas un puerto
+
+```
+sh interface f0/0 switchport
+```
+
+sh int trunk native vlan '#vlan'
+
+```
+S1(config)# interface fastEthernet 0/1
+S1(config-if)# switchport mode trunk
+S1(config-if)# switchport trunk native vlan 99
+S1(config-if)# switchport trunk allowed vlan 10,20,30,99 //añadir a lista de trafico permitido
+S1(config-if)# end
+```
