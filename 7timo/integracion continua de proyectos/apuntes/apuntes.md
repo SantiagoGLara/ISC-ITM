@@ -16,3 +16,21 @@ php artisan
 ciclo de vida laravel
 
 peticion HTTP>index.php > framework > middleware(precarga) > rutas > middleware(especifico) > controlador > respuesta
+
+
+### npm para instalar tailwind
+
+despues de instalado nodeJS, ponemos esto en la terminal del proyecto
+``` 
+npm install -D tailwindcss@3 postcss autoprefixer
+npx tailwindcss init -p(crea archivos necesarios)
+
+```
+luego modificamos el tailwind.css, con el codigo siguiente 
+```
+```
+pasos intermedios donde me disocie
+
+si da error el sv npm install run dev
+
+con .blade.php es para codigo que repetiremoas

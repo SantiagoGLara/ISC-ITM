@@ -226,3 +226,35 @@ S1(config-if)# switchport trunk native vlan 99
 S1(config-if)# switchport trunk allowed vlan 10,20,30,99 //añadir a lista de trafico permitido
 S1(config-if)# end
 ```
+### VLAN de voz, datos
+un telefono ip se compone de 2 partes, tiene un miniswitch para no desperdiciar puertos, siendo un intermedio de la red y un dispositivo final. Por lo que su puerto a pesar de que pudiera ser de una vlan de acceso, se le puede configurar tambien la vlan de voz y pasa las 2 vlans, etiquetando solo el de voz.
+
+### protocolo 802.1q
+sirve para etiquetar las tramas en los troncales 
+
+
+### inter vlan-routing
+#### protocolo ip
+usa la mascara para saber los bits que deben de coincidir y a partir de la tabla de ruteo con las ips que tiene conectadas 
+
+##### protocolos enrutamiento capa 3
+rip, ospf
+
+# los protocolos que envian mensajes en difusion/broadcast son ARP y DHCP
+
+# unidad 2
+## protocolo STP
+normalmente nosotros dejamos redundancia de caminos en nuestros switches, esto en capa 2 nos puede producir errores, como bucles infinitos. Aunque fisicamente la redundancia nos otorga beneficios, logicamente no. Por eso entra STP. Los problemas que evitamos son que se repitan las tramas, o la **TORMENTA DE DIFUSION**
+### PROTOCOLO ARBOL EXTENSION
+el protocolo arbol de expansion (stp), este bloquea uno de los caminos para el reenvio de tramas, aunque sigue funcionando logicamente no se usa. Si el enlace no bloqueado deja de trabajar, se recalcula el STP
+![topologia sin bucles](image-4.png)
+los puertos bloqueados pueden unicamente mandar y recibir informacion del protocolo STP, cualquier otro protocolo tiene que viajar por los puertos disponible. Los 'costos' se calculan segun costos, como los cables segun rapidez(gigabit vs fast), saltos,etc.
+
+el Root bridge es el que dirige el trafico general, por lo tanto mantiene siempre todos sus puertos conectados a otros switches activo. Este puente se elige segun el que tenga la prioridad mas baja, y si son iguales se desempata por la MAC mas baja. Siempre querremos que esté conectado al router.
+
+Existe una tabla que pondera el coste de mover un paquete, basandose en la velocidad de transferencia del tipo de cable. La ruta que tome menos en mover los datos sera la elegida por STP y la otra se inhabilita.
+![coste STP velocidad](image-6.png)
+
+Siempre se designa un puerto en cada switches que conecta con el otro switch que lleva de manera mas rapida al root bridge, el **puerto raiz**, y el resto quedan como designados
+![puertos designados/raiz](image-5.png)
+en este caso el f0/1 del S3 es el raiz, y el f0/1 del S2 es el puerto raiz. En la interconexion entre el s2 y el s3 quedan como designados, pero si fuera el caso seguiria habiendo problemas de bucles, por lo que uno(el de la MAC mas baja) queda como designado y el otro como **no designado**.

@@ -90,3 +90,6 @@ e) adoptar la adaptabilidad a resilencia
 f) involucrarse eficazmente con los interesados
 
 
+
+resultado: producto que entregamos
+valores: la suma de los beneficios del resultado, como eficiencia, dinero,etc.
