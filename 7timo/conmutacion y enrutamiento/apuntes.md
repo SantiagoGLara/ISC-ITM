@@ -258,3 +258,13 @@ Existe una tabla que pondera el coste de mover un paquete, basandose en la veloc
 Siempre se designa un puerto en cada switches que conecta con el otro switch que lleva de manera mas rapida al root bridge, el **puerto raiz**, y el resto quedan como designados
 ![puertos designados/raiz](image-5.png)
 en este caso el f0/1 del S3 es el raiz, y el f0/1 del S2 es el puerto raiz. En la interconexion entre el s2 y el s3 quedan como designados, pero si fuera el caso seguiria habiendo problemas de bucles, por lo que uno(el de la MAC mas baja) queda como designado y el otro como **no designado**.
+
+
+la prioridad de puente predeterminada es 32768 + MAC
+
+
+el numero de puerto se puede duplicar en la tabla mac porque son las mac conectadas a otro switch conectado a ese puerto repetido
+
+
+vpn punto a punto
+vpn remoto
