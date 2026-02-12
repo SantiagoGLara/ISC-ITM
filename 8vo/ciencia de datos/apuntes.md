@@ -76,3 +76,27 @@ Transformar datos crudos en tableros de control(dashboards) automatizados y opti
 A la hora de empezar a trabajar con los datos de una empresa, hay un orden de prioridad/piramide de maslow de valor en los cientificos de datos, para ir progresando de la descripcion a las previsiones.
 
 ![orden](image.png)
+
+### etapas
+#### 1: selecccion
+el objetivo es determinar las fuentes de los datos(externas/internas) con acciones como:
+- identificar bases de datos externas y internas
+- entender el objetivo del negocio o investigacion
+    - entender a la empresa
+    - conocer clientes
+    - conocer productos/servicios
+    - mision/vision
+pregunta clave: que datos realmente necesito para responder a los planteamientos?
+
+#### 2: pre-procesamiento(data cleaning)
+el objetivo es mejorar la calidad de los datos con acciones como:
+- manejo de valores nulos(missing values)
+- deteccion y tratamiento de valores atipicos(outliers)(causados por error humano o situaciones raras, pero es cosa que se debe evaluar)
+- eliminacion de ruido y duplicados
+#### 3: transformacion 
+su objetivo es preparar los datos para el algoritmo especifico con acciones como:
+- **normalizaciones/estandarizacion**
+- **reduccion de dimensionalidad:** seleccionar las variables mas importantes
+- **creacion de nuevas variables**(feature engineering)
+muchas veces se construyen scripts para este proceso
+#### 4:
