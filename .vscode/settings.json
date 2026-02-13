@@ -1,3 +1,11 @@
 {
-    "livePreview.defaultPreviewPath": "/6to/programación web/actividades/practica 3/formulario.html"
+    "livePreview.defaultPreviewPath": "/6to/programación web/actividades/practica 3/formulario.html",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-21",
+            "path": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.5.11-hotspot",
+            "default": true
+        }
+    ],
+    "java.home": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.5.11-hotspot"
 }
