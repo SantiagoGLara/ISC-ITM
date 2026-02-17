@@ -19,4 +19,35 @@ ejemplos
 
 - programa para aprobar un credito: a partir de reglas, arboles de deciciones y/o condiciones se define si es apto o no para el credito
 
+### expresiones
+una expresion siempre produce un valor y es evaluada por el programa para producir el mismo valorm comunmente se confunde como instrucciones o asignaciones
+
+Cosas que si son expresiones:
+```java
+if(x>y) //<-esto si es expresion
+
+```
+cosas que no son expresiones
+```java
+int x=5;
+int y;
+//comentarios tambien son
+scanner
+```
+#### tipos de evaluacion de una expresion
+- evaluacion estricta:
+    - se evalua inmediatamente
+    - se sigue el modelo de evaluacion por jerarquia matematica
+    - a nivel tecnico evalua todas las expresiones
+    - simplicidad
+- evaluacion paso a paso
+    - conocida como evaluacion por reduccion
+    - simplifica la expresion progresivamente
+- evaluacion perezosa
+    - se evaluan solamente cuando se necesitan
+    - requiere optimizar la memoria en operaciones complejas
+### disciplina de datos
+en lenguajes de programacion debilmente tipados permite realizar expresiones que carecen de sentido y el lenguaje se adapta, en ocasiones por facilidad de aprendizaje para el programador. Otros lenguajes de programacion altamente tipados son mas confiables al evaluar expresiones pero tienen una curva de aprendizaje mas lenta.
+
+
 

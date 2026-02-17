@@ -100,3 +100,25 @@ su objetivo es preparar los datos para el algoritmo especifico con acciones como
 - **creacion de nuevas variables**(feature engineering)
 muchas veces se construyen scripts para este proceso
 #### 4:
+
+
+#### reporte de calidad de datos
+resumen ejecutivo que documente el estado de los datos, enlace con archivos y detalle de datos donde haya error. Incluye analisis e interpretacion del estado de los datos y las estrategias, propuestas y decisiones que se tomarán sobre los datos para mejorar la calidad
+
+### metodologia Crisp-DM
+a diferencia de KDD, es una metodologia mucho mas extensa y detallada
+
+#### fase 1: comprension del negocio
+aqui deseamos saber que problema deseamos resolver y para quien
+- conocer el negocio
+
+    1. historia
+    2. mision
+    3. vision
+    4. valores y cultura
+    5. estructura
+    6. entorno
+    7. productos y servicios
+- definir objetivos de negocio
+- evaluar la situacion
+- definicion del plan de proyecto 
