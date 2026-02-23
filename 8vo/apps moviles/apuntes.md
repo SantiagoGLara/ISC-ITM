@@ -9,3 +9,11 @@ Hace uso de tecnologias web como HTML, CSS, JS con frameworks como Ionic+angular
 Frameworks como react native, flutter, xamarin, KMP. Una base de codigo utilizable en varias plataformas, reduce costos y tiempo de desarrollo respecto al nativo pero tambien tiene posible peor rendimiento. El compilador genera el binario para ambas plataformas.
 ### aplicaciones web progresivas
 siguen empleando
+
+## pantallas sugeridas
+1. splash screen
+
+si hay sesión entra 2 directo, si no pasa por 3 y 4
+2. home screen
+3. login screen
+3. register screen

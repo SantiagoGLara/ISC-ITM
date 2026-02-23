@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Calculadora</h1>
+        
+        <div class="calculadora">
+            <input type="text" id="pantalla" class="pantalla" readonly>
+            
+            <div class="botones">
+               
+                <button class="btn btn-gris" onclick="limpiar()">C</button>
+                <button class="btn btn-gris" onclick="borrar()">←</button>
+                <button class="btn btn-operador" onclick="agregarOperador('/')">/</button>
+                <button class="btn btn-operador" onclick="agregarOperador('*')">×</button>
+                
+                <button class="btn" onclick="agregarNumero('7')">7</button>
+                <button class="btn" onclick="agregarNumero('8')">8</button>
+                <button class="btn" onclick="agregarNumero('9')">9</button>
+                <button class="btn btn-operador" onclick="agregarOperador('-')">-</button>
+                
+                <button class="btn" onclick="agregarNumero('4')">4</button>
+                <button class="btn" onclick="agregarNumero('5')">5</button>
+                <button class="btn" onclick="agregarNumero('6')">6</button>
+                <button class="btn btn-operador" onclick="agregarOperador('+')">+</button>
+                
+                <button class="btn" onclick="agregarNumero('1')">1</button>
+                <button class="btn" onclick="agregarNumero('2')">2</button>
+                <button class="btn" onclick="agregarNumero('3')">3</button>
+                <button class="btn btn-operador" onclick="agregarOperador('.')">,</button>
+                
+                <button class="btn btn-cero" onclick="agregarNumero('0')">0</button>
+                <button class="btn btn-igual" onclick="calcular()">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        let pantalla = document.getElementById('pantalla');
+        let expresion = '';
+
+        // FUNCIÓN: Agregar números a la pantalla (Arrow Function)
+        const agregarNumero = (numero) => {
+            // Evita números con ceros al inicio (ej: 010, 00)
+            const ultimoCaracter = expresion.slice(-1);
+            const esOperador = /[+\-*/.]/.test(ultimoCaracter);
+            const empienzaCero = expresion.endsWith('0') && !expresion.includes('.');
+            
+            // Solo acepta 0 si es después de operador o si es parte de decimal (0.)
+            if (numero === '0' && empienzaCero && !esOperador) return;
+            
+            expresion = expresion + numero;
+            pantalla.value = expresion;
+        };
+
+        const agregarOperador = (operador) => {
+            // Verifica si ya hay un operador al final con ternario
+            const tieneOperador = /[+\-*/.]/g.test(expresion.slice(-1));
+            expresion = tieneOperador ? expresion.slice(0, -1) + operador : expresion + operador;
+            pantalla.value = expresion;
+        };
+
+        //Calcular resultado 
+        const calcular = () => {
+            try {
+                // Evalúa la expresión
+                const resultado = Function('"use strict"; return (' + expresion + ')')();
+                
+                // Usa operador ternario para formatear decimales
+                pantalla.value = resultado % 1 !== 0 ? resultado.toFixed(2) : resultado;
+                expresion = pantalla.value.toString();
+            } catch (error) {
+                pantalla.value = 'Error';
+                expresion = '';
+            }
+        };
+
+        // FUNCIÓN: Limpiar pantalla (Arrow Function)
+        const limpiar = () => {
+            expresion = '';
+            pantalla.value = '';
+        };
+
+        // FUNCIÓN: Borrar último carácter
+        const borrar = () => {
+            // Usa slice para crear un nuevo string sin el último carácter
+            expresion = expresion.slice(0, -1);
+            pantalla.value = expresion;
+        };
+        
+        // Valida si la expresión es válida
+        const esValida = (exp) => exp.length > 0 && !/[+\-*/.]*$/.test(exp);
+
+        // Valida si es un número
+        const esNumero = (valor) => !isNaN(valor) && valor !== '';
+
+        // Valida operador válido
+        const esOperadorValido = (op) => ['+', '-', '*', '/', '.'].includes(op);
+
+        console.log('Calculadora lista. Pruébala en el navegador.');
+    </script>
+</body>
+</html>

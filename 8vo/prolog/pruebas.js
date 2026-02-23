@@ -5,3 +5,6 @@ console.log(x+y)
 function cuadrado(x){
     return x*x
 }
+
+
+let cuadrado = x=>x*x
