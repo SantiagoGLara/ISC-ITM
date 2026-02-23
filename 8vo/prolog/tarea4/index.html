@@ -46,9 +46,9 @@
         let pantalla = document.getElementById('pantalla');
         let expresion = '';
 
-        // FUNCIÓN: Agregar números a la pantalla (Arrow Function)
+        // FUNCIÓN: Agregar números a la pantalla
         const agregarNumero = (numero) => {
-            // Evita números con ceros al inicio (ej: 010, 00)
+
             const ultimoCaracter = expresion.slice(-1);
             const esOperador = /[+\-*/.]/.test(ultimoCaracter);
             const empienzaCero = expresion.endsWith('0') && !expresion.includes('.');
@@ -73,7 +73,6 @@
                 // Evalúa la expresión
                 const resultado = Function('"use strict"; return (' + expresion + ')')();
                 
-                // Usa operador ternario para formatear decimales
                 pantalla.value = resultado % 1 !== 0 ? resultado.toFixed(2) : resultado;
                 expresion = pantalla.value.toString();
             } catch (error) {
@@ -82,13 +81,12 @@
             }
         };
 
-        // FUNCIÓN: Limpiar pantalla (Arrow Function)
         const limpiar = () => {
             expresion = '';
             pantalla.value = '';
         };
 
-        // FUNCIÓN: Borrar último carácter
+        //Borrar último carácter
         const borrar = () => {
             // Usa slice para crear un nuevo string sin el último carácter
             expresion = expresion.slice(0, -1);
