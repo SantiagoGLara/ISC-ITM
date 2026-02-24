@@ -59,16 +59,14 @@
         };
 
         const agregarOperador = (operador) => {
-            // Verifica si ya hay un operador al final con ternario
+            // Verifica si ya hay un operador al final 
             const tieneOperador = /[+\-*/.]/g.test(expresion.slice(-1));
             expresion = tieneOperador ? expresion.slice(0, -1) + operador : expresion + operador;
             pantalla.value = expresion;
         };
 
-        //Calcular resultado 
         const calcular = () => {
             try {
-                // Evalúa la expresión
                 const resultado = Function('"use strict"; return (' + expresion + ')')();
                 
                 pantalla.value = resultado % 1 !== 0 ? resultado.toFixed(2) : resultado;
@@ -84,9 +82,7 @@
             pantalla.value = '';
         };
 
-        //Borrar último carácter
         const borrar = () => {
-            // Usa slice para crear un nuevo string sin el último carácter
             expresion = expresion.slice(0, -1);
             pantalla.value = expresion;
         };
