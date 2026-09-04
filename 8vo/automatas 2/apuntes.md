@@ -18,3 +18,21 @@ verifica que el codigo tiene sentido, asegurandose de que los tipos de datos sea
 - un error lexico ocurre cuando el codigo contiene caracteres o simbolos no reconocidos por el lenguaje
 - un error sintactico ocurre cuando el codigo viola la gramatica del lenguaje
 - un error semantico ocurre cuando el codigo es sintacticamente correcto pero su significado no tiene sentido logico
+
+
+## unidad 2
+### gramatica
+modelo matematico o notacion formal que se utiliza para especificar y describir la estructura (sintaxis) de un lenguaje, proporciona un conjunto finito de reglas que dictan como se pueden combinar los simbolos para formar sentencias validas
+
+cuadrupa(sumatoria de simbolos terminales, sumatoria de simbolos, simbolo inicial y reglas de produccion)
+
+#### simbolos terminales(T)
+son los simbolos basicos o elementales, no pueden descomponerse mas. en un lenguaje pueden ser los(), if, +, ID,etc.
+#### simbolos no terminales(NT)
+son simbolos abstractos que representan conjuntos de cadenas o estructuras gramaticales como expresiones, instrucciones o listas
+#### simbolo inicial(S)
+un no terminal designado como punto de partida, el lenguaje definido por la gramatica es el conjunto de cadenas derivadas de este simbolo
+#### produccion(P)
+reglas que especifican como los no terminales pueden ser transformados o sustituidos por secuencias de terminales y otros no terminales 
+
+tienen la forma de notacion BNF
